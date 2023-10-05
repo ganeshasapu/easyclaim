@@ -1,16 +1,14 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-  import { cookies } from "next/headers";
+import { cookies } from "next/headers";
+import TestEntries from "./test_entries";
 
-  export default async function Index() {
+export default async function Index() {
     const supabase = createServerComponentClient({ cookies });
-
-    const { data: countries } = await supabase.from("DatabaseTable").select();
-
+    const { data: tests } = await supabase.from("tests").select();
     return (
-      <ul className="my-auto text-foreground">
-        {countries?.map((country) => (
-          <li key={country.id}>{country.name}</li>
-        ))}
-      </ul>
+        <>
+            <div className="text-white">Test Entries:</div>
+            <TestEntries serverTests={tests ?? []} />
+        </>
     );
-  }
+}
