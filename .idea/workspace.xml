@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6301588c-88dd-407a-80ae-bfb09080ef07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.local.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/serviceAccountKey.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/main/java/com/easyclaim/EasyClaimBackend/Controller/PersonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/main/java/com/easyclaim/EasyClaimBackend/EasyClaimBackendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/main/java/com/easyclaim/EasyClaimBackend/Entity/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/main/java/com/easyclaim/EasyClaimBackend/Firebase/FirebaseInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/main/java/com/easyclaim/EasyClaimBackend/Service/PersonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EXTRA/src/test/java/com/easyclaim/EasyClaimBackend/EasyClaimBackendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_examples/client-component/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_examples/route-handler/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_examples/server-action/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_examples/server-component/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/callback/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/sign-in/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/sign-out/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/sign-up/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/countries/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/messages.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/opengraph-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/test/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/test/test_entries.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DeployButton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/LogoutButton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/NextJsLogo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SupabaseLogo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/supabase/migrations/20230618024722_init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/supabase/seed.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/supabase.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2WYID5eQ0t4jD9um5CA3a87ekFc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Documents/easyclaim",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "a0ccb3789b058c3509be4315a14bc099",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\easyclaim\EXTRA" />
+      <recent name="D:\Documents\easyclaim\EXTRA\src\main\java\com\easyclaim\EasyClaimBackend\Firebase" />
+      <recent name="D:\Documents\easyclaim\EXTRA\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EasyClaimBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EasyClaimBackend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.easyclaim.EasyClaimBackend.EasyClaimBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6301588c-88dd-407a-80ae-bfb09080ef07" name="Changes" comment="" />
+      <created>1696902963634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696902963634</updated>
+      <workItem from="1696902964691" duration="1326000" />
+      <workItem from="1696961288755" duration="2272000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.FileNotFoundException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
