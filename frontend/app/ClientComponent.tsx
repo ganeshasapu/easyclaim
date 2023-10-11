@@ -2,8 +2,14 @@
 
 import React, { useState } from 'react';
 
+interface UserData {
+  name: string;
+  age: string;
+}
+
 export default function ClientComponent() {
   const [inputValue, setInputValue] = useState('');
+  const [obtainedData, setData] = useState<null | UserData>(null); 
   const [documentName, setDocumentName] = useState('');
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
@@ -21,7 +27,8 @@ export default function ClientComponent() {
         throw new Error('error in response');
       }
 
-      const data = await response.json();
+      const data: UserData = await response.json();
+      setData(data)
 
       console.log(`Search result: ${JSON.stringify(data)}`);
     } catch (error) {
@@ -72,6 +79,12 @@ export default function ClientComponent() {
         <input type='text' value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder='Enter name' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
         <button onClick={handleSearchClick}>Search</button>
       </div>
+      <div>
+        <h2>User Information</h2>
+        <p>Name: {obtainedData?.name}</p>
+        <p>Age: {obtainedData?.age}</p>
+      </div>
+
       <div>
         <h1>Create a User</h1>
         <input
