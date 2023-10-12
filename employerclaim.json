@@ -1,0 +1,31 @@
+{
+  "dateOfBirth": "11/12/1969",
+  "employerFill": {
+    "dateOfHire": "11/10/2023",
+    "dateLastWorked": "11/10/2023",
+    "reasonStop": "bro was sus",
+    "receiveingBenefits": false,
+    "oldHoursPerWeek": 4,
+    "returned": true,
+    "returnedDate": "11/10/2023",
+    "currentHoursPerWeek": 10,
+    "returnState": "Full-time, no restrictions",
+    "returnedRestrictions": "banned from employee washroom facilities",
+    "restrictionsPreventWork": false,
+  },
+  "offWork": {
+    "currentStatus": "Normal retirement",
+    "effectiveDate": "01/01/2022",
+    "lightWorkNow": false,
+    "lightWorkFuture": false,
+    "canModifyForRestrictions": false,
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": false,
+    "stillReceivingBenefits": false,
+    "compensationCarrier": "BobIsYourUncle"
+  },
+  "authorizedRep": {
+    "companyName": "Mike McCarthy Corp.",
+  }
+}
