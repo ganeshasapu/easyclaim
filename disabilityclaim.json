@@ -1,0 +1,46 @@
+{
+  "dateOfBirth": "11/12/1969",
+  "nameOfLendingInstituion": "xxx",
+  "disabilityType": "Accident / Illness / Pregnancy",
+  "disability": {
+    "accident": {
+      "dateOfAccident": "11/12/1977",
+      "dateFirstTreated": "11/12/1985",
+      "accidentCause": "Work related injury",
+      "motorPoliceReport": false
+    },
+    "illness": {
+      "dateOccured": "11/12/1977",
+      "dateFirstTreated": "11/12/1985"
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "8/12/1970",
+      "dateFirstTreated": "11/12/1969",
+      "pregnancyComplications": false
+    },
+  "dateLastWorked": "01/01/1970",
+  "missedWorkPast": false,
+  "returnedWork": false,
+  "returnWithRestrictions": false,
+  "carePhysician": {
+    "exist": true,
+    "reasonDiagnosis": "baby"
+  },
+  "currentPhysicianA": {
+    "reasonDiagnosis": "baby"
+  },
+  "currentPhysicianB": {
+    "reasonDiagnosis": "baby"
+  },
+  "occupation": "dentist",
+  "physicianStatement": {
+    "hospitalized": false,
+    "surgeryPerformed": false,
+    "surgeryType": "baby",
+    "wasReferred": false,
+    "treatedPastTwoYears": false,
+    "treatmentDates": "xxx",
+    "treatedByAnother": false
+  }
+  }
+}
