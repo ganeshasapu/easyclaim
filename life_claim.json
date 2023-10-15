@@ -1,5 +1,5 @@
 {
-  "dateOfAccident": "12/12/2022",
+  "dateOccured": "12/12/22",
   "placeOfDeath": "University of Toronto",
   "inquestHeld": true,
   "autopsyPerformed": false,
@@ -16,6 +16,7 @@
   },
   "generalLoanInformation": {
     "nameOfLendingInstitution": "xxx",
+    "lendingInstitutionAddress": "Ontario".
     "loanA": {
       "originalAmountOfLoan": 123,
       "amountOfInsuranceAppliedFor": 456,
@@ -36,4 +37,5 @@
       "balanceOnDateOfDeath": 500
     }
   }
+  "signatureDate": "12/13/22"
 }
