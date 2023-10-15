@@ -1,13 +1,13 @@
 {
-  "dateOfBirth": "11/12/1969",
+  "dateOfBirth": "11/12/69",
   "employerFill": {
-    "dateOfHire": "11/10/2023",
-    "dateLastWorked": "11/10/2023",
+    "dateOfHire": "11/10/23",
+    "dateLastWorked": "11/10/23",
     "reasonStop": "Injury",
     "receiveingBenefits": false,
     "oldHoursPerWeek": 4,
     "returned": true,
-    "returnedDate": "11/10/2023",
+    "returnedDate": "11/10/23",
     "currentHoursPerWeek": 10,
     "returnState": "Full-time, no restrictions",
     "returnedRestrictions": "NA",
@@ -15,7 +15,7 @@
   },
   "offWork": {
     "currentStatus": "Normal retirement",
-    "effectiveDate": "01/01/2022",
+    "effectiveDate": "01/01/22",
     "lightWorkNow": false,
     "lightWorkFuture": false,
     "canModifyForRestrictions": false,
@@ -28,4 +28,5 @@
   "authorizedRep": {
     "companyName": "TD Bank",
   }
+  "signatureDate": "11/20/23"
 }
