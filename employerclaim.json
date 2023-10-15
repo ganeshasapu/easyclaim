@@ -3,14 +3,14 @@
   "employerFill": {
     "dateOfHire": "11/10/2023",
     "dateLastWorked": "11/10/2023",
-    "reasonStop": "bro was sus",
+    "reasonStop": "Injury",
     "receiveingBenefits": false,
     "oldHoursPerWeek": 4,
     "returned": true,
     "returnedDate": "11/10/2023",
     "currentHoursPerWeek": 10,
     "returnState": "Full-time, no restrictions",
-    "returnedRestrictions": "banned from employee washroom facilities",
+    "returnedRestrictions": "NA",
     "restrictionsPreventWork": false,
   },
   "offWork": {
@@ -23,9 +23,9 @@
   "workersCompensation": {
     "filedCompensationClaim": false,
     "stillReceivingBenefits": false,
-    "compensationCarrier": "BobIsYourUncle"
+    "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "Mike McCarthy Corp.",
+    "companyName": "TD Bank",
   }
 }
