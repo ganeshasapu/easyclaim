@@ -1,24 +1,25 @@
 {
-  "dateOfBirth": "11/12/1969",
+  "dateOfBirth": "11/12/69",
   "nameOfLendingInstituion": "xxx",
+  "LendingInstitionProvince": "Ontario",
   "disabilityType": "Accident / Illness / Pregnancy",
   "disability": {
     "accident": {
-      "dateOfAccident": "11/12/1977",
-      "dateFirstTreated": "11/12/1985",
+      "dateOccurred": "11/12/77",
+      "dateFirstTreated": "11/12/85",
       "accidentCause": "Work related injury",
       "motorPoliceReport": false
     },
     "illness": {
-      "dateOccured": "11/12/1977",
+      "dateOccurred": "11/12/77",
       "dateFirstTreated": "11/12/1985"
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "8/12/1970",
+      "estimatedDeliveryDate": "8/12/70",
       "dateFirstTreated": "11/12/1969",
       "pregnancyComplications": false
     },
-  "dateLastWorked": "01/01/1970",
+  "dateLastWorked": "01/01/70",
   "missedWorkPast": false,
   "returnedWork": false,
   "returnWithRestrictions": false,
@@ -43,4 +44,5 @@
     "treatedByAnother": false
   }
   }
+  "signatureDate": "11/13/77"
 }
