@@ -16,7 +16,7 @@
   },
   "generalLoanInformation": {
     "nameOfLendingInstitution": "xxx",
-    "lendingInstitutionProvince": "Ontario".
+    "lendingInstitutionProvince": "Ontario",
     "loanA": {
       "originalAmountOfLoan": 123,
       "amountOfInsuranceAppliedFor": 456,
