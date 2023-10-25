@@ -11,12 +11,12 @@ export default function Database() {
                     >
                         Inbox
                     </Link>
-                    <Link
+                    <div
                         className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold"
-                        href={"/inbox"}
+
                     >
                         Database
-                    </Link>
+                    </div>
                 </div>
                 <div className="flex">
                     <div className="rounded-full bg-green-300 w-10 h-10" />

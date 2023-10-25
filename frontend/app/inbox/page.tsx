@@ -5,12 +5,12 @@ export default function Inbox() {
         <main className="flex h-screen w-full flex-col items-center justify-between">
             <div className="flex w-full p-4 items-center border-b border-white">
                 <div className="flex w-full items-center justify-evenly p-2 gap-8">
-                    <Link
+                    <div
                         className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold"
-                        href={"/inbox"}
+
                     >
                         Inbox
-                    </Link>
+                    </div>
 
                     <Link
                         className="py-2 border rounded w-full px-4 text-center"
