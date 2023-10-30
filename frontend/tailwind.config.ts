@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        '1/4-screen': '25vw'
+      },
+      height: {
+        '1/4-screen': '25vh'
+      },
+      colors: {
+        'securian-green': '#039D00'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
