@@ -1,0 +1,40 @@
+{
+  "dateOfBirth": "",
+  "nameOfLendingInstitution": "",
+  "LendingInstitionProvince": "ON",
+  "disabilityType": "",
+  "disability": {
+    "accident": {
+      "dateOccurred": "",
+      "dateFirstTreated": "",
+      "accidentCause": "",
+      "motorPoliceReport": ""
+    },
+    "illness": {
+      "dateOccurred": "",
+      "dateFirstTreated": ""
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "",
+      "dateFirstTreated": "",
+      "pregnancyComplications": ""
+    }
+  },
+  "dateLastWorked": "",
+  "missedWorkPast": "",
+  "returnedWork": "",
+  "returnWithRestrictions": "",
+  "carePhysician": {
+    "exist": "",
+    "reasonDiagnosis": ""
+  },
+  "occupation": "",
+  "physicianStatement": {
+    "hospitalized": "",
+    "surgeryPerformed": "",
+    "surgeryType": "",
+    "wasReferred": "",
+    "treatedPastTwoYears": "",
+    "treatedByAnother": ""
+  }
+}
