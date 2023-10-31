@@ -1,0 +1,38 @@
+{
+  "dateOccured": "",
+  "placeOfDeath": "",
+  "inquestHeld": "",
+  "autopsyPerformed": "",
+  "medicalInformation": {
+    "causeOfDeath": "",
+    "typeOfDeath": "",
+    "hospitalized": ""
+  },
+  "employmentInformation": {
+    "occupation": "",
+    "dateLastWorked": "",
+    "reasonInsuredStoppedWorking": ""
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "",
+    "lendingInstitutionProvince": "",
+    "loanA": {
+      "originalAmountOfLoan": "",
+      "amountOfInsuranceAppliedFor": "",
+      "typeOrPurposeOfLoan": "",
+      "balanceOnDateOfDeath": ""
+    },
+    "loanB": {
+      "originalAmountOfLoan": "",
+      "amountOfInsuranceAppliedFor": "",
+      "typeOrPurposeOfLoan": "",
+      "balanceOnDateOfDeath": ""
+    },
+    "loanC": {
+      "originalAmountOfLoan": "",
+      "amountOfInsuranceAppliedFor": "",
+      "typeOrPurposeOfLoan": "",
+      "balanceOnDateOfDeath": ""
+    }
+  }
+}

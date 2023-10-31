@@ -1,0 +1,28 @@
+{
+  "dateOfBirth": "",
+  "employerFill": {
+    "dateOfHire": "",
+    "dateLastWorked": "",
+    "reasonStop": "",
+    "receiveingBenefits": "",
+    "oldHoursPerWeek": "",
+    "returned": "",
+    "returnedDate": "",
+    "currentHoursPerWeek": "",
+    "returnState": "",
+    "restrictionsPreventWork": "",
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": "",
+    "lightWorkAvailableFuture": "",
+    "canModifyForRestrictions": "",
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": "",
+    "stillReceivingBenefits": "",
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "",
+  }
+}
