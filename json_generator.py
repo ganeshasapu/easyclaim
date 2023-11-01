@@ -384,9 +384,9 @@ if __name__ == "__main__":
 	os.mkdir("dummy_data/employment_claims")
 
 	# Specifying counts for each claim
-	life_claim_count = 20
-	disability_claim_count = 20
-	employment_claim_count = 20
+	life_claim_count = 1
+	disability_claim_count = 0
+	employment_claim_count = 0
 
 	# Generating claims using helper functions
 	create_life_claims(life_claim_count)

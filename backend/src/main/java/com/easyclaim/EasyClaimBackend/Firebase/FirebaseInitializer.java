@@ -3,6 +3,8 @@ package com.easyclaim.EasyClaimBackend.Firebase;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.FirebaseOptions.Builder;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;

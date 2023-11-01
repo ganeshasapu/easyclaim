@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState } from 'react';
+import jsonData from '../../dummy_data/life_claims/1.json';
+
 
 interface UserData{
   name: string;
@@ -30,6 +32,7 @@ export default function ClientComponent() {
       }
 
       const data = await response.json();
+      console.log(typeof data);
 
       console.log(`Search result: ${JSON.stringify(data)}`);
       setResult(data);
@@ -52,6 +55,7 @@ export default function ClientComponent() {
       };
 
       const requestBodyJSON = JSON.stringify(requestBody);
+      console.log(requestBodyJSON);
 
       const apiUrl = `/api/people/`
 
@@ -73,6 +77,33 @@ export default function ClientComponent() {
       console.log('Error creating user:', error);
     }
   };
+
+  const uploadJSON = async () => {
+    try {
+    const apiUrl = 'api/upload/'
+    const requestBodyJSON = JSON.stringify(jsonData);
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: requestBodyJSON
+    });
+
+    console.log(response);
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+      console.log(`Create result: ${JSON.stringify(data)}`);
+    } catch (error) {
+      console.log('Error creating user:', error);
+    }
+    
+  }
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -109,6 +140,8 @@ export default function ClientComponent() {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         />
         <button onClick={handleCreateClick}>Create</button>
+        <div className='h-[200px]'></div>
+        <button onClick={uploadJSON}>Upload JSON</button>
       </div>
     </main>
   );
