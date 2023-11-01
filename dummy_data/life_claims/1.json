@@ -1,0 +1,38 @@
+{
+  "dateOccured": "12-10-14",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Construction",
+    "dateLastWorked": "05/07/14",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "RBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 83551,
+      "amountOfInsuranceAppliedFor": 58596,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 66951
+    },
+    "loanB": {
+      "originalAmountOfLoan": 21878,
+      "amountOfInsuranceAppliedFor": 15599,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 17787
+    },
+    "loanC": {
+      "originalAmountOfLoan": 92199,
+      "amountOfInsuranceAppliedFor": 38904,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 48124
+    }
+  }
+}
