@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import jsonData from '../../dummy_data/life_claims/1.json';
+import jsonData from '../../dummy_data/life_claims/life_claim_data.json';
 
 
 interface UserData{
@@ -78,29 +78,36 @@ export default function ClientComponent() {
     }
   };
 
-  const uploadJSON = async () => {
-    try {
-    const apiUrl = 'api/upload/'
-    const requestBodyJSON = JSON.stringify(jsonData);
-    const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: requestBodyJSON
+  const uploadJSON = () => {
+    jsonData.forEach( async (claim) => {
+      console.log(claim)
+      try {
+        const apiUrl = 'api/upload/'
+        const requestBodyJSON = JSON.stringify(claim);
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: requestBodyJSON
+        });
+    
+        console.log(response);
+    
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+    
+        const data = await response.json();
+          console.log(`Create result: ${JSON.stringify(data)}`);
+        } catch (error) {
+          console.log('Error creating user:', error);
+        }
     });
+      
 
-    console.log(response);
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-
-    const data = await response.json();
-      console.log(`Create result: ${JSON.stringify(data)}`);
-    } catch (error) {
-      console.log('Error creating user:', error);
-    }
+    
     
   }
 
