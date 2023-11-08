@@ -1,0 +1,800 @@
+[
+{
+  "dateOccured": "05-21-11",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Construction",
+    "dateLastWorked": "05-18-11",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "RBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 51214,
+      "amountOfInsuranceAppliedFor": 19150,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 24271
+    },
+    "loanB": {
+      "originalAmountOfLoan": 66739,
+      "amountOfInsuranceAppliedFor": 47768,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 54442
+    },
+    "loanC": {
+      "originalAmountOfLoan": 66249,
+      "amountOfInsuranceAppliedFor": 36096,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 42721
+    }
+  }
+},
+{
+  "dateOccured": "12-13-23",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Teacher",
+    "dateLastWorked": "12-10-23",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "CIBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 34061,
+      "amountOfInsuranceAppliedFor": 26857,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 30263
+    },
+    "loanB": {
+      "originalAmountOfLoan": 41585,
+      "amountOfInsuranceAppliedFor": 35664,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 39822
+    },
+    "loanC": {
+      "originalAmountOfLoan": 61675,
+      "amountOfInsuranceAppliedFor": 38973,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 45140
+    }
+  }
+},
+{
+  "dateOccured": "12-18-12",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Teacher",
+    "dateLastWorked": "12-15-12",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 25316,
+      "amountOfInsuranceAppliedFor": 15614,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 18146
+    },
+    "loanB": {
+      "originalAmountOfLoan": 87319,
+      "amountOfInsuranceAppliedFor": 63690,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 72422
+    },
+    "loanC": {
+      "originalAmountOfLoan": 16670,
+      "amountOfInsuranceAppliedFor": 12422,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 14089
+    }
+  }
+},
+{
+  "dateOccured": "12-27-14",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Engineer",
+    "dateLastWorked": "12-24-14",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 55780,
+      "amountOfInsuranceAppliedFor": 36286,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 41864
+    },
+    "loanB": {
+      "originalAmountOfLoan": 92177,
+      "amountOfInsuranceAppliedFor": 68785,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 78003
+    },
+    "loanC": {
+      "originalAmountOfLoan": 84499,
+      "amountOfInsuranceAppliedFor": 38792,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 47242
+    }
+  }
+},
+{
+  "dateOccured": "08-20-20",
+  "placeOfDeath": "Home",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Old Age",
+    "typeOfDeath": "Natural",
+    "hospitalized": false
+  },
+  "employmentInformation": {
+    "occupation": "Doctor",
+    "dateLastWorked": "08-17-20",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "CIBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 61778,
+      "amountOfInsuranceAppliedFor": 20676,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 26854
+    },
+    "loanB": {
+      "originalAmountOfLoan": 84780,
+      "amountOfInsuranceAppliedFor": 37149,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 45627
+    },
+    "loanC": {
+      "originalAmountOfLoan": 84560,
+      "amountOfInsuranceAppliedFor": 50379,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 58835
+    }
+  }
+},
+{
+  "dateOccured": "06-23-23",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Lawyer",
+    "dateLastWorked": "06-20-23",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 33852,
+      "amountOfInsuranceAppliedFor": 20225,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 23610
+    },
+    "loanB": {
+      "originalAmountOfLoan": 64841,
+      "amountOfInsuranceAppliedFor": 38561,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 45045
+    },
+    "loanC": {
+      "originalAmountOfLoan": 53030,
+      "amountOfInsuranceAppliedFor": 21210,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 26513
+    }
+  }
+},
+{
+  "dateOccured": "10-25-16",
+  "placeOfDeath": "Home",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Old Age",
+    "typeOfDeath": "Natural",
+    "hospitalized": false
+  },
+  "employmentInformation": {
+    "occupation": "Construction",
+    "dateLastWorked": "10-22-16",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "CIBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 49390,
+      "amountOfInsuranceAppliedFor": 17272,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 22211
+    },
+    "loanB": {
+      "originalAmountOfLoan": 98693,
+      "amountOfInsuranceAppliedFor": 51412,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 61281
+    },
+    "loanC": {
+      "originalAmountOfLoan": 67395,
+      "amountOfInsuranceAppliedFor": 58972,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 65712
+    }
+  }
+},
+{
+  "dateOccured": "09-14-12",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Teacher",
+    "dateLastWorked": "09-11-12",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "CIBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 11517,
+      "amountOfInsuranceAppliedFor": 6859,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 8011
+    },
+    "loanB": {
+      "originalAmountOfLoan": 26400,
+      "amountOfInsuranceAppliedFor": 18301,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 20941
+    },
+    "loanC": {
+      "originalAmountOfLoan": 20522,
+      "amountOfInsuranceAppliedFor": 11650,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 13702
+    }
+  }
+},
+{
+  "dateOccured": "09-14-18",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Doctor",
+    "dateLastWorked": "09-11-18",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "Scotiabank",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 70680,
+      "amountOfInsuranceAppliedFor": 36889,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 43957
+    },
+    "loanB": {
+      "originalAmountOfLoan": 82235,
+      "amountOfInsuranceAppliedFor": 71571,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 79794
+    },
+    "loanC": {
+      "originalAmountOfLoan": 28569,
+      "amountOfInsuranceAppliedFor": 11158,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 14015
+    }
+  }
+},
+{
+  "dateOccured": "04-08-12",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Construction",
+    "dateLastWorked": "04-05-12",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "Scotiabank",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 47289,
+      "amountOfInsuranceAppliedFor": 38874,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 43603
+    },
+    "loanB": {
+      "originalAmountOfLoan": 17236,
+      "amountOfInsuranceAppliedFor": 10192,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 11916
+    },
+    "loanC": {
+      "originalAmountOfLoan": 83649,
+      "amountOfInsuranceAppliedFor": 71428,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 79793
+    }
+  }
+},
+{
+  "dateOccured": "02-11-21",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Doctor",
+    "dateLastWorked": "02-08-21",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "Scotiabank",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 66767,
+      "amountOfInsuranceAppliedFor": 43303,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 49980
+    },
+    "loanB": {
+      "originalAmountOfLoan": 90189,
+      "amountOfInsuranceAppliedFor": 63975,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 72994
+    },
+    "loanC": {
+      "originalAmountOfLoan": 60129,
+      "amountOfInsuranceAppliedFor": 45316,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 51329
+    }
+  }
+},
+{
+  "dateOccured": "12-09-15",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Construction",
+    "dateLastWorked": "12-06-15",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 25580,
+      "amountOfInsuranceAppliedFor": 9517,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 12075
+    },
+    "loanB": {
+      "originalAmountOfLoan": 55986,
+      "amountOfInsuranceAppliedFor": 19763,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 25362
+    },
+    "loanC": {
+      "originalAmountOfLoan": 16142,
+      "amountOfInsuranceAppliedFor": 11167,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 12781
+    }
+  }
+},
+{
+  "dateOccured": "12-10-13",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Retired",
+    "dateLastWorked": "N/A",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 39453,
+      "amountOfInsuranceAppliedFor": 21859,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 25804
+    },
+    "loanB": {
+      "originalAmountOfLoan": 49537,
+      "amountOfInsuranceAppliedFor": 22072,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 27026
+    },
+    "loanC": {
+      "originalAmountOfLoan": 38067,
+      "amountOfInsuranceAppliedFor": 22168,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 25975
+    }
+  }
+},
+{
+  "dateOccured": "10-14-17",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Teacher",
+    "dateLastWorked": "10-11-17",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "BMO",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 29028,
+      "amountOfInsuranceAppliedFor": 21706,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 24609
+    },
+    "loanB": {
+      "originalAmountOfLoan": 30482,
+      "amountOfInsuranceAppliedFor": 17258,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 20306
+    },
+    "loanC": {
+      "originalAmountOfLoan": 60413,
+      "amountOfInsuranceAppliedFor": 46579,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 52620
+    }
+  }
+},
+{
+  "dateOccured": "08-18-23",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Teacher",
+    "dateLastWorked": "08-15-23",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "RBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 26391,
+      "amountOfInsuranceAppliedFor": 14570,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 17209
+    },
+    "loanB": {
+      "originalAmountOfLoan": 68604,
+      "amountOfInsuranceAppliedFor": 41019,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 47879
+    },
+    "loanC": {
+      "originalAmountOfLoan": 61105,
+      "amountOfInsuranceAppliedFor": 18614,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 24724
+    }
+  }
+},
+{
+  "dateOccured": "05-25-10",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Retired",
+    "dateLastWorked": "N/A",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "BMO",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 27217,
+      "amountOfInsuranceAppliedFor": 11411,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 14133
+    },
+    "loanB": {
+      "originalAmountOfLoan": 89515,
+      "amountOfInsuranceAppliedFor": 49649,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 58600
+    },
+    "loanC": {
+      "originalAmountOfLoan": 41657,
+      "amountOfInsuranceAppliedFor": 28503,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 32669
+    }
+  }
+},
+{
+  "dateOccured": "03-08-10",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Construction",
+    "dateLastWorked": "03-05-10",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "Scotiabank",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 52622,
+      "amountOfInsuranceAppliedFor": 17443,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 22705
+    },
+    "loanB": {
+      "originalAmountOfLoan": 35986,
+      "amountOfInsuranceAppliedFor": 16015,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 19614
+    },
+    "loanC": {
+      "originalAmountOfLoan": 55182,
+      "amountOfInsuranceAppliedFor": 19298,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 24816
+    }
+  }
+},
+{
+  "dateOccured": "09-06-23",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": false,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Assault",
+    "typeOfDeath": "Premature",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Engineer",
+    "dateLastWorked": "09-03-23",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 80067,
+      "amountOfInsuranceAppliedFor": 40210,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 48217
+    },
+    "loanB": {
+      "originalAmountOfLoan": 57147,
+      "amountOfInsuranceAppliedFor": 46997,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 52712
+    },
+    "loanC": {
+      "originalAmountOfLoan": 57210,
+      "amountOfInsuranceAppliedFor": 26931,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 32652
+    }
+  }
+},
+{
+  "dateOccured": "09-22-15",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Engineer",
+    "dateLastWorked": "09-19-15",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "BMO",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 54721,
+      "amountOfInsuranceAppliedFor": 19762,
+      "typeOrPurposeOfLoan": "Equity",
+      "balanceOnDateOfDeath": 25234
+    },
+    "loanB": {
+      "originalAmountOfLoan": 55394,
+      "amountOfInsuranceAppliedFor": 37890,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 43429
+    },
+    "loanC": {
+      "originalAmountOfLoan": 45589,
+      "amountOfInsuranceAppliedFor": 36136,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 40695
+    }
+  }
+},
+{
+  "dateOccured": "04-09-23",
+  "placeOfDeath": "Home",
+  "inquestHeld": true,
+  "autopsyPerformed": true,
+  "medicalInformation": {
+    "causeOfDeath": "Old Age",
+    "typeOfDeath": "Natural",
+    "hospitalized": false
+  },
+  "employmentInformation": {
+    "occupation": "Doctor",
+    "dateLastWorked": "04-06-23",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "TD",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 40327,
+      "amountOfInsuranceAppliedFor": 31112,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 35145
+    },
+    "loanB": {
+      "originalAmountOfLoan": 96134,
+      "amountOfInsuranceAppliedFor": 66930,
+      "typeOrPurposeOfLoan": "Car",
+      "balanceOnDateOfDeath": 76543
+    },
+    "loanC": {
+      "originalAmountOfLoan": 98471,
+      "amountOfInsuranceAppliedFor": 32091,
+      "typeOrPurposeOfLoan": "Mortgage",
+      "balanceOnDateOfDeath": 41938
+    }
+  }
+},
+{
+  "dateOccured": "04-06-13",
+  "placeOfDeath": "Hospital",
+  "inquestHeld": true,
+  "autopsyPerformed": false,
+  "medicalInformation": {
+    "causeOfDeath": "Heart Attack",
+    "typeOfDeath": "Natural",
+    "hospitalized": true
+  },
+  "employmentInformation": {
+    "occupation": "Engineer",
+    "dateLastWorked": "04-03-13",
+    "reasonInsuredStoppedWorking": "Death"
+  },
+  "generalLoanInformation": {
+    "nameOfLendingInstitution": "RBC",
+    "lendingInstitutionProvince": "ON",
+    "loanA": {
+      "originalAmountOfLoan": 55979,
+      "amountOfInsuranceAppliedFor": 45412,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 51010
+    },
+    "loanB": {
+      "originalAmountOfLoan": 67471,
+      "amountOfInsuranceAppliedFor": 52816,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 59563
+    },
+    "loanC": {
+      "originalAmountOfLoan": 57557,
+      "amountOfInsuranceAppliedFor": 46789,
+      "typeOrPurposeOfLoan": "Other",
+      "balanceOnDateOfDeath": 52545
+    }
+  }
+}
+]

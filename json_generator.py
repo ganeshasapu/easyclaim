@@ -9,15 +9,22 @@ Usage Info:
 
 # Importing libraries
 import os
+import glob
 import json
 import random
 
-def create_file(file_name, data):
+def create_file(file_name, data, first, last):
 	"""Create a JSON file with the given data and name."""
 
 	# Opening file, storing data and closing file object
-	file = open(file_name, "w")
+	file = open(file_name, "a")
+	if first:
+		file.write('[\n')
 	json.dump(data, file, indent = 2)
+	if not last:
+		file.write(',\n')
+	else:
+		file.write('\n]\n')
 	file.close()
 
 def create_life_claims(count):
@@ -25,23 +32,45 @@ def create_life_claims(count):
 
 	# Calling helper function 'count' times
 	for i in range(1, count + 1):
-		create_life_claim(i)
+		if count == 1:
+			create_life_claim(True, True)
+		elif i == count:
+			create_life_claim(False, True)
+		elif i == 1:
+			create_life_claim(True, False)
+		else:
+			create_life_claim(False, False)
+
 
 def create_disability_claims(count):
 	"""Generate the specified number of disability claims."""
 
 	# Calling helper function 'count' times
 	for i in range(1, count + 1):
-		create_disability_claim(i)
+		if count == 1:
+			create_disability_claim(True, True)
+		elif i == count:
+			create_disability_claim(False, True)
+		elif i == 1:
+			create_disability_claim(True, False)
+		else:
+			create_disability_claim(False, False)
 
 def create_employment_claims(count):
 	"""Generate the specified number of employment claims."""
 
 	# Calling helper function 'count' times
 	for i in range(1, count + 1):
-		create_employment_claim(i)
+		if count == 1:
+			create_employment_claim(True, True)
+		elif i == count:
+			create_employment_claim(False, True)
+		elif i == 1:
+			create_employment_claim(True, False)
+		else:
+			create_employment_claim(False, False)
 
-def create_life_claim(file_number):
+def create_life_claim(first, last):
 	"""Create dummy data for the life claim JSON model, specified here:
 	https://github.com/ganeshasapu/easyclaim/blob/main/life_claim.json"""
 
@@ -84,7 +113,7 @@ def create_life_claim(file_number):
 	    }
 	  }
 	}
-
+	
 	# Generating death information
 	month = random.randint(1, 12)
 	day = random.randint(4, 28)
@@ -93,7 +122,7 @@ def create_life_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	data["dateOccured"] = f"{month}/{day}/{year}"
+	data["dateOccured"] = f"{month}-{day}-{year}"
 	data["inquestHeld"] = bool(random.randint(0, 1))
 	data["autopsyPerformed"] = bool(random.randint(0, 1))
 	options = [["Home", "Old Age", "Natural", False], ["Hospital", "Heart Attack", "Natural" , True], 
@@ -108,7 +137,7 @@ def create_life_claim(file_number):
 	temp_day = int(day) - 3
 	if temp_day < 10:
 		temp_day = f"0{temp_day}"
-	temp_date = f"{month}/{temp_day}/{year}"
+	temp_date = f"{month}-{temp_day}-{year}"
 	options = [["Retired", "N/A", "Death"], ["Construction", temp_date, "Death"], ["Doctor", temp_date, "Death"], 
 		["Engineer", temp_date, "Death"], ["Lawyer", temp_date, "Death"], ["Teacher", temp_date, "Death"]]
 	index = random.randint(0, len(options) - 1)
@@ -138,10 +167,10 @@ def create_life_claim(file_number):
 		data["generalLoanInformation"][loan_string]["balanceOnDateOfDeath"] = balance
 
 	# Saving JSON file
-	file_name = f"dummy_data/life_claims/{file_number}.json"
-	create_file(file_name, data)
+	file_name = f"dummy_data/life_claims/life_claim_data.json"
+	create_file(file_name, data, first, last)
 
-def create_disability_claim(file_number):
+def create_disability_claim(first, last):
 	"""Create dummy data for the disability claim JSON model, specified here:
 	https://github.com/ganeshasapu/easyclaim/blob/main/disabilityclaim.json"""
 
@@ -195,7 +224,7 @@ def create_disability_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	data["dateOfBirth"] = f"{month}/{day}/{year}"
+	data["dateOfBirth"] = f"{month}-{day}-{year}"
 	options = ["RBC", "TD", "BMO", "CIBC", "Scotiabank"]
 	index = random.randint(0, len(options) - 1)
 	data["nameOfLendingInstitution"] = options[index]
@@ -211,14 +240,14 @@ def create_disability_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	temp_date = f"{month}/{day}/{year}"
+	temp_date = f"{month}-{day}-{year}"
 	month = int(month) + 1
 	day = int(month) + 5
 	if month < 10:
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	temp_date_2 = f"{month}/{day}/{year}"
+	temp_date_2 = f"{month}-{day}-{year}"
 	if index == 0:
 		data["disability"]["accident"]["dateOccurred"] = temp_date
 		data["disability"]["accident"]["dateFirstTreated"] = temp_date_2
@@ -245,7 +274,7 @@ def create_disability_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	temp_date = f"{month}/{day}/{year}"
+	temp_date = f"{month}-{day}-{year}"
 	data["dateLastWorked"] = temp_date
 	data["missedWorkPast"] = bool(random.randint(0, 1))
 	data["returnedWork"] = bool(random.randint(0, 1))
@@ -273,10 +302,10 @@ def create_disability_claim(file_number):
 	data["physicianStatement"]["treatedByAnother"] = bool(random.randint(0, 1))
 
 	# Saving JSON file
-	file_name = f"dummy_data/disability_claims/{file_number}.json"
-	create_file(file_name, data)
+	file_name = f"dummy_data/disability_claims/disability_claim_data.json"
+	create_file(file_name, data, first, last)
 
-def create_employment_claim(file_number):
+def create_employment_claim(first, last):
 	"""Create dummy data for the employment claim JSON model, specified here:
 	https://github.com/ganeshasapu/easyclaim/blob/main/employerclaim.json"""
 
@@ -316,7 +345,7 @@ def create_employment_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	data["dateOfBirth"] = f"{month}/{day}/{year}"
+	data["dateOfBirth"] = f"{month}-{day}-{year}"
 	options = ["Normal retirement", "Voluntary separation", "Involuntary termination", "Medical leave", 
 		"Disability retirement", "Laid off"]
 	index = random.randint(0, len(options) - 1)
@@ -328,7 +357,7 @@ def create_employment_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	temp_date = f"{month}/{day}/{year}"
+	temp_date = f"{month}-{day}-{year}"
 	month = int(month) + 1
 	day = int(month) + 5
 	year += 3
@@ -336,7 +365,7 @@ def create_employment_claim(file_number):
 		month = f"0{month}"
 	if day < 10:
 		day = f"0{day}"
-	temp_date_2 = f"{month}/{day}/{year}"
+	temp_date_2 = f"{month}-{day}-{year}"
 	data["employerFill"]["dateOfHire"] = temp_date
 	data["employerFill"]["dateLastWorked"] = temp_date_2
 	data["employerFill"]["receiveingBenefits"] = bool(random.randint(0, 1))
@@ -345,7 +374,7 @@ def create_employment_claim(file_number):
 	data["employerFill"]["returned"] = returned
 	if returned:
 		year += 1
-		data["employerFill"]["returnedDate"] = f"{month}/{day}/{year}"
+		data["employerFill"]["returnedDate"] = f"{month}-{day}-{year}"
 		data["employerFill"]["currentHoursPerWeek"] = random.randint(10, 40)
 		options = ["Full-time, no restrictions", "Full-time, with restrictions", "Part-time, no restrictions", 
 			"Part-time, with restrictions"]
@@ -370,23 +399,27 @@ def create_employment_claim(file_number):
 	data["authorizedRep"]["companyName"] = options[index]
 
 	# Saving JSON file
-	file_name = f"dummy_data/employment_claims/{file_number}.json"
-	create_file(file_name, data)
+	file_name = f"dummy_data/employment_claims/employment_claim_data.json"
+	create_file(file_name, data, first, last)
 
 
 # Program runner
 if __name__ == "__main__":
 
 	# Creating data folders
-	os.mkdir("dummy_data")
-	os.mkdir("dummy_data/life_claims")
-	os.mkdir("dummy_data/disability_claims")
-	os.mkdir("dummy_data/employment_claims")
+	try:
+		os.mkdir("dummy_data")
+		os.mkdir("dummy_data/life_claims")
+		os.mkdir("dummy_data/disability_claims")
+		os.mkdir("dummy_data/employment_claims")
+	except FileExistsError as e:
+		for filename in glob.iglob("dummy_data/**/*.json", recursive=True):
+			os.remove(filename)
 
 	# Specifying counts for each claim
-	life_claim_count = 1
-	disability_claim_count = 0
-	employment_claim_count = 0
+	life_claim_count = 21
+	disability_claim_count = 14
+	employment_claim_count = 20
 
 	# Generating claims using helper functions
 	create_life_claims(life_claim_count)
