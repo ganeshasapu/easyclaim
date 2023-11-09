@@ -2,6 +2,7 @@ package com.easyclaim.EasyClaimBackend.Entity;
 
 
 public class LifeClaim {
+    private String claimNumber;
     private String dateOccured;
     private String placeOfDeath;
     private boolean inquestHeld;
@@ -10,6 +11,12 @@ public class LifeClaim {
     private EmploymentInformation employmentInformation;
     private GeneralLoanInformation generalLoanInformation;
     // getters and setters
+    public String getClaimNumber() {
+        return this.claimNumber;
+    }
+    public void setClaimNumber(String claimNumber) {
+        this.claimNumber = claimNumber;
+    }
     public String getDateOccured() {
         return dateOccured;
     }

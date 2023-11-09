@@ -78,11 +78,11 @@ export default function ClientComponent() {
     }
   };
 
-  const uploadJSON = () => {
+  const uploadCurrentLife = () => {
     jsonData.forEach( async (claim) => {
       console.log(claim)
       try {
-        const apiUrl = 'api/upload/'
+        const apiUrl = 'api/upload_life/current'
         const requestBodyJSON = JSON.stringify(claim);
         const response = await fetch(apiUrl, {
           method: 'POST',
@@ -103,12 +103,67 @@ export default function ClientComponent() {
         } catch (error) {
           console.log('Error creating user:', error);
         }
-    });
-      
-
-
+    }); 
     
+  }
+
+  const uploadHistoricalLife = async () => {
+    jsonData.forEach( async (claim) => {
+      console.log(claim)
+      try {
+        const apiUrl = 'api/upload_life/historical'
+        const requestBodyJSON = JSON.stringify(claim);
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: requestBodyJSON
+        });
     
+        console.log(response);
+    
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+    
+        const data = await response.json();
+          console.log(`Create result: ${JSON.stringify(data)}`);
+        } catch (error) {
+          console.log('Error creating user:', error);
+        }
+    }); 
+
+  }
+
+  const getCurrentLifeClaims = async () => {
+    try {
+      const apiUrl = '/api/get_life/Current';
+      const response = await fetch(apiUrl);
+      console.log(response.json)
+      if (!response.ok) {
+        throw new Error('could not get life claim');
+      }
+      const data = await response.json() as Array<LifeClaim>;
+      console.log(data);
+    } catch(error) {
+      console.log('error getting life claim:', error)
+    } 
+  }
+
+  const getHistoricalLifeClaims = async () => {
+    try {
+      const apiUrl = '/api/get_life/Historical';
+      const response = await fetch(apiUrl);
+      console.log(response.json)
+      if (!response.ok) {
+        throw new Error('could not get life claim');
+      }
+      const data = await response.json() as Array<LifeClaim>;
+      console.log(data);
+    } catch(error) {
+      console.log('error getting life claim:', error)
+    } 
   }
 
 
@@ -148,7 +203,13 @@ export default function ClientComponent() {
         />
         <button onClick={handleCreateClick}>Create</button>
         <div className='h-[200px]'></div>
-        <button onClick={uploadJSON}>Upload JSON</button>
+        <button onClick={uploadCurrentLife}>Upload Current Life Claim</button>
+        <div className='h-[200px]'></div>
+        <button onClick={uploadHistoricalLife}>Upload Historical Life Claim</button>
+        <div className='h-[200px]'></div>
+        <button onClick={getCurrentLifeClaims}>Get Current Life Claims</button>
+        <div className='h-[200px]'></div>
+        <button onClick={getHistoricalLifeClaims}>Get Historical Life Claims</button>
       </div>
     </main>
   );

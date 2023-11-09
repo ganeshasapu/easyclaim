@@ -13,12 +13,19 @@ import java.util.concurrent.ExecutionException;
 public class UploadController {
 
     @Autowired
-    private UploadService personService;
+    private UploadService uploadService;
 
-    @PostMapping("/upload")
-    public String createPerson(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {
+    @PostMapping("/upload_life/current")
+    public String uploadCurrentLife(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {
 
-        return personService.uploadJson(claim);
+        return uploadService.uploadCurrentLife(claim);
+
+    }
+
+    @PostMapping("/upload_life/historical")
+    public String uploadHistoricalLife(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {
+
+    return uploadService.uploadHistoricalLife(claim);
 
     }
 
