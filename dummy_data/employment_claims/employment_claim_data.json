@@ -1,12 +1,13 @@
 [
 {
-  "dateOfBirth": "06-27-77",
+  "claimNumber": "719061",
+  "dateOfBirth": "04-22-65",
   "employerFill": {
-    "dateOfHire": "01-16-11",
-    "dateLastWorked": "02-07-14",
-    "reasonStop": "Voluntary separation",
+    "dateOfHire": "02-05-20",
+    "dateLastWorked": "03-08-23",
+    "reasonStop": "Medical leave",
     "receiveingBenefits": true,
-    "oldHoursPerWeek": 39,
+    "oldHoursPerWeek": 26,
     "returned": false,
     "returnedDate": "N/A",
     "currentHoursPerWeek": "N/A",
@@ -16,62 +17,6 @@
   "currentWorkState": {
     "lightWorkAvailableNow": true,
     "lightWorkAvailableFuture": false,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": false,
-    "stillReceivingBenefits": false,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "BMO"
-  }
-},
-{
-  "dateOfBirth": "12-04-78",
-  "employerFill": {
-    "dateOfHire": "01-12-13",
-    "dateLastWorked": "02-07-16",
-    "reasonStop": "Voluntary separation",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 21,
-    "returned": false,
-    "returnedDate": "N/A",
-    "currentHoursPerWeek": "N/A",
-    "returnState": "N/A",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": true,
-    "lightWorkAvailableFuture": false,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": false,
-    "stillReceivingBenefits": false,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "CIBC"
-  }
-},
-{
-  "dateOfBirth": "07-28-52",
-  "employerFill": {
-    "dateOfHire": "07-08-17",
-    "dateLastWorked": "08-13-20",
-    "reasonStop": "Disability retirement",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 22,
-    "returned": true,
-    "returnedDate": "08-13-21",
-    "currentHoursPerWeek": 14,
-    "returnState": "Full-time, no restrictions",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": true,
     "canModifyForRestrictions": false
   },
   "workersCompensation": {
@@ -84,23 +29,24 @@
   }
 },
 {
-  "dateOfBirth": "06-23-84",
+  "claimNumber": "261259",
+  "dateOfBirth": "05-24-78",
   "employerFill": {
-    "dateOfHire": "02-06-13",
-    "dateLastWorked": "03-08-16",
-    "reasonStop": "Normal retirement",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 30,
+    "dateOfHire": "06-08-10",
+    "dateLastWorked": "07-12-13",
+    "reasonStop": "Medical leave",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 25,
     "returned": true,
-    "returnedDate": "03-08-17",
-    "currentHoursPerWeek": 28,
-    "returnState": "Part-time, with restrictions",
-    "restrictionsPreventWork": "Some"
+    "returnedDate": "07-12-14",
+    "currentHoursPerWeek": 16,
+    "returnState": "Full-time, no restrictions",
+    "restrictionsPreventWork": "N/A"
   },
   "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": true,
-    "canModifyForRestrictions": false
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": false,
+    "canModifyForRestrictions": true
   },
   "workersCompensation": {
     "filedCompensationClaim": false,
@@ -108,17 +54,105 @@
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "BMO"
+    "companyName": "Scotiabank"
   }
 },
 {
-  "dateOfBirth": "07-26-60",
+  "claimNumber": "135241",
+  "dateOfBirth": "05-10-79",
   "employerFill": {
-    "dateOfHire": "01-08-18",
-    "dateLastWorked": "02-07-21",
+    "dateOfHire": "10-04-17",
+    "dateLastWorked": "11-16-20",
     "reasonStop": "Normal retirement",
     "receiveingBenefits": true,
-    "oldHoursPerWeek": 38,
+    "oldHoursPerWeek": 13,
+    "returned": true,
+    "returnedDate": "11-16-21",
+    "currentHoursPerWeek": 10,
+    "returnState": "Part-time, no restrictions",
+    "restrictionsPreventWork": "N/A"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": false,
+    "canModifyForRestrictions": false
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": true,
+    "stillReceivingBenefits": false,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "Scotiabank"
+  }
+},
+{
+  "claimNumber": "814614",
+  "dateOfBirth": "03-20-64",
+  "employerFill": {
+    "dateOfHire": "07-19-16",
+    "dateLastWorked": "08-13-19",
+    "reasonStop": "Normal retirement",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 40,
+    "returned": true,
+    "returnedDate": "08-13-20",
+    "currentHoursPerWeek": 36,
+    "returnState": "Full-time, with restrictions",
+    "restrictionsPreventWork": "Some"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": true,
+    "canModifyForRestrictions": false
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": false,
+    "stillReceivingBenefits": true,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "TD"
+  }
+},
+{
+  "claimNumber": "239367",
+  "dateOfBirth": "10-10-50",
+  "employerFill": {
+    "dateOfHire": "06-11-16",
+    "dateLastWorked": "07-12-19",
+    "reasonStop": "Disability retirement",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 20,
+    "returned": true,
+    "returnedDate": "07-12-20",
+    "currentHoursPerWeek": 22,
+    "returnState": "Full-time, no restrictions",
+    "restrictionsPreventWork": "N/A"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": false,
+    "lightWorkAvailableFuture": true,
+    "canModifyForRestrictions": true
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": false,
+    "stillReceivingBenefits": true,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "RBC"
+  }
+},
+{
+  "claimNumber": "586815",
+  "dateOfBirth": "03-22-66",
+  "employerFill": {
+    "dateOfHire": "04-08-17",
+    "dateLastWorked": "05-10-20",
+    "reasonStop": "Involuntary termination",
+    "receiveingBenefits": false,
+    "oldHoursPerWeek": 23,
     "returned": false,
     "returnedDate": "N/A",
     "currentHoursPerWeek": "N/A",
@@ -127,7 +161,7 @@
   },
   "currentWorkState": {
     "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": true,
+    "lightWorkAvailableFuture": false,
     "canModifyForRestrictions": false
   },
   "workersCompensation": {
@@ -140,18 +174,19 @@
   }
 },
 {
-  "dateOfBirth": "11-06-70",
+  "claimNumber": "325398",
+  "dateOfBirth": "05-16-61",
   "employerFill": {
-    "dateOfHire": "03-17-12",
-    "dateLastWorked": "04-09-15",
-    "reasonStop": "Medical leave",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 36,
+    "dateOfHire": "03-02-11",
+    "dateLastWorked": "04-09-14",
+    "reasonStop": "Disability retirement",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 28,
     "returned": true,
-    "returnedDate": "04-09-16",
-    "currentHoursPerWeek": 19,
-    "returnState": "Full-time, no restrictions",
-    "restrictionsPreventWork": "N/A"
+    "returnedDate": "04-09-15",
+    "currentHoursPerWeek": 29,
+    "returnState": "Part-time, with restrictions",
+    "restrictionsPreventWork": "Some"
   },
   "currentWorkState": {
     "lightWorkAvailableNow": true,
@@ -159,22 +194,23 @@
     "canModifyForRestrictions": true
   },
   "workersCompensation": {
-    "filedCompensationClaim": false,
+    "filedCompensationClaim": true,
     "stillReceivingBenefits": false,
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "TD"
+    "companyName": "CIBC"
   }
 },
 {
-  "dateOfBirth": "01-14-82",
+  "claimNumber": "829153",
+  "dateOfBirth": "08-07-83",
   "employerFill": {
-    "dateOfHire": "05-15-10",
-    "dateLastWorked": "06-11-13",
-    "reasonStop": "Normal retirement",
+    "dateOfHire": "02-14-15",
+    "dateLastWorked": "03-08-18",
+    "reasonStop": "Involuntary termination",
     "receiveingBenefits": true,
-    "oldHoursPerWeek": 29,
+    "oldHoursPerWeek": 21,
     "returned": false,
     "returnedDate": "N/A",
     "currentHoursPerWeek": "N/A",
@@ -196,11 +232,70 @@
   }
 },
 {
-  "dateOfBirth": "09-20-64",
+  "claimNumber": "927544",
+  "dateOfBirth": "01-24-67",
   "employerFill": {
-    "dateOfHire": "01-04-10",
-    "dateLastWorked": "02-07-13",
+    "dateOfHire": "10-01-13",
+    "dateLastWorked": "11-16-16",
+    "reasonStop": "Voluntary separation",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 18,
+    "returned": false,
+    "returnedDate": "N/A",
+    "currentHoursPerWeek": "N/A",
+    "returnState": "N/A",
+    "restrictionsPreventWork": "N/A"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": true,
+    "canModifyForRestrictions": true
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": true,
+    "stillReceivingBenefits": true,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "RBC"
+  }
+},
+{
+  "claimNumber": "942120",
+  "dateOfBirth": "06-19-62",
+  "employerFill": {
+    "dateOfHire": "04-05-18",
+    "dateLastWorked": "05-10-21",
     "reasonStop": "Laid off",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 27,
+    "returned": false,
+    "returnedDate": "N/A",
+    "currentHoursPerWeek": "N/A",
+    "returnState": "N/A",
+    "restrictionsPreventWork": "N/A"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": false,
+    "canModifyForRestrictions": false
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": true,
+    "stillReceivingBenefits": false,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "BMO"
+  }
+},
+{
+  "claimNumber": "238411",
+  "dateOfBirth": "08-05-66",
+  "employerFill": {
+    "dateOfHire": "09-08-15",
+    "dateLastWorked": "10-15-18",
+    "reasonStop": "Disability retirement",
     "receiveingBenefits": true,
     "oldHoursPerWeek": 24,
     "returned": false,
@@ -210,86 +305,31 @@
     "restrictionsPreventWork": "N/A"
   },
   "currentWorkState": {
-    "lightWorkAvailableNow": false,
+    "lightWorkAvailableNow": true,
     "lightWorkAvailableFuture": true,
     "canModifyForRestrictions": true
   },
   "workersCompensation": {
-    "filedCompensationClaim": false,
+    "filedCompensationClaim": true,
     "stillReceivingBenefits": true,
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "Scotiabank"
+    "companyName": "TD"
   }
 },
 {
-  "dateOfBirth": "10-22-51",
+  "claimNumber": "590505",
+  "dateOfBirth": "10-07-69",
   "employerFill": {
-    "dateOfHire": "01-13-13",
-    "dateLastWorked": "02-07-16",
-    "reasonStop": "Involuntary termination",
-    "receiveingBenefits": true,
-    "oldHoursPerWeek": 21,
-    "returned": true,
-    "returnedDate": "02-07-17",
-    "currentHoursPerWeek": 16,
-    "returnState": "Part-time, no restrictions",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": true,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": false,
-    "stillReceivingBenefits": false,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "CIBC"
-  }
-},
-{
-  "dateOfBirth": "04-12-82",
-  "employerFill": {
-    "dateOfHire": "06-19-11",
-    "dateLastWorked": "07-12-14",
-    "reasonStop": "Medical leave",
-    "receiveingBenefits": true,
-    "oldHoursPerWeek": 13,
-    "returned": false,
-    "returnedDate": "N/A",
-    "currentHoursPerWeek": "N/A",
-    "returnState": "N/A",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": false,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": false,
-    "stillReceivingBenefits": true,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "Scotiabank"
-  }
-},
-{
-  "dateOfBirth": "04-18-54",
-  "employerFill": {
-    "dateOfHire": "08-08-15",
-    "dateLastWorked": "09-14-18",
-    "reasonStop": "Disability retirement",
+    "dateOfHire": "07-16-14",
+    "dateLastWorked": "08-13-17",
+    "reasonStop": "Normal retirement",
     "receiveingBenefits": false,
-    "oldHoursPerWeek": 36,
+    "oldHoursPerWeek": 16,
     "returned": true,
-    "returnedDate": "09-14-19",
-    "currentHoursPerWeek": 19,
+    "returnedDate": "08-13-18",
+    "currentHoursPerWeek": 25,
     "returnState": "Full-time, with restrictions",
     "restrictionsPreventWork": "Some"
   },
@@ -297,6 +337,64 @@
     "lightWorkAvailableNow": false,
     "lightWorkAvailableFuture": false,
     "canModifyForRestrictions": true
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": true,
+    "stillReceivingBenefits": true,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "RBC"
+  }
+},
+{
+  "claimNumber": "805774",
+  "dateOfBirth": "02-27-67",
+  "employerFill": {
+    "dateOfHire": "06-06-11",
+    "dateLastWorked": "07-12-14",
+    "reasonStop": "Voluntary separation",
+    "receiveingBenefits": false,
+    "oldHoursPerWeek": 23,
+    "returned": true,
+    "returnedDate": "07-12-15",
+    "currentHoursPerWeek": 15,
+    "returnState": "Part-time, with restrictions",
+    "restrictionsPreventWork": "Some"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": false,
+    "lightWorkAvailableFuture": true,
+    "canModifyForRestrictions": true
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": true,
+    "stillReceivingBenefits": false,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "BMO"
+  }
+},
+{
+  "claimNumber": "511504",
+  "dateOfBirth": "12-25-75",
+  "employerFill": {
+    "dateOfHire": "04-10-19",
+    "dateLastWorked": "05-10-22",
+    "reasonStop": "Involuntary termination",
+    "receiveingBenefits": false,
+    "oldHoursPerWeek": 22,
+    "returned": true,
+    "returnedDate": "05-10-23",
+    "currentHoursPerWeek": 18,
+    "returnState": "Part-time, no restrictions",
+    "restrictionsPreventWork": "N/A"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": true,
+    "canModifyForRestrictions": false
   },
   "workersCompensation": {
     "filedCompensationClaim": true,
@@ -308,74 +406,19 @@
   }
 },
 {
-  "dateOfBirth": "01-05-80",
+  "claimNumber": "634570",
+  "dateOfBirth": "06-10-58",
   "employerFill": {
-    "dateOfHire": "09-13-13",
-    "dateLastWorked": "10-15-16",
-    "reasonStop": "Medical leave",
-    "receiveingBenefits": true,
-    "oldHoursPerWeek": 27,
-    "returned": true,
-    "returnedDate": "10-15-17",
-    "currentHoursPerWeek": 22,
-    "returnState": "Full-time, no restrictions",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": true,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": true,
-    "stillReceivingBenefits": false,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "TD"
-  }
-},
-{
-  "dateOfBirth": "09-08-73",
-  "employerFill": {
-    "dateOfHire": "03-16-13",
-    "dateLastWorked": "04-09-16",
-    "reasonStop": "Involuntary termination",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 34,
-    "returned": true,
-    "returnedDate": "04-09-17",
-    "currentHoursPerWeek": 13,
-    "returnState": "Part-time, with restrictions",
-    "restrictionsPreventWork": "Some"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": true,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": true,
-    "stillReceivingBenefits": true,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "Scotiabank"
-  }
-},
-{
-  "dateOfBirth": "02-18-56",
-  "employerFill": {
-    "dateOfHire": "06-15-10",
-    "dateLastWorked": "07-12-13",
-    "reasonStop": "Voluntary separation",
+    "dateOfHire": "06-03-16",
+    "dateLastWorked": "07-12-19",
+    "reasonStop": "Laid off",
     "receiveingBenefits": true,
     "oldHoursPerWeek": 22,
-    "returned": true,
-    "returnedDate": "07-12-14",
-    "currentHoursPerWeek": 21,
-    "returnState": "Full-time, with restrictions",
-    "restrictionsPreventWork": "Some"
+    "returned": false,
+    "returnedDate": "N/A",
+    "currentHoursPerWeek": "N/A",
+    "returnState": "N/A",
+    "restrictionsPreventWork": "N/A"
   },
   "currentWorkState": {
     "lightWorkAvailableNow": true,
@@ -384,7 +427,7 @@
   },
   "workersCompensation": {
     "filedCompensationClaim": true,
-    "stillReceivingBenefits": false,
+    "stillReceivingBenefits": true,
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
@@ -392,54 +435,27 @@
   }
 },
 {
-  "dateOfBirth": "09-28-77",
+  "claimNumber": "439840",
+  "dateOfBirth": "01-09-51",
   "employerFill": {
-    "dateOfHire": "04-05-15",
-    "dateLastWorked": "05-10-18",
-    "reasonStop": "Normal retirement",
+    "dateOfHire": "02-01-17",
+    "dateLastWorked": "03-08-20",
+    "reasonStop": "Medical leave",
     "receiveingBenefits": true,
     "oldHoursPerWeek": 18,
     "returned": true,
-    "returnedDate": "05-10-19",
-    "currentHoursPerWeek": 33,
-    "returnState": "Full-time, with restrictions",
+    "returnedDate": "03-08-21",
+    "currentHoursPerWeek": 28,
+    "returnState": "Part-time, with restrictions",
     "restrictionsPreventWork": "Some"
   },
   "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": false,
-    "canModifyForRestrictions": true
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": true,
-    "stillReceivingBenefits": false,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "TD"
-  }
-},
-{
-  "dateOfBirth": "09-17-50",
-  "employerFill": {
-    "dateOfHire": "05-10-19",
-    "dateLastWorked": "06-11-22",
-    "reasonStop": "Normal retirement",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 12,
-    "returned": false,
-    "returnedDate": "N/A",
-    "currentHoursPerWeek": "N/A",
-    "returnState": "N/A",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": false,
+    "lightWorkAvailableNow": true,
     "lightWorkAvailableFuture": true,
     "canModifyForRestrictions": true
   },
   "workersCompensation": {
-    "filedCompensationClaim": true,
+    "filedCompensationClaim": false,
     "stillReceivingBenefits": true,
     "compensationCarrier": "Securian"
   },
@@ -448,13 +464,14 @@
   }
 },
 {
-  "dateOfBirth": "06-14-67",
+  "claimNumber": "564919",
+  "dateOfBirth": "08-19-81",
   "employerFill": {
-    "dateOfHire": "06-15-19",
-    "dateLastWorked": "07-12-22",
-    "reasonStop": "Voluntary separation",
-    "receiveingBenefits": false,
-    "oldHoursPerWeek": 16,
+    "dateOfHire": "04-01-19",
+    "dateLastWorked": "05-10-22",
+    "reasonStop": "Medical leave",
+    "receiveingBenefits": true,
+    "oldHoursPerWeek": 26,
     "returned": false,
     "returnedDate": "N/A",
     "currentHoursPerWeek": "N/A",
@@ -462,8 +479,8 @@
     "restrictionsPreventWork": "N/A"
   },
   "currentWorkState": {
-    "lightWorkAvailableNow": false,
-    "lightWorkAvailableFuture": false,
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": true,
     "canModifyForRestrictions": true
   },
   "workersCompensation": {
@@ -472,22 +489,23 @@
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "RBC"
+    "companyName": "CIBC"
   }
 },
 {
-  "dateOfBirth": "08-13-65",
+  "claimNumber": "176736",
+  "dateOfBirth": "11-27-62",
   "employerFill": {
-    "dateOfHire": "07-16-17",
-    "dateLastWorked": "08-13-20",
-    "reasonStop": "Involuntary termination",
+    "dateOfHire": "10-13-11",
+    "dateLastWorked": "11-16-14",
+    "reasonStop": "Normal retirement",
     "receiveingBenefits": false,
-    "oldHoursPerWeek": 12,
+    "oldHoursPerWeek": 21,
     "returned": true,
-    "returnedDate": "08-13-21",
-    "currentHoursPerWeek": 16,
-    "returnState": "Full-time, no restrictions",
-    "restrictionsPreventWork": "N/A"
+    "returnedDate": "11-16-15",
+    "currentHoursPerWeek": 12,
+    "returnState": "Part-time, with restrictions",
+    "restrictionsPreventWork": "Some"
   },
   "currentWorkState": {
     "lightWorkAvailableNow": true,
@@ -500,45 +518,18 @@
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "RBC"
+    "companyName": "BMO"
   }
 },
 {
-  "dateOfBirth": "09-16-85",
+  "claimNumber": "591635",
+  "dateOfBirth": "08-27-63",
   "employerFill": {
-    "dateOfHire": "01-04-15",
-    "dateLastWorked": "02-07-18",
-    "reasonStop": "Laid off",
+    "dateOfHire": "10-09-15",
+    "dateLastWorked": "11-16-18",
+    "reasonStop": "Medical leave",
     "receiveingBenefits": false,
-    "oldHoursPerWeek": 39,
-    "returned": true,
-    "returnedDate": "02-07-19",
-    "currentHoursPerWeek": 14,
-    "returnState": "Full-time, no restrictions",
-    "restrictionsPreventWork": "N/A"
-  },
-  "currentWorkState": {
-    "lightWorkAvailableNow": true,
-    "lightWorkAvailableFuture": false,
-    "canModifyForRestrictions": false
-  },
-  "workersCompensation": {
-    "filedCompensationClaim": true,
-    "stillReceivingBenefits": true,
-    "compensationCarrier": "Securian"
-  },
-  "authorizedRep": {
-    "companyName": "TD"
-  }
-},
-{
-  "dateOfBirth": "03-04-64",
-  "employerFill": {
-    "dateOfHire": "02-19-12",
-    "dateLastWorked": "03-08-15",
-    "reasonStop": "Disability retirement",
-    "receiveingBenefits": true,
-    "oldHoursPerWeek": 21,
+    "oldHoursPerWeek": 32,
     "returned": false,
     "returnedDate": "N/A",
     "currentHoursPerWeek": "N/A",
@@ -546,17 +537,46 @@
     "restrictionsPreventWork": "N/A"
   },
   "currentWorkState": {
-    "lightWorkAvailableNow": true,
+    "lightWorkAvailableNow": false,
     "lightWorkAvailableFuture": false,
     "canModifyForRestrictions": false
   },
   "workersCompensation": {
-    "filedCompensationClaim": true,
+    "filedCompensationClaim": false,
     "stillReceivingBenefits": false,
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "RBC"
+    "companyName": "CIBC"
+  }
+},
+{
+  "claimNumber": "268594",
+  "dateOfBirth": "06-23-85",
+  "employerFill": {
+    "dateOfHire": "04-03-14",
+    "dateLastWorked": "05-10-17",
+    "reasonStop": "Laid off",
+    "receiveingBenefits": false,
+    "oldHoursPerWeek": 28,
+    "returned": true,
+    "returnedDate": "05-10-18",
+    "currentHoursPerWeek": 37,
+    "returnState": "Part-time, no restrictions",
+    "restrictionsPreventWork": "N/A"
+  },
+  "currentWorkState": {
+    "lightWorkAvailableNow": true,
+    "lightWorkAvailableFuture": false,
+    "canModifyForRestrictions": true
+  },
+  "workersCompensation": {
+    "filedCompensationClaim": true,
+    "stillReceivingBenefits": true,
+    "compensationCarrier": "Securian"
+  },
+  "authorizedRep": {
+    "companyName": "CIBC"
   }
 }
 ]

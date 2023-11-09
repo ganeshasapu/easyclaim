@@ -1,4 +1,5 @@
 {
+  "claimNumber": "",
   "dateOfBirth": "",
   "employerFill": {
     "dateOfHire": "",
@@ -10,12 +11,12 @@
     "returnedDate": "",
     "currentHoursPerWeek": "",
     "returnState": "",
-    "restrictionsPreventWork": "",
+    "restrictionsPreventWork": ""
   },
   "currentWorkState": {
     "lightWorkAvailableNow": "",
     "lightWorkAvailableFuture": "",
-    "canModifyForRestrictions": "",
+    "canModifyForRestrictions": ""
   },
   "workersCompensation": {
     "filedCompensationClaim": "",
@@ -23,6 +24,6 @@
     "compensationCarrier": "Securian"
   },
   "authorizedRep": {
-    "companyName": "",
+    "companyName": ""
   }
 }

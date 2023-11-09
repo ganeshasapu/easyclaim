@@ -13,9 +13,17 @@ import com.google.firebase.cloud.FirestoreClient;
 @Service
 public class UploadService {
 
-  public String uploadJson(LifeClaim claim) throws ExecutionException, InterruptedException{
+  public String uploadCurrentLife(LifeClaim claim) throws ExecutionException, InterruptedException{
     Firestore dbFirestore = FirestoreClient.getFirestore();
-    ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("Users").document(claim.getDateOccured()).set(claim);
+    ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("Current Claims").document("Life").collection("Claims")
+    .document(claim.getClaimNumber()).set(claim);
+    return collectionApiFuture.get().getUpdateTime().toString();
+  }
+
+  public String uploadHistoricalLife(LifeClaim claim) throws InterruptedException, ExecutionException {
+    Firestore dbFirestore = FirestoreClient.getFirestore();
+    ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("Historical Claims").document("Life").collection("Claims")
+    .document(claim.getClaimNumber()).set(claim);
     return collectionApiFuture.get().getUpdateTime().toString();
   }
 

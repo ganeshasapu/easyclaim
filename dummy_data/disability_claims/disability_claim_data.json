@@ -1,86 +1,7 @@
 [
 {
-  "dateOfBirth": "03-09-60",
-  "nameOfLendingInstitution": "RBC",
-  "LendingInstitionProvince": "ON",
-  "disabilityType": "Illness",
-  "disability": {
-    "accident": {
-      "dateOccurred": "",
-      "dateFirstTreated": "",
-      "accidentCause": "",
-      "motorPoliceReport": ""
-    },
-    "illness": {
-      "dateOccurred": "06-02-16",
-      "dateFirstTreated": "07-12-16"
-    },
-    "pregnancy": {
-      "estimatedDeliveryDate": "",
-      "dateFirstTreated": "",
-      "pregnancyComplications": ""
-    }
-  },
-  "dateLastWorked": "08-11-16",
-  "missedWorkPast": false,
-  "returnedWork": false,
-  "returnWithRestrictions": false,
-  "carePhysician": {
-    "exist": false,
-    "reasonDiagnosis": "Sickness"
-  },
-  "occupation": "Engineer",
-  "physicianStatement": {
-    "hospitalized": true,
-    "surgeryPerformed": true,
-    "surgeryType": "N/A",
-    "wasReferred": true,
-    "treatedPastTwoYears": true,
-    "treatedByAnother": true
-  }
-},
-{
-  "dateOfBirth": "07-22-61",
-  "nameOfLendingInstitution": "Scotiabank",
-  "LendingInstitionProvince": "ON",
-  "disabilityType": "Pregnancy",
-  "disability": {
-    "accident": {
-      "dateOccurred": "",
-      "dateFirstTreated": "",
-      "accidentCause": "",
-      "motorPoliceReport": ""
-    },
-    "illness": {
-      "dateOccurred": "",
-      "dateFirstTreated": ""
-    },
-    "pregnancy": {
-      "estimatedDeliveryDate": "04-09-12",
-      "dateFirstTreated": "03-20-12",
-      "pregnancyComplications": false
-    }
-  },
-  "dateLastWorked": "05-08-12",
-  "missedWorkPast": false,
-  "returnedWork": false,
-  "returnWithRestrictions": true,
-  "carePhysician": {
-    "exist": true,
-    "reasonDiagnosis": "Baby"
-  },
-  "occupation": "Construction",
-  "physicianStatement": {
-    "hospitalized": true,
-    "surgeryPerformed": false,
-    "surgeryType": "N/A",
-    "wasReferred": false,
-    "treatedPastTwoYears": false,
-    "treatedByAnother": true
-  }
-},
-{
-  "dateOfBirth": "02-10-74",
+  "claimNumber": "409528",
+  "dateOfBirth": "12-15-57",
   "nameOfLendingInstitution": "BMO",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
@@ -96,32 +17,33 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "10-15-13",
-      "dateFirstTreated": "09-14-13",
-      "pregnancyComplications": false
+      "estimatedDeliveryDate": "07-12-17",
+      "dateFirstTreated": "06-19-17",
+      "pregnancyComplications": true
     }
   },
-  "dateLastWorked": "11-14-13",
+  "dateLastWorked": "08-11-17",
   "missedWorkPast": false,
-  "returnedWork": false,
-  "returnWithRestrictions": true,
+  "returnedWork": true,
+  "returnWithRestrictions": false,
   "carePhysician": {
     "exist": false,
     "reasonDiagnosis": "Baby"
   },
-  "occupation": "Retired",
+  "occupation": "Doctor",
   "physicianStatement": {
-    "hospitalized": true,
+    "hospitalized": false,
     "surgeryPerformed": false,
     "surgeryType": "N/A",
-    "wasReferred": false,
-    "treatedPastTwoYears": false,
+    "wasReferred": true,
+    "treatedPastTwoYears": true,
     "treatedByAnother": true
   }
 },
 {
-  "dateOfBirth": "09-14-74",
-  "nameOfLendingInstitution": "TD",
+  "claimNumber": "204553",
+  "dateOfBirth": "06-20-63",
+  "nameOfLendingInstitution": "Scotiabank",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
   "disability": {
@@ -136,17 +58,58 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "04-09-14",
-      "dateFirstTreated": "03-17-14",
+      "estimatedDeliveryDate": "03-08-21",
+      "dateFirstTreated": "02-15-21",
       "pregnancyComplications": false
     }
   },
-  "dateLastWorked": "05-08-14",
-  "missedWorkPast": true,
+  "dateLastWorked": "04-07-21",
+  "missedWorkPast": false,
   "returnedWork": false,
   "returnWithRestrictions": false,
   "carePhysician": {
-    "exist": true,
+    "exist": false,
+    "reasonDiagnosis": "Baby"
+  },
+  "occupation": "Teacher",
+  "physicianStatement": {
+    "hospitalized": false,
+    "surgeryPerformed": false,
+    "surgeryType": "N/A",
+    "wasReferred": true,
+    "treatedPastTwoYears": true,
+    "treatedByAnother": true
+  }
+},
+{
+  "claimNumber": "465206",
+  "dateOfBirth": "09-21-75",
+  "nameOfLendingInstitution": "CIBC",
+  "LendingInstitionProvince": "ON",
+  "disabilityType": "Pregnancy",
+  "disability": {
+    "accident": {
+      "dateOccurred": "",
+      "dateFirstTreated": "",
+      "accidentCause": "",
+      "motorPoliceReport": ""
+    },
+    "illness": {
+      "dateOccurred": "",
+      "dateFirstTreated": ""
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "08-13-16",
+      "dateFirstTreated": "07-06-16",
+      "pregnancyComplications": false
+    }
+  },
+  "dateLastWorked": "09-12-16",
+  "missedWorkPast": true,
+  "returnedWork": false,
+  "returnWithRestrictions": true,
+  "carePhysician": {
+    "exist": false,
     "reasonDiagnosis": "Baby"
   },
   "occupation": "Lawyer",
@@ -155,53 +118,14 @@
     "surgeryPerformed": true,
     "surgeryType": "Baby",
     "wasReferred": false,
-    "treatedPastTwoYears": false,
-    "treatedByAnother": false
-  }
-},
-{
-  "dateOfBirth": "07-09-72",
-  "nameOfLendingInstitution": "BMO",
-  "LendingInstitionProvince": "ON",
-  "disabilityType": "Accident",
-  "disability": {
-    "accident": {
-      "dateOccurred": "06-11-13",
-      "dateFirstTreated": "07-12-13",
-      "accidentCause": "Car Accident",
-      "motorPoliceReport": true
-    },
-    "illness": {
-      "dateOccurred": "",
-      "dateFirstTreated": ""
-    },
-    "pregnancy": {
-      "estimatedDeliveryDate": "",
-      "dateFirstTreated": "",
-      "pregnancyComplications": ""
-    }
-  },
-  "dateLastWorked": "08-11-13",
-  "missedWorkPast": false,
-  "returnedWork": false,
-  "returnWithRestrictions": true,
-  "carePhysician": {
-    "exist": false,
-    "reasonDiagnosis": "Injury"
-  },
-  "occupation": "Lawyer",
-  "physicianStatement": {
-    "hospitalized": false,
-    "surgeryPerformed": false,
-    "surgeryType": "N/A",
-    "wasReferred": false,
     "treatedPastTwoYears": true,
     "treatedByAnother": true
   }
 },
 {
-  "dateOfBirth": "02-10-72",
-  "nameOfLendingInstitution": "Scotiabank",
+  "claimNumber": "776227",
+  "dateOfBirth": "05-10-64",
+  "nameOfLendingInstitution": "BMO",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
   "disability": {
@@ -216,20 +140,20 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "02-07-19",
-      "dateFirstTreated": "01-01-19",
+      "estimatedDeliveryDate": "08-13-22",
+      "dateFirstTreated": "07-10-22",
       "pregnancyComplications": true
     }
   },
-  "dateLastWorked": "03-06-19",
-  "missedWorkPast": false,
-  "returnedWork": false,
+  "dateLastWorked": "09-12-22",
+  "missedWorkPast": true,
+  "returnedWork": true,
   "returnWithRestrictions": false,
   "carePhysician": {
-    "exist": true,
+    "exist": false,
     "reasonDiagnosis": "Baby"
   },
-  "occupation": "Construction",
+  "occupation": "Doctor",
   "physicianStatement": {
     "hospitalized": false,
     "surgeryPerformed": false,
@@ -240,7 +164,49 @@
   }
 },
 {
-  "dateOfBirth": "05-22-76",
+  "claimNumber": "762998",
+  "dateOfBirth": "12-11-55",
+  "nameOfLendingInstitution": "CIBC",
+  "LendingInstitionProvince": "ON",
+  "disabilityType": "Accident",
+  "disability": {
+    "accident": {
+      "dateOccurred": "10-05-18",
+      "dateFirstTreated": "11-16-18",
+      "accidentCause": "Workplace Injury",
+      "motorPoliceReport": false
+    },
+    "illness": {
+      "dateOccurred": "",
+      "dateFirstTreated": ""
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "",
+      "dateFirstTreated": "",
+      "pregnancyComplications": ""
+    }
+  },
+  "dateLastWorked": "12-15-18",
+  "missedWorkPast": false,
+  "returnedWork": true,
+  "returnWithRestrictions": false,
+  "carePhysician": {
+    "exist": true,
+    "reasonDiagnosis": "Injury"
+  },
+  "occupation": "Doctor",
+  "physicianStatement": {
+    "hospitalized": true,
+    "surgeryPerformed": true,
+    "surgeryType": "Internal Injury",
+    "wasReferred": true,
+    "treatedPastTwoYears": false,
+    "treatedByAnother": true
+  }
+},
+{
+  "claimNumber": "130933",
+  "dateOfBirth": "08-19-61",
   "nameOfLendingInstitution": "CIBC",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Illness",
@@ -252,8 +218,8 @@
       "motorPoliceReport": ""
     },
     "illness": {
-      "dateOccurred": "05-02-22",
-      "dateFirstTreated": "06-11-22"
+      "dateOccurred": "05-05-23",
+      "dateFirstTreated": "06-11-23"
     },
     "pregnancy": {
       "estimatedDeliveryDate": "",
@@ -261,7 +227,7 @@
       "pregnancyComplications": ""
     }
   },
-  "dateLastWorked": "07-10-22",
+  "dateLastWorked": "07-10-23",
   "missedWorkPast": false,
   "returnedWork": false,
   "returnWithRestrictions": false,
@@ -269,87 +235,7 @@
     "exist": false,
     "reasonDiagnosis": "Sickness"
   },
-  "occupation": "Retired",
-  "physicianStatement": {
-    "hospitalized": false,
-    "surgeryPerformed": false,
-    "surgeryType": "N/A",
-    "wasReferred": false,
-    "treatedPastTwoYears": true,
-    "treatedByAnother": false
-  }
-},
-{
-  "dateOfBirth": "05-14-81",
-  "nameOfLendingInstitution": "BMO",
-  "LendingInstitionProvince": "ON",
-  "disabilityType": "Illness",
-  "disability": {
-    "accident": {
-      "dateOccurred": "",
-      "dateFirstTreated": "",
-      "accidentCause": "",
-      "motorPoliceReport": ""
-    },
-    "illness": {
-      "dateOccurred": "06-09-19",
-      "dateFirstTreated": "07-12-19"
-    },
-    "pregnancy": {
-      "estimatedDeliveryDate": "",
-      "dateFirstTreated": "",
-      "pregnancyComplications": ""
-    }
-  },
-  "dateLastWorked": "08-11-19",
-  "missedWorkPast": false,
-  "returnedWork": true,
-  "returnWithRestrictions": true,
-  "carePhysician": {
-    "exist": true,
-    "reasonDiagnosis": "Sickness"
-  },
-  "occupation": "Construction",
-  "physicianStatement": {
-    "hospitalized": false,
-    "surgeryPerformed": false,
-    "surgeryType": "N/A",
-    "wasReferred": true,
-    "treatedPastTwoYears": false,
-    "treatedByAnother": false
-  }
-},
-{
-  "dateOfBirth": "02-21-56",
-  "nameOfLendingInstitution": "Scotiabank",
-  "LendingInstitionProvince": "ON",
-  "disabilityType": "Pregnancy",
-  "disability": {
-    "accident": {
-      "dateOccurred": "",
-      "dateFirstTreated": "",
-      "accidentCause": "",
-      "motorPoliceReport": ""
-    },
-    "illness": {
-      "dateOccurred": "",
-      "dateFirstTreated": ""
-    },
-    "pregnancy": {
-      "estimatedDeliveryDate": "03-08-22",
-      "dateFirstTreated": "02-05-22",
-      "pregnancyComplications": true
-    }
-  },
-  "dateLastWorked": "04-07-22",
-  "missedWorkPast": true,
-  "returnedWork": true,
-  "returnWithRestrictions": false,
-  "carePhysician": {
-    "exist": false,
-    "reasonDiagnosis": "Baby"
-  },
-  "occupation": "Construction",
+  "occupation": "Engineer",
   "physicianStatement": {
     "hospitalized": false,
     "surgeryPerformed": false,
@@ -360,8 +246,9 @@
   }
 },
 {
-  "dateOfBirth": "02-14-53",
-  "nameOfLendingInstitution": "Scotiabank",
+  "claimNumber": "208452",
+  "dateOfBirth": "01-25-73",
+  "nameOfLendingInstitution": "RBC",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
   "disability": {
@@ -376,38 +263,80 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "09-14-19",
-      "dateFirstTreated": "08-02-19",
+      "estimatedDeliveryDate": "09-14-10",
+      "dateFirstTreated": "08-18-10",
       "pregnancyComplications": false
     }
   },
-  "dateLastWorked": "10-13-19",
+  "dateLastWorked": "10-13-10",
   "missedWorkPast": true,
-  "returnedWork": true,
+  "returnedWork": false,
   "returnWithRestrictions": true,
   "carePhysician": {
     "exist": true,
     "reasonDiagnosis": "Baby"
   },
-  "occupation": "Retired",
+  "occupation": "Engineer",
   "physicianStatement": {
-    "hospitalized": true,
-    "surgeryPerformed": true,
-    "surgeryType": "Baby",
-    "wasReferred": false,
+    "hospitalized": false,
+    "surgeryPerformed": false,
+    "surgeryType": "N/A",
+    "wasReferred": true,
     "treatedPastTwoYears": true,
     "treatedByAnother": false
   }
 },
 {
-  "dateOfBirth": "01-17-52",
-  "nameOfLendingInstitution": "RBC",
+  "claimNumber": "133799",
+  "dateOfBirth": "06-23-74",
+  "nameOfLendingInstitution": "CIBC",
+  "LendingInstitionProvince": "ON",
+  "disabilityType": "Illness",
+  "disability": {
+    "accident": {
+      "dateOccurred": "",
+      "dateFirstTreated": "",
+      "accidentCause": "",
+      "motorPoliceReport": ""
+    },
+    "illness": {
+      "dateOccurred": "10-06-19",
+      "dateFirstTreated": "11-16-19"
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "",
+      "dateFirstTreated": "",
+      "pregnancyComplications": ""
+    }
+  },
+  "dateLastWorked": "12-15-19",
+  "missedWorkPast": false,
+  "returnedWork": true,
+  "returnWithRestrictions": true,
+  "carePhysician": {
+    "exist": false,
+    "reasonDiagnosis": "Sickness"
+  },
+  "occupation": "Retired",
+  "physicianStatement": {
+    "hospitalized": false,
+    "surgeryPerformed": false,
+    "surgeryType": "N/A",
+    "wasReferred": true,
+    "treatedPastTwoYears": false,
+    "treatedByAnother": false
+  }
+},
+{
+  "claimNumber": "473034",
+  "dateOfBirth": "03-11-77",
+  "nameOfLendingInstitution": "CIBC",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Accident",
   "disability": {
     "accident": {
-      "dateOccurred": "06-14-10",
-      "dateFirstTreated": "07-12-10",
+      "dateOccurred": "07-09-20",
+      "dateFirstTreated": "08-13-20",
       "accidentCause": "Car Accident",
       "motorPoliceReport": true
     },
@@ -421,26 +350,27 @@
       "pregnancyComplications": ""
     }
   },
-  "dateLastWorked": "08-11-10",
+  "dateLastWorked": "09-12-20",
   "missedWorkPast": true,
-  "returnedWork": true,
+  "returnedWork": false,
   "returnWithRestrictions": true,
   "carePhysician": {
-    "exist": false,
+    "exist": true,
     "reasonDiagnosis": "Injury"
   },
-  "occupation": "Engineer",
+  "occupation": "Construction",
   "physicianStatement": {
-    "hospitalized": true,
+    "hospitalized": false,
     "surgeryPerformed": false,
     "surgeryType": "N/A",
     "wasReferred": true,
-    "treatedPastTwoYears": false,
-    "treatedByAnother": true
+    "treatedPastTwoYears": true,
+    "treatedByAnother": false
   }
 },
 {
-  "dateOfBirth": "08-13-66",
+  "claimNumber": "122992",
+  "dateOfBirth": "05-24-81",
   "nameOfLendingInstitution": "Scotiabank",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
@@ -456,17 +386,17 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "02-07-20",
-      "dateFirstTreated": "01-01-20",
-      "pregnancyComplications": false
+      "estimatedDeliveryDate": "08-13-17",
+      "dateFirstTreated": "07-19-17",
+      "pregnancyComplications": true
     }
   },
-  "dateLastWorked": "03-06-20",
+  "dateLastWorked": "09-12-17",
   "missedWorkPast": false,
   "returnedWork": true,
   "returnWithRestrictions": false,
   "carePhysician": {
-    "exist": true,
+    "exist": false,
     "reasonDiagnosis": "Baby"
   },
   "occupation": "Teacher",
@@ -480,7 +410,49 @@
   }
 },
 {
-  "dateOfBirth": "03-07-58",
+  "claimNumber": "617191",
+  "dateOfBirth": "10-06-59",
+  "nameOfLendingInstitution": "CIBC",
+  "LendingInstitionProvince": "ON",
+  "disabilityType": "Illness",
+  "disability": {
+    "accident": {
+      "dateOccurred": "",
+      "dateFirstTreated": "",
+      "accidentCause": "",
+      "motorPoliceReport": ""
+    },
+    "illness": {
+      "dateOccurred": "04-20-17",
+      "dateFirstTreated": "05-10-17"
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "",
+      "dateFirstTreated": "",
+      "pregnancyComplications": ""
+    }
+  },
+  "dateLastWorked": "06-09-17",
+  "missedWorkPast": true,
+  "returnedWork": true,
+  "returnWithRestrictions": true,
+  "carePhysician": {
+    "exist": true,
+    "reasonDiagnosis": "Sickness"
+  },
+  "occupation": "Teacher",
+  "physicianStatement": {
+    "hospitalized": false,
+    "surgeryPerformed": false,
+    "surgeryType": "N/A",
+    "wasReferred": true,
+    "treatedPastTwoYears": false,
+    "treatedByAnother": true
+  }
+},
+{
+  "claimNumber": "932463",
+  "dateOfBirth": "04-10-64",
   "nameOfLendingInstitution": "TD",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
@@ -496,20 +468,20 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "05-10-21",
-      "dateFirstTreated": "04-04-21",
+      "estimatedDeliveryDate": "06-11-12",
+      "dateFirstTreated": "05-21-12",
       "pregnancyComplications": false
     }
   },
-  "dateLastWorked": "06-09-21",
+  "dateLastWorked": "07-10-12",
   "missedWorkPast": false,
   "returnedWork": true,
-  "returnWithRestrictions": false,
+  "returnWithRestrictions": true,
   "carePhysician": {
-    "exist": true,
+    "exist": false,
     "reasonDiagnosis": "Baby"
   },
-  "occupation": "Lawyer",
+  "occupation": "Retired",
   "physicianStatement": {
     "hospitalized": false,
     "surgeryPerformed": false,
@@ -520,8 +492,50 @@
   }
 },
 {
-  "dateOfBirth": "08-15-85",
-  "nameOfLendingInstitution": "CIBC",
+  "claimNumber": "133561",
+  "dateOfBirth": "03-19-65",
+  "nameOfLendingInstitution": "RBC",
+  "LendingInstitionProvince": "ON",
+  "disabilityType": "Accident",
+  "disability": {
+    "accident": {
+      "dateOccurred": "10-14-16",
+      "dateFirstTreated": "11-16-16",
+      "accidentCause": "Car Accident",
+      "motorPoliceReport": true
+    },
+    "illness": {
+      "dateOccurred": "",
+      "dateFirstTreated": ""
+    },
+    "pregnancy": {
+      "estimatedDeliveryDate": "",
+      "dateFirstTreated": "",
+      "pregnancyComplications": ""
+    }
+  },
+  "dateLastWorked": "12-15-16",
+  "missedWorkPast": true,
+  "returnedWork": false,
+  "returnWithRestrictions": true,
+  "carePhysician": {
+    "exist": false,
+    "reasonDiagnosis": "Injury"
+  },
+  "occupation": "Teacher",
+  "physicianStatement": {
+    "hospitalized": true,
+    "surgeryPerformed": true,
+    "surgeryType": "Internal Injury",
+    "wasReferred": true,
+    "treatedPastTwoYears": false,
+    "treatedByAnother": false
+  }
+},
+{
+  "claimNumber": "594683",
+  "dateOfBirth": "06-25-70",
+  "nameOfLendingInstitution": "BMO",
   "LendingInstitionProvince": "ON",
   "disabilityType": "Pregnancy",
   "disability": {
@@ -536,27 +550,27 @@
       "dateFirstTreated": ""
     },
     "pregnancy": {
-      "estimatedDeliveryDate": "04-09-12",
-      "dateFirstTreated": "03-13-12",
+      "estimatedDeliveryDate": "09-14-14",
+      "dateFirstTreated": "08-09-14",
       "pregnancyComplications": true
     }
   },
-  "dateLastWorked": "05-08-12",
-  "missedWorkPast": true,
-  "returnedWork": false,
+  "dateLastWorked": "10-13-14",
+  "missedWorkPast": false,
+  "returnedWork": true,
   "returnWithRestrictions": true,
   "carePhysician": {
     "exist": true,
     "reasonDiagnosis": "Baby"
   },
-  "occupation": "Retired",
+  "occupation": "Construction",
   "physicianStatement": {
     "hospitalized": false,
     "surgeryPerformed": false,
     "surgeryType": "N/A",
-    "wasReferred": false,
+    "wasReferred": true,
     "treatedPastTwoYears": true,
-    "treatedByAnother": false
+    "treatedByAnother": true
   }
 }
 ]
