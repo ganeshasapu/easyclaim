@@ -1,14 +1,16 @@
 package com.easyclaim.EasyClaimBackend.Service;
 
 
-import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
 import java.util.concurrent.ExecutionException;
 import java.util.ArrayList;
 
+import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import com.easyclaim.EasyClaimBackend.Entity.SimilarClaim;
+
 import org.springframework.stereotype.Service;
 
-import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -20,7 +22,7 @@ public class GetSimilarLifeClaimService {
 
     private final GetLifeClaimService LIFE_CLAIM_SERVICE = new GetLifeClaimService();
 
-    public ArrayList<SimilarClaim> getSimilarLifeClaims(String claimNumber) throws InterruptedException,
+    public List<SimilarClaim> getSimilarLifeClaims(String claimNumber) throws InterruptedException,
             ExecutionException {
 
         // Collecting all historical life claims
@@ -53,10 +55,10 @@ public class GetSimilarLifeClaimService {
             return null;
         }
 
-        // Finding similarity scores for each historical claim
+        // Finding top "NUMBER_OF_RECS" scores in n*log(k) steps
         int score;
         SimilarClaim similarClaim;
-        ArrayList<SimilarClaim> similarClaims = new ArrayList<SimilarClaim>();
+        PriorityQueue<SimilarClaim> minHeap = new PriorityQueue<>(SimilarClaim::compareTo);
         for (LifeClaim historicalClaim: historicalLifeClaims) {
 
             // Getting similarity score and creating similar claim object
@@ -64,18 +66,21 @@ public class GetSimilarLifeClaimService {
             similarClaim = new SimilarClaim(score, historicalClaim);
 
             // Checking current count
-            if (similarClaims.size() < NUMBER_OF_RECS) {
-                similarClaims.add(similarClaim);
+            if (minHeap.size() < NUMBER_OF_RECS) {
+                minHeap.add(similarClaim);  // log k steps
             }else {
-                SimilarClaim minClaim = Collections.min(similarClaims, SimilarClaim::compareTo);
-                if (score > minClaim.getSimilarityScore()) {  // checking for better score
-                    int index = similarClaims.indexOf(minClaim);
-                    similarClaims.set(index, similarClaim);  // replacing worst score
+
+                // Checking current minimum score for better score
+                if (score > minHeap.peek().getSimilarityScore()) {  // Constant time
+                    minHeap.remove();
+                    minHeap.add(similarClaim);  // log k steps
                 }
             }
 
         }
-        return similarClaims;
+
+        // Returning list of best claims
+        return minHeap.stream().toList();
 
     }
 
