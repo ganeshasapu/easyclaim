@@ -16,6 +16,7 @@ export default function ClientComponent() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [result, setResult] = useState<UserData | null>(null);
+  const [inputClaimNumber, setInputClaimNumber] = useState('');
 
   const handleSearchClick = async () => {
     alert(`Searching for user with ${inputValue}`);
@@ -166,6 +167,21 @@ export default function ClientComponent() {
     } 
   }
 
+  const getSimilarLifeClaims = async () => {
+    try{
+      const apiUrl = '/api/get_similar_life/' + inputClaimNumber;
+      const response = await fetch(apiUrl);
+      console.log(response.json);
+      if (!response.ok) {
+        throw new Error('could not get similar life claims');
+      }
+      const data = await response.json() as Array<LifeClaim>;
+      console.log(data);
+    }catch(error) {
+      console.log('error getting similar life claims: ', error);
+    }
+  }
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -210,6 +226,12 @@ export default function ClientComponent() {
         <button onClick={getCurrentLifeClaims}>Get Current Life Claims</button>
         <div className='h-[200px]'></div>
         <button onClick={getHistoricalLifeClaims}>Get Historical Life Claims</button>
+        <div className='h-[200px]'></div>
+        <button onClick={getHistoricalLifeClaims}>Get Historical Life Claims</button>
+        <div className='h-[200px]'></div>
+        <h1>Get Similar Life Claims</h1>
+        <input type='text' value={inputClaimNumber} onChange={(e) => setInputClaimNumber(e.target.value)} placeholder='Enter claim number'/>
+        <br></br><br></br><button onClick={getSimilarLifeClaims}>Find claims</button>
       </div>
     </main>
   );
