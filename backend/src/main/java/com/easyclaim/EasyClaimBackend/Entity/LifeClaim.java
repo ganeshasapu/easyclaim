@@ -10,6 +10,7 @@ public class LifeClaim {
     private MedicalInformation medicalInformation;
     private EmploymentInformation employmentInformation;
     private GeneralLoanInformation generalLoanInformation;
+    private String status = "Recieved";
     // getters and setters
     public String getClaimNumber() {
         return this.claimNumber;
@@ -58,5 +59,11 @@ public class LifeClaim {
     }
     public void setGeneralLoanInformation(GeneralLoanInformation generalLoanInformation) {
         this.generalLoanInformation = generalLoanInformation;
+    }
+    public String getStatus() {
+        return this.status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
