@@ -25,7 +25,7 @@ public class UploadController {
     @PostMapping("/upload_life/historical")
     public String uploadHistoricalLife(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {
 
-    return uploadService.uploadHistoricalLife(claim);
+        return uploadService.uploadHistoricalLife(claim);
 
     }
 
