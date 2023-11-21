@@ -5,6 +5,7 @@ interface LifeClaim {
     autopsyPerformed: boolean;
     medicalInformation: MedicalInformation;
     employmentInformation: EmploymentInformation;
+    status: string
     generalLoanInformation: GeneralLoanInformation;
 }
 
