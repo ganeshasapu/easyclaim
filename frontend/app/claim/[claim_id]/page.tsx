@@ -43,7 +43,7 @@ export default function ClaimViewPage({
   return (
     <div>
       {claim_data.status == "Recieved" ? (
-        <CurrentClaimView lifeclaim={claim_data} />
+        <CurrentClaimView lifeclaim={claim_data} claim_id={claim_id} />
       ) : (
         <HistoricalClaimView lifeclaim={claim_data} />
       )}

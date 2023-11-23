@@ -1,5 +1,5 @@
 interface LifeClaim {
-    dateOccured: Date;
+    dateOccured: string;
     placeOfDeath: string;
     inquestHeld: boolean;
     autopsyPerformed: boolean;
@@ -17,7 +17,7 @@ type MedicalInformation = {
 
 type EmploymentInformation = {
     occupation: string;
-    dateLastWorked: Date;
+    dateLastWorked: string;
     reasonInsuredStoppedWorking: string;
 }
 
