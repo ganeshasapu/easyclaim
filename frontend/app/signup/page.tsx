@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
-import { useAuth } from './context/AuthContext'
+import { useAuth } from '../context/AuthContext'
+import Link from 'next/link'
 
 const Signup = () => {
   const { user, signup } = useAuth()
@@ -74,6 +75,11 @@ const Signup = () => {
                 <div>
                     <button type="submit" onClick={handleSignup} className="flex w-full justify-center rounded-md bg-[#43934B] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#43934B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#43934B]">Sign Up</button>
                 </div>
+                <div className="text-sm">
+                        <Link href="/">
+                            <p className="font-semibold text-[#43934B] hover:text-[#43934B]">Already have an account? Login here!</p>
+                        </Link>
+                    </div>
                 </form>
             </div>
         </div>

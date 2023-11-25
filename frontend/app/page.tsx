@@ -1,9 +1,9 @@
 'use client'
 import dynamic from 'next/dynamic';
 import FormCard from './components/FormCard';
-import Login from './login';
-import Signup from './signup';
+import Login from './components/login';
 import { AuthContextProvider } from './context/AuthContext';
+
 const ClientComponent = dynamic(() => import('./ClientComponent'), {
   ssr: false, 
 });
@@ -14,9 +14,6 @@ export default function Home() {
       <AuthContextProvider>
         <div>
           {<Login/>}
-        </div>
-        <div>
-          {<Signup/>}
         </div>
       </AuthContextProvider>
     </main>

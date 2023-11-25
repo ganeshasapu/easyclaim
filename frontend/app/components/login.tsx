@@ -1,7 +1,9 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import { useAuth } from './context/AuthContext'
+import { useAuth } from '../context/AuthContext'
+import Link from 'next/link';
+
 
 const Login = () => {
   const router = useRouter()
@@ -19,7 +21,7 @@ const Login = () => {
     try {
         console.log(data.email, data.password)
       await login(data.email, data.password)
-      router.push('/dashboard')
+      router.push('/inbox')
       console.log('trying to login')
     } catch (err) {
       console.log(err)
@@ -69,6 +71,11 @@ const Login = () => {
                 <div>
                     <button type="submit" onClick={handleLogin} className="flex w-full justify-center rounded-md bg-[#43934B] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#43934B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#43934B]">Sign in</button>
                 </div>
+                <div className="text-sm">
+                        <Link href="/signup">
+                            <p className="font-semibold text-[#43934B] hover:text-[#43934B]">No account yet? Sign up here!</p>
+                        </Link>
+                    </div>
                 </form>
             </div>
         </div>
