@@ -89,15 +89,6 @@ _______
 _______
 
 <div>
-  <h3> Running the program locally: </h3>
-  <ol>
-    <li> Install <a href="https://nodejs.org/en/"> node.js </a> </li>
-    <li> Run <code>npm run dev</code> in the Terminal</li>
-    <li> Open <a href="http://localhost:3000"> http://localhost:3000 </a> </li>
-  </ol>
-</div>
-
-<div>
   <h3> Using json_generator to create JSON mock files: </h3>
   <ol>
     <li> Open <code>json_generator.py</code></li>
@@ -106,3 +97,15 @@ _______
     <li> Check the <code>dummy_data</code> folder; each file in the folder contains <em>count</em> number of mock models, all placed into one compliation file for each type of claim</li>
   </ol>
 </div>
+
+<div>
+  <h3> <em>(Old)</em> Running the program locally: </h3>
+  <ol>
+    <li> Install <a href="https://nodejs.org/en/"> node.js </a> </li>
+    <li> Run <code>npm run dev</code> in the Terminal</li>
+    <li> Open <a href="http://localhost:3000"> http://localhost:3000 </a> </li>
+  </ol>
+  <h3> <em>(Update)</em> Hooray! The program is now viewable at <a href="https://easyclaim.vercel.app"> this link! </a> </h3>
+</div>
+
+
