@@ -5,7 +5,7 @@ import Login from './components/login';
 import { AuthContextProvider } from './context/AuthContext';
 
 const ClientComponent = dynamic(() => import('./ClientComponent'), {
-  ssr: false, 
+  ssr: false,
 });
 
 export default function Home() {

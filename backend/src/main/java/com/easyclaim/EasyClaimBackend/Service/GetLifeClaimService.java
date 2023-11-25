@@ -33,7 +33,23 @@ public class GetLifeClaimService {
     } else {
       return null;
     }
-  
   }
-  
+
+  public LifeClaim findLifeClaim(String claimNumber) throws ExecutionException, InterruptedException {
+    Firestore dbFirestore = FirestoreClient.getFirestore();
+    DocumentReference docRef_current = dbFirestore.collection("Current Claims").document("Life").collection("Claims").document(claimNumber);
+    ApiFuture<DocumentSnapshot> future_current = docRef_current.get();
+    DocumentSnapshot document_current = future_current.get();
+
+    DocumentReference docRef_historical = dbFirestore.collection("Historical Claims").document("Life").collection("Claims").document(claimNumber);
+    ApiFuture<DocumentSnapshot> future_historical = docRef_historical.get();
+    DocumentSnapshot document_historical = future_historical.get();
+    if (document_historical.exists()) {
+      return document_historical.toObject(LifeClaim.class);
+    } else if (document_current.exists()){
+      return document_current.toObject(LifeClaim.class);
+    } else{
+      return null;
+    }
+  }
 }

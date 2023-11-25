@@ -59,6 +59,7 @@ _______
             <li>Employment Claims</li>
             <li>Life Claims</li>
           </ul>
+        <li> Each JSON file contains <em>count</em> number of mock models based on specific number in <code>json_generator.py</code> </li>
       </ul>
     <li> <code> frontend </code> </li>
       <ul>
@@ -80,7 +81,7 @@ _______
       </ul>
     <li> <code> json_generator.py </code> </li>
       <ul>
-        <li>Python file use to automatically generate filled out JSON claim files</li>
+        <li>Python file use to automatically generate filled out JSON claim mock files</li>
       </ul>
   </ul>
 </div>
@@ -93,5 +94,15 @@ _______
     <li> Install <a href="https://nodejs.org/en/"> node.js </a> </li>
     <li> Run <code>npm run dev</code> in the Terminal</li>
     <li> Open <a href="http://localhost:3000"> http://localhost:3000 </a> </li>
+  </ol>
+</div>
+
+<div>
+  <h3> Using json_generator to create JSON mock files: </h3>
+  <ol>
+    <li> Open <code>json_generator.py</code></li>
+    <li> In the main branch at the bottom of the file, specifiy the count for the number of dummy JSON models you would like </li>
+    <li> Run the file in your favourite compiler!</a> </li>
+    <li> Check the <code>dummy_data</code> folder; each file in the folder contains <em>count</em> number of mock models, all placed into one compliation file for each type of claim</li>
   </ol>
 </div>

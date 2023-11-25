@@ -1,11 +1,18 @@
 interface LifeClaim {
-    dateOccured: Date;
+    claimNumber: string;
+    dateOccured: string;
     placeOfDeath: string;
     inquestHeld: boolean;
     autopsyPerformed: boolean;
     medicalInformation: MedicalInformation;
     employmentInformation: EmploymentInformation;
+    status: string
     generalLoanInformation: GeneralLoanInformation;
+}
+
+interface SimilarClaim {
+    similarityScore: number;
+    claim: LifeClaim;
 }
 
 type MedicalInformation = {
@@ -16,7 +23,7 @@ type MedicalInformation = {
 
 type EmploymentInformation = {
     occupation: string;
-    dateLastWorked: Date;
+    dateLastWorked: string;
     reasonInsuredStoppedWorking: string;
 }
 
