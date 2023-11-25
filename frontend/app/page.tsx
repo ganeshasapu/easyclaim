@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 import FormCard from './components/FormCard';
+import LoginComponent from './components/authentication/login';
+import SignUpComponent from './components/authentication/signup';
 
 const ClientComponent = dynamic(() => import('./ClientComponent'), {
   ssr: false, 
@@ -7,11 +9,12 @@ const ClientComponent = dynamic(() => import('./ClientComponent'), {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main>
       <div>
+        {<LoginComponent/>}
       </div>
       <div>
-        <ClientComponent />
+        {<SignUpComponent/>}
       </div>
     </main>
   );
