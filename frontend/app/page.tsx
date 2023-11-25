@@ -1,4 +1,8 @@
+'use client'
 import dynamic from 'next/dynamic';
+import FormCard from './components/FormCard';
+import Login from './components/login';
+import { AuthContextProvider } from './context/AuthContext';
 
 const ClientComponent = dynamic(() => import('./ClientComponent'), {
   ssr: false,
@@ -6,12 +10,12 @@ const ClientComponent = dynamic(() => import('./ClientComponent'), {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-      </div>
-      <div>
-        <ClientComponent />
-      </div>
+    <main>
+      <AuthContextProvider>
+        <div>
+          {<Login/>}
+        </div>
+      </AuthContextProvider>
     </main>
   );
 }
