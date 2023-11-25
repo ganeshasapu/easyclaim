@@ -1,10 +1,12 @@
-package com.easyclaim.EasyClaimBackend.Service;
+package com.easyclaim.EasyClaimBackend.UseCase;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
+import org.springframework.stereotype.Service;
 
-public class CompareClaimService {
 
-    public CompareClaimService() {}
+@Service
+public class BasicCompareClaimService implements SimilarityStrategy {
+
 
     public int getComparisonScore(LifeClaim claimOne, LifeClaim claimTwo) {
 
@@ -96,7 +98,7 @@ public class CompareClaimService {
 
     }
 
-    private float getIntervalScore(float max, float punish, int numberOne, int numberTwo) {
+    public float getIntervalScore(float max, float punish, int numberOne, int numberTwo) {
         int intervalOne = numberOne / 10000;
         int intervalTwo = numberTwo / 10000;
         int gap = Math.abs(intervalOne - intervalTwo);

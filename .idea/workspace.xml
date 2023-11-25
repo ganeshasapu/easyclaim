@@ -6,6 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6301588c-88dd-407a-80ae-bfb09080ef07" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/DenyLifeClaimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/DenyLifeClaimController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/GetLifeClaimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/GetLifeClaimController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/GetSimilarLifeClaimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/GetSimilarLifeClaimController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/EasyClaimBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/EasyClaimBackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/CompareClaimService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/CompareClaimService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/DeleteLifeClaimService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/DeleteLifeClaimService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/DenyLifeClaimService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/DenyLifeClaimService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/GetLifeClaimService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/GetLifeClaimService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/GetSimilarLifeClaimService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/GetSimilarLifeClaimService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/GetSingleLifeClaimService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/GetSingleLifeClaimService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/Service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/easyclaim/EasyClaimBackend/UseCase/UploadService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,29 +38,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/raunakmadan/Desktop/UofT/Year 2/Fall/CSC207/EasyClaim",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "a0ccb3789b058c3509be4315a14bc099",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/raunakmadan/Desktop/UofT/Year 2/Fall/CSC207/EasyClaim&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a0ccb3789b058c3509be4315a14bc099&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\easyclaim\EXTRA" />
@@ -80,15 +92,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.io.FileNotFoundException" package="java.io" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

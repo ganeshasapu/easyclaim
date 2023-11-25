@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
-import com.easyclaim.EasyClaimBackend.Service.GetLifeClaimService;
+import com.easyclaim.EasyClaimBackend.UseCase.GetLifeClaimService;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
