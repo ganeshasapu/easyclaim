@@ -92,20 +92,20 @@ export default function ClientComponent() {
           },
           body: requestBodyJSON
         });
-    
+
         console.log(response);
-    
+
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-    
+
         const data = await response.json();
           console.log(`Create result: ${JSON.stringify(data)}`);
         } catch (error) {
           console.log('Error creating user:', error);
         }
-    }); 
-    
+    });
+
   }
 
   const uploadHistoricalLife = async () => {
@@ -121,19 +121,19 @@ export default function ClientComponent() {
           },
           body: requestBodyJSON
         });
-    
+
         console.log(response);
-    
+
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-    
+
         const data = await response.json();
           console.log(`Create result: ${JSON.stringify(data)}`);
         } catch (error) {
           console.log('Error creating user:', error);
         }
-    }); 
+    });
 
   }
 
@@ -141,7 +141,7 @@ export default function ClientComponent() {
     try {
       const apiUrl = '/api/get_life/Current';
       const response = await fetch(apiUrl);
-      console.log(response.json)
+      console.log(response)
       if (!response.ok) {
         throw new Error('could not get life claim');
       }
@@ -149,7 +149,7 @@ export default function ClientComponent() {
       console.log(data);
     } catch(error) {
       console.log('error getting life claim:', error)
-    } 
+    }
   }
 
   const getHistoricalLifeClaims = async () => {
@@ -164,7 +164,7 @@ export default function ClientComponent() {
       console.log(data);
     } catch(error) {
       console.log('error getting life claim:', error)
-    } 
+    }
   }
 
   const getSimilarLifeClaims = async () => {

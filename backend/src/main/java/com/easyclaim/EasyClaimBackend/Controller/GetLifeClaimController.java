@@ -22,4 +22,9 @@ public class GetLifeClaimController {
   public ArrayList<LifeClaim> getLifeClaims(@PathVariable String type) throws InterruptedException, ExecutionException {
     return lifeClaimService.getLifeClaims(type);
   }
+
+  @GetMapping("/get_life/claim/{claimNumber}")
+    public LifeClaim getLifeClaim(@PathVariable String claimNumber) throws InterruptedException, ExecutionException {
+        return lifeClaimService.findLifeClaim(claimNumber);
+    }
 }
