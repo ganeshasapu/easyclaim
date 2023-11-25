@@ -1,4 +1,5 @@
 interface LifeClaim {
+    claimNumber: string;
     dateOccured: string;
     placeOfDeath: string;
     inquestHeld: boolean;
@@ -7,6 +8,11 @@ interface LifeClaim {
     employmentInformation: EmploymentInformation;
     status: string
     generalLoanInformation: GeneralLoanInformation;
+}
+
+interface SimilarClaim {
+    similarityScore: number;
+    claim: LifeClaim;
 }
 
 type MedicalInformation = {
