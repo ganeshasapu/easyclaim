@@ -1,6 +1,5 @@
 'use client'
 import dynamic from 'next/dynamic';
-import FormCard from './components/FormCard';
 import Login from './components/login';
 import { AuthContextProvider } from './context/AuthContext';
 
