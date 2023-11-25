@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import ConfirmationPopup from './PopupComponent';
+// import ConfirmationPopup from './PopupComponent';
 import './PopupComponent.css';
 
 const App = () => {
@@ -25,11 +25,11 @@ const App = () => {
       <div className="button-container">
         <button onClick={() => setPopupOpen(allowPopup)}>{buttonText}</button>
       </div>
-      <ConfirmationPopup
+      {/* <ConfirmationPopup
         isOpen={isPopupOpen}
         onApprove={handleApprove}
         onCancel={handleCancel}
-      />
+      /> */}
     </div>
   );
 };
