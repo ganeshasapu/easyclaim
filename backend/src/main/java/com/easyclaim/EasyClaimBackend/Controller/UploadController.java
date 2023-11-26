@@ -1,6 +1,6 @@
 package com.easyclaim.EasyClaimBackend.Controller;
 
-import com.easyclaim.EasyClaimBackend.Service.UploadService;
+import com.easyclaim.EasyClaimBackend.UseCase.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

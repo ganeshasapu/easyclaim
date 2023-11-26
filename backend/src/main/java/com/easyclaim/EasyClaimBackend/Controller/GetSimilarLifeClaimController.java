@@ -1,11 +1,12 @@
 package com.easyclaim.EasyClaimBackend.Controller;
 
 
+import com.easyclaim.EasyClaimBackend.UseCase.GetSimilarLifeClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.easyclaim.EasyClaimBackend.Entity.SimilarClaim;
-import com.easyclaim.EasyClaimBackend.Service.GetSimilarLifeClaimService;
+
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
