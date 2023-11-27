@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import com.easyclaim.EasyClaimBackend.Entity.SimilarClaim;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -18,12 +19,13 @@ public class GetSimilarLifeClaimService {
 
     private final SimilarityStrategy similarityStrategy;
 
-    @Autowired
     private GetLifeClaimsDataAccessInterface dataAccessObject;
 
     @Autowired
-    public GetSimilarLifeClaimService(@Qualifier("basicCompareClaimService") SimilarityStrategy similarityStrategy) {
+    public GetSimilarLifeClaimService(@Qualifier("basicCompareClaimService") SimilarityStrategy similarityStrategy,
+                                      GetLifeClaimsDataAccessInterface dataAccessObject) {
         this.similarityStrategy = similarityStrategy;
+        this.dataAccessObject = dataAccessObject;
     }
 
 
@@ -32,7 +34,7 @@ public class GetSimilarLifeClaimService {
 
         // Collecting all historical life claims
         final int NUMBER_OF_RECS = 5;
-        ArrayList<LifeClaim> historicalLifeClaims = LifeClaimUtility.getLifeClaims(dataAccessObject, "Historical");
+        List<LifeClaim> historicalLifeClaims = LifeClaimUtility.getLifeClaims(dataAccessObject, "Historical");
 
         // Finding claim in database
         LifeClaim currentClaim = LifeClaimUtility.findLifeClaimOfType(dataAccessObject, "Current", claimNumber);

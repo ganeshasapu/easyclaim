@@ -18,14 +18,14 @@ public class UploadController {
     @PostMapping("/upload_life/current")
     public String uploadCurrentLife(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {
 
-        return uploadService.uploadCurrentLife(claim);
+        return uploadService.uploadLife("Current", claim);
 
     }
 
     @PostMapping("/upload_life/historical")
     public String uploadHistoricalLife(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {
 
-        return uploadService.uploadHistoricalLife(claim);
+        return uploadService.uploadLife("Historical", claim);
 
     }
 

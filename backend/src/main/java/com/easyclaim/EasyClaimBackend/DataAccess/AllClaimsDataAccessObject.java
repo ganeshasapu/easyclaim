@@ -13,13 +13,14 @@ import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @Service
 public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterface, DeleteLifeClaimDataAccessInterface,
          UploadLifeClaimDataAccessInterface {
     @Override
-    public ArrayList<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {
+    public List<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {
         ArrayList<LifeClaim> claims = new ArrayList<LifeClaim>();
         Firestore dbFirestore = FirestoreClient.getFirestore();
         String collectionName = type + " Claims";
@@ -93,18 +94,11 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
     }
 
     @Override
-    public String uploadCurrentLife(LifeClaim claim) throws ExecutionException, InterruptedException {
+    public String uploadLife(String type, LifeClaim claim) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("Current Claims").document("Life").collection("Claims")
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(type + " Claims").document("Life").collection("Claims")
                 .document(claim.getClaimNumber()).set(claim);
         return collectionApiFuture.get().getUpdateTime().toString();
     }
 
-    @Override
-    public String uploadHistoricalLife(LifeClaim claim) throws ExecutionException, InterruptedException {
-        Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("Historical Claims").document("Life").collection("Claims")
-                .document(claim.getClaimNumber()).set(claim);
-        return collectionApiFuture.get().getUpdateTime().toString();
-    }
 }
