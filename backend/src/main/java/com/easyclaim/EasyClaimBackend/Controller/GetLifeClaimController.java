@@ -8,6 +8,7 @@ import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import com.easyclaim.EasyClaimBackend.UseCase.GetLifeClaimService;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
@@ -19,7 +20,7 @@ public class GetLifeClaimController {
   private GetLifeClaimService lifeClaimService;
   
   @GetMapping("/get_life/{type}")
-  public ArrayList<LifeClaim> getLifeClaims(@PathVariable String type) throws InterruptedException, ExecutionException {
+  public List<LifeClaim> getLifeClaims(@PathVariable String type) throws InterruptedException, ExecutionException {
     return lifeClaimService.getLifeClaims(type);
   }
 

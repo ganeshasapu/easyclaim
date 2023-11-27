@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutionException;
 
 public interface UploadLifeClaimDataAccessInterface {
 
-    String uploadCurrentLife(LifeClaim claim) throws ExecutionException, InterruptedException;
+    String uploadLife(String type, LifeClaim claim) throws ExecutionException, InterruptedException;
 
-    String uploadHistoricalLife(LifeClaim claim) throws ExecutionException, InterruptedException;
 }
