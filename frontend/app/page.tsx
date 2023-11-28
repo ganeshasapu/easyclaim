@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <AuthContextProvider>
         <div>
-          {<ClientComponent/>}
+        {<Login/>}
         </div>
       </AuthContextProvider>
     </main>
