@@ -27,6 +27,7 @@ export default function Inbox() {
                 <div className="w-[20vw] h-full bg-gray-50"></div>
                 <div className="w-full h-full text-white p-4">
                     <h1 className="text-3xl font-bold">Claims to Process</h1>
+
                     <div className="shadow-sm overflow-hidden my-8">
                         <table className="border-collapse table-auto w-full text-sm">
                             <thead>
@@ -83,6 +84,7 @@ export default function Inbox() {
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </main>
