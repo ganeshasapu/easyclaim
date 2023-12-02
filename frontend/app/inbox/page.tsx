@@ -1,4 +1,9 @@
+"use client"
+
 import Link from "next/link";
+import {useRouter} from "next/navigation";
+import {useState, useEffect} from "react";
+import {set} from "@firebase/database";
 
 const filters = [
     {
@@ -18,9 +23,32 @@ const user = {
     email: "tom@example.com",
     imageUrl:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  };
-  
+};
+
 export default function Inbox() {
+
+    const router = useRouter()
+    const [currentClaims, setCurrentClaims] = useState([]);
+
+    useEffect(() => {
+        document.title = 'EasyClaim Dashboard';
+        getData();
+    }, []);
+
+    const getData = () => {
+        fetch("/api/get_life/Current")
+            .then((response) => response.json() as Array<LifeClaim>)
+            .then((data) => {
+                setCurrentClaims(data);
+            });
+    }
+
+    const routeToClaim = async (id: String) => {
+        try {
+            router.push('/claim/' + id)
+        } catch (err) {}
+    }
+
     return (
         <main className="flex h-screen w-full flex-col items-center justify-between">
             <div className="flex w-full p-4 items-center border-b border-white">
@@ -66,52 +94,18 @@ export default function Inbox() {
                                 <th className="border-b white:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim ID</th>
                                 <th className="border-b white:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim Amount</th>
                                 <th className="border-b white:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim Type</th>
-                                <th className="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Month</th>
+                                <th className="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Date</th>
                             </tr>
                             </thead>
                             <tbody className="bg-black dark:bg-slate-800">
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Claim ID</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Claim Amount</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Claim Type</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Month</td>
-                            </tr>
+                            {currentClaims.map((currentClaim) => (
+                                <tr key={currentClaim.claimNumber}>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{currentClaim.claimNumber}</td>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">${currentClaim.generalLoanInformation.loanA.amountOfInsuranceAppliedFor}</td>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Life</td>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">{currentClaim.dateOccured}</td>
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                     </div>
