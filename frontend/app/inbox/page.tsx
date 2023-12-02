@@ -28,7 +28,7 @@ const user = {
 export default function Inbox() {
 
     const router = useRouter()
-    const [currentClaims, setCurrentClaims] = useState([]);
+    const [currentClaims, setCurrentClaims] = useState<LifeClaim[]>([]);
 
     useEffect(() => {
         document.title = 'EasyClaim Dashboard';
@@ -37,8 +37,8 @@ export default function Inbox() {
 
     const getData = () => {
         fetch("/api/get_life/Current")
-            .then((response) => response.json() as Array<LifeClaim>)
-            .then((data) => {
+            .then((response) => response.json())
+            .then((data: LifeClaim[]) => {
                 setCurrentClaims(data);
             });
     }
