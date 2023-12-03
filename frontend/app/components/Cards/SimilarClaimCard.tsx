@@ -7,17 +7,19 @@ const SimilarClaimCard = ({
   status,
   score,
   claim_id,
+  inbox_claim_id
 }: {
   title: string;
   dateOccured: string;
   status: string;
   score: number;
-  claim_id: string
+  claim_id: string;
+  inbox_claim_id: string
 }) => {
   const router = useRouter();
 
   const navigateToClaim = () => {
-    router.push(`/claim/${claim_id}`);
+    router.push(`/compare_claims/${inbox_claim_id},${claim_id}`);
   }
   return (
     <button className="flex w-full justify-around gap-4 text-black" onClick={navigateToClaim}>
