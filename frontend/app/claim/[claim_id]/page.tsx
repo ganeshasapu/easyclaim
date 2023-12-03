@@ -317,7 +317,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
                   <div className="overflow-hidden rounded-lg bg-white shadow">
                     <div className="p-6">
                       <div className="h-[75vh] overflow-scroll no-scrollbar">
-                        <SimilarClaimsPanel similar_claims={similar_claims} />
+                        <SimilarClaimsPanel similar_claims={similar_claims} inbox_claim_id={claim_id}/>
                       </div>
                     </div>
                   </div>
