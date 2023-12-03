@@ -1,9 +1,11 @@
 'use client'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useAuth } from '../context/AuthContext'
 import Link from 'next/link'
 
 const Signup = () => {
+  const router = useRouter()
   const { user, signup } = useAuth()
   console.log(user)
   const [data, setData] = useState({
@@ -16,8 +18,9 @@ const Signup = () => {
 
     try {
         console.log(data.email, data.password)
-      await signup(data.email, data.password)
-      console.log('trying to signup')
+        await signup(data.email, data.password)
+        router.push('')
+        console.log('trying to signup')
     } catch (err) {
         console.log(data.email, data.password)
       console.log(err)
