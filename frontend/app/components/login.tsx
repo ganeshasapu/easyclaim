@@ -1,11 +1,16 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import { useAuth } from '../context/AuthContext'
 import Link from 'next/link';
 
 
 const Login = () => {
+
+    useEffect(() => {
+        document.title = 'EasyClaim Login';
+    }, []);
+
   const router = useRouter()
   const { user, login } = useAuth()
   const [data, setData] = useState({

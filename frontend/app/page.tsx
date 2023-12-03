@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <AuthContextProvider>
         <div>
-          {<Login/>}
+        {<Login/>}
         </div>
       </AuthContextProvider>
     </main>

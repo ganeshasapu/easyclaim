@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './PopupComponent.css';
 
-// const ConfirmationPopup = ({ isOpen, onApprove, onCancel }) => {
+// const ConfirmationPopup = ({ isOpen, onApprove, onCancel }: ) => {
 //   if (!isOpen) {
 //     return null;
 //   }
