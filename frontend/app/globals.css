@@ -26,6 +26,17 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+input:focus-visible {
+  outline: none;
+  /* Add any other styles you want to remove for input with :focus-visible */
+}
+
+p, h1, h2, h3, label{
+  color: #757575;
+}
+
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }

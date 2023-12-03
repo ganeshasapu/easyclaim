@@ -64,7 +64,6 @@ export default function Database() {
         </div>
         <div className="w-full h-full flex">
             <div className="w-full h-full text-white p-4">
-                <h1 className="text-3xl font-bold">Historical Claims</h1>
                 <div className="bg-white">
                 <div>
                     {/* Mobile filter dialog */}
@@ -138,7 +137,7 @@ export default function Database() {
                                                 />
                                                 <label
                                                 htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                                className="ml-3 min-w-0 flex-1 text-gray-500"
+                                                className="ml-3 min-w-0 flex-1 text-757575"
                                                 >
                                                 {option.label}
                                                 </label>
@@ -159,7 +158,7 @@ export default function Database() {
 
                     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-baseline justify-between border-b border-gray-200 pb-6">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900">Historical Claims</h1>
+                        <h1 className="text-4xl font-bold tracking-tight ">Historical Claims</h1>
 
                     <div className="flex items-center">
                         <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
@@ -224,7 +223,7 @@ export default function Database() {
                                             />
                                             <label
                                             htmlFor={`filter-${section.id}-${optionIdx}`}
-                                            className="ml-3 text-sm text-gray-600"
+                                            className="ml-3 text-sm text-757575"
                                             >
                                             {option.label}
                                             </label>

@@ -38,27 +38,27 @@ const Login = () => {
     <div>
         <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img className="mx-auto h-10 w-auto" src="/Logo.png" alt="Your Company"/>
-                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+                <img className="mx-auto h-16 w-auto" src="/logo.png" alt="Your Company"/>
+                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-757575">Sign in to your account</h2>
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="#" method="POST">
                 <div>
-                    <label className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                    <label className="block text-sm font-medium leading-6 text-757575">Email address</label>
                     <div className="mt-2">
                     <input id="email" onChange={(e: any) =>
               setData({
                 ...data,
                 email: e.target.value,
               })
-            } value={data.email} name="email" type="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6"/>
+            } value={data.email} name="email" type="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2"/>
                     </div>
                 </div>
 
                 <div>
                     <div className="flex items-center justify-between">
-                    <label className="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                    <label className="block text-sm font-medium leading-6 text-757575">Password</label>
                     <div className="text-sm">
                         <a href="#" className="font-semibold text-[#43934B] hover:text-[#43934B]">Forgot password?</a>
                     </div>
@@ -69,7 +69,7 @@ const Login = () => {
                 ...data,
                 password: e.target.value,
               })
-            } value={data.password} name="password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6" />
+            } value={data.password} name="password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2" />
                     </div>
                 </div>
 
