@@ -37,11 +37,13 @@ export const AuthContextProvider = ({
     return () => unsubscribe()
   }, [])
 
-  const signup = (email: string, password: string) => {
+   const signup = (email: string, password: string) => {
+    console.log('signing up from authcontext')
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
   const login = (email: string, password: string) => {
+    console.log('logging in from authcontext')
     return signInWithEmailAndPassword(auth, email, password)
   }
 
@@ -56,3 +58,4 @@ export const AuthContextProvider = ({
     </AuthContext.Provider>
   )
 }
+
