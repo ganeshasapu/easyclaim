@@ -5,8 +5,6 @@ import com.easyclaim.EasyClaimBackend.UseCase.DenyLifeClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
-import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 
@@ -14,8 +12,12 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class DenyLifeClaimController {
 
-  @Autowired
   private DenyLifeClaimService denyLifeClaimService;
+
+  @Autowired
+  public DenyLifeClaimController(DenyLifeClaimService service) {
+    this.denyLifeClaimService = service;
+  }
   
   @GetMapping("/deny_life/{claimNumber}")
   public void denyClaim(@PathVariable String claimNumber) throws InterruptedException,

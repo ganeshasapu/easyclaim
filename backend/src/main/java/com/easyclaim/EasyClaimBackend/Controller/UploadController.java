@@ -12,8 +12,12 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class UploadController {
 
-    @Autowired
     private UploadService uploadService;
+
+    @Autowired
+    public UploadController(UploadService service) {
+        this.uploadService = service;
+    }
 
     @PostMapping("/upload_life/current")
     public String uploadCurrentLife(@RequestBody LifeClaim claim) throws ExecutionException, InterruptedException {

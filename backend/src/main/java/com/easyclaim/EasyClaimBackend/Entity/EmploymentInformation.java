@@ -4,6 +4,14 @@ public class EmploymentInformation {
     private String occupation;
     private String dateLastWorked;
     private String reasonInsuredStoppedWorking;
+
+    public EmploymentInformation(String occupation, String dateLastWorked, String reasonInsuredStoppedWorking) {
+        this.occupation = occupation;
+        this.dateLastWorked = dateLastWorked;
+        this.reasonInsuredStoppedWorking = reasonInsuredStoppedWorking;
+    }
+
+    public EmploymentInformation() {}
     // getters and setters
     public String getOccupation() {
         return occupation;

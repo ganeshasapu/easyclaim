@@ -16,8 +16,12 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class GetLifeClaimController {
 
-  @Autowired
   private GetLifeClaimService lifeClaimService;
+
+  @Autowired
+  public GetLifeClaimController(GetLifeClaimService service) {
+    this.lifeClaimService = service;
+  }
   
   @GetMapping("/get_life/{type}")
   public List<LifeClaim> getLifeClaims(@PathVariable String type) throws InterruptedException, ExecutionException {
