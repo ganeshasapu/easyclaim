@@ -100,10 +100,12 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                         {/* Main 2 column grid */}
                         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-8">
                             {/* Current Claim */}
-                            <ClaimCard claim_data={claim1_data} prefixString={"Current:"}/>
+                            <ClaimCard claim_data={claim1_data} prefixString={"Current:"} width={'1'}
+                                       isHistorical={false}/>
 
                             {/* Precedent Claim */}
-                           <ClaimCard claim_data={claim2_data} prefixString={"Precedent:"}/>
+                           <ClaimCard claim_data={claim2_data} prefixString={"Precedent:"} width={'1'}
+                                      isHistorical={false}/>
                         </div>
                     </div>
                 </main>

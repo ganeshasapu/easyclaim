@@ -52,19 +52,18 @@ export default function Database() {
         <main className="flex h-screen w-full flex-col items-center justify-between">
             <div className="flex w-full p-4 items-center border-b border-white">
                 <div className="flex w-full items-center justify-evenly p-2 gap-8">
+                    <Link
+                        className="py-2 border rounded w-full px-4 text-center"
+                        href={"/inbox"}
+                    >
+                        Inbox
+                    </Link>
                     <div
                         className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold"
 
                     >
-                        Inbox
-                    </div>
-
-                    <Link
-                        className="py-2 border rounded w-full px-4 text-center"
-                        href={"/database"}
-                    >
                         Database
-                    </Link>
+                    </div>
                 </div>
                 <div className="flex">
                     <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />

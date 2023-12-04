@@ -5,6 +5,7 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ClaimCard from "@/app/components/Cards/ClaimCard";
+import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
 const user = {
     name: "Tom Cook",
@@ -93,13 +94,13 @@ export default function HistoricalClaimView({params}: {params: {claim_id: string
                         {/* Main 2 column grid */}
                         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-8">
                             {/* Historical Claim */}
-                            <ClaimCard claim_data={claim_data} prefixString={"Current:"}/>
-
-                            {/* Historical Footer */}
-                            <HistoricalClaimFooter />
+                            <ClaimCard claim_data={claim_data} prefixString={"Historical:"} width={'2'}
+                                       isHistorical={true}/>
                         </div>
                     </div>
                 </main>
+                <Popover as="header" className="bg-[#0b9541] pb-24">
+                </Popover>
             </div>
         </>
     );
