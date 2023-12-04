@@ -21,7 +21,7 @@ public class DenyLifeClaimService {
     public void denyClaim(String claimNumber) throws InterruptedException, ExecutionException {
 
         // Finding claim in database
-        LifeClaim currentClaim = LifeClaimUtility.findLifeClaimOfType(getLifeDataAccessObject,"Current", claimNumber);
+        LifeClaim currentClaim = getLifeDataAccessObject.findLifeClaimOfType("Current", claimNumber);
         if (currentClaim == null) {
             return;
         }
@@ -29,7 +29,7 @@ public class DenyLifeClaimService {
         // Change status to Denied and move to claim to Historical
         currentClaim.setStatus("Denied");
         uploadDataAccessObject.uploadLife("Historical", currentClaim);
-        LifeClaimUtility.deleteLifeClaim(deleteClaimDataAccessObject, "Current", currentClaim.getClaimNumber());
+        deleteClaimDataAccessObject.deleteLifeClaim("Current", currentClaim.getClaimNumber());
     
     }
 

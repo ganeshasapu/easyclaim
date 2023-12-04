@@ -5,17 +5,20 @@ import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
 public class GetLifeClaimServiceTests {
+
 
     private GetLifeClaimsDataAccessInterface dataAccessObject;
 
@@ -29,8 +32,7 @@ public class GetLifeClaimServiceTests {
         service = new GetLifeClaimService(dataAccessObject);
         claims = new ArrayList<>();
         for (int i = 1; i < 11; i++) {
-            LifeClaim claim = new LifeClaim();
-            claim.setClaimNumber(Integer.toString(i));
+            LifeClaim claim = new LifeClaim(Integer.toString(i));
             claims.add(claim);
         }
     }
@@ -38,13 +40,21 @@ public class GetLifeClaimServiceTests {
     @Test
     void findLifeClaim_getClaimByNumber_numbersMatch() throws ExecutionException, InterruptedException {
         String claimNumber = "123456";
-        LifeClaim claim = new LifeClaim();
-        claim.setClaimNumber(claimNumber);
+        LifeClaim claim = new LifeClaim(claimNumber);
         when(dataAccessObject.findLifeClaim(claimNumber)).thenReturn(claim);
 
         LifeClaim claimTwo = service.findLifeClaim(claimNumber);
 
         Assertions.assertEquals(claimNumber, claimTwo.getClaimNumber());
+    }
+
+    @Test
+    void findLifeClaim_noClaimExists_nullReturned() throws ExecutionException, InterruptedException {
+        when(dataAccessObject.findLifeClaim(any(String.class))).thenReturn(null);
+
+        LifeClaim claim = service.findLifeClaim("CLM001");
+
+        Assertions.assertNull(claim);
     }
 
     @Test

@@ -26,4 +26,5 @@ public class GetLifeClaimService {
   public LifeClaim findLifeClaim(String claimNumber) throws ExecutionException, InterruptedException {
     return this.dataAccessObject.findLifeClaim(claimNumber);
   }
+
 }

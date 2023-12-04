@@ -1,6 +1,5 @@
 package com.easyclaim.EasyClaimBackend.Entity;
 
-
 public class LifeClaim {
     private String claimNumber;
     private String dateOccured;
@@ -11,6 +10,25 @@ public class LifeClaim {
     private EmploymentInformation employmentInformation;
     private GeneralLoanInformation generalLoanInformation;
     private String status = "Recieved";
+
+    public LifeClaim(String claimNumber) {
+        this.claimNumber = claimNumber;
+    }
+
+    public LifeClaim(String claimNumber, String dateOccurred, String placeOfDeath, boolean inquestHeld,
+                     boolean autopsyPerformed, MedicalInformation medicalInformation,
+                     EmploymentInformation employmentInformation, GeneralLoanInformation generalLoanInformation) {
+        this.claimNumber = claimNumber;
+        this.dateOccured = dateOccurred;
+        this.placeOfDeath = placeOfDeath;
+        this.inquestHeld = inquestHeld;
+        this.autopsyPerformed = autopsyPerformed;
+        this.medicalInformation = medicalInformation;
+        this.employmentInformation = employmentInformation;
+        this.generalLoanInformation = generalLoanInformation;
+    }
+
+    public LifeClaim() {}
     // getters and setters
     public String getClaimNumber() {
         return this.claimNumber;

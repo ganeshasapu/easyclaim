@@ -15,8 +15,12 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class GetSimilarLifeClaimController {
 
-    @Autowired
     private GetSimilarLifeClaimService similarLifeClaimService;
+
+    @Autowired
+    public GetSimilarLifeClaimController(GetSimilarLifeClaimService service) {
+        this.similarLifeClaimService = service;
+    }
 
     @GetMapping("/get_similar_life/{claimNumber}")
     public List<SimilarClaim> getSimilarLifeClaims(@PathVariable String claimNumber) throws InterruptedException,

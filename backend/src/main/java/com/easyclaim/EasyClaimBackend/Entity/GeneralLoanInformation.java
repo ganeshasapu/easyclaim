@@ -6,6 +6,17 @@ public class GeneralLoanInformation {
     private Loan loanA;
     private Loan loanB;
     private Loan loanC;
+
+    public GeneralLoanInformation(String nameOfLendingInstitution, String lendingInstitutionProvince, Loan loanA,
+                                  Loan loanB, Loan loanC) {
+        this.nameOfLendingInstitution = nameOfLendingInstitution;
+        this.lendingInstitutionProvince = lendingInstitutionProvince;
+        this.loanA = loanA;
+        this.loanB = loanB;
+        this.loanC = loanC;
+    }
+
+    public GeneralLoanInformation() {}
     // getters and setters
     public String getNameOfLendingInstitution() {
         return nameOfLendingInstitution;
