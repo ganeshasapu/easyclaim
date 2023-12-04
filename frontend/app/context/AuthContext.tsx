@@ -38,11 +38,13 @@ export const AuthContextProvider = ({
   }, [])
 
    const signup = (email: string, password: string) => {
+    console.log(user)
     console.log('signing up from authcontext')
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
   const login = (email: string, password: string) => {
+    console.log(user)
     console.log('logging in from authcontext')
     return signInWithEmailAndPassword(auth, email, password)
   }
