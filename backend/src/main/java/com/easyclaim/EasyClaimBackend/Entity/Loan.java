@@ -5,6 +5,16 @@ public class Loan {
     private int amountOfInsuranceAppliedFor;
     private String typeOrPurposeOfLoan;
     private int balanceOnDateOfDeath;
+
+    public Loan(int originalAmountOfLoan, int amountOfInsuranceAppliedFor, String typeOrPurposeOfLoan,
+                int balanceOnDateOfDeath) {
+        this.originalAmountOfLoan = originalAmountOfLoan;
+        this.amountOfInsuranceAppliedFor = amountOfInsuranceAppliedFor;
+        this.typeOrPurposeOfLoan = typeOrPurposeOfLoan;
+        this.balanceOnDateOfDeath = balanceOnDateOfDeath;
+    }
+
+    public Loan() {}
     // getters and setters
     public int getOriginalAmountOfLoan() {
         return originalAmountOfLoan;

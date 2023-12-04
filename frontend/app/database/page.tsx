@@ -45,7 +45,7 @@ export default function Database() {
 
     const routeToClaim = async (id: String) => {
         try {
-            router.push('/claim/' + id)
+            router.push('/historical_claim/' + id)
         } catch (err) {}
     }
 

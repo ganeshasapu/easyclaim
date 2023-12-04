@@ -34,10 +34,10 @@ public class GetSimilarLifeClaimService {
 
         // Collecting all historical life claims
         final int NUMBER_OF_RECS = 5;
-        List<LifeClaim> historicalLifeClaims = LifeClaimUtility.getLifeClaims(dataAccessObject, "Historical");
+        List<LifeClaim> historicalLifeClaims = dataAccessObject.getLifeClaims("Historical");
 
         // Finding claim in database
-        LifeClaim currentClaim = LifeClaimUtility.findLifeClaimOfType(dataAccessObject, "Current", claimNumber);
+        LifeClaim currentClaim = dataAccessObject.findLifeClaimOfType("Current", claimNumber);
         if (currentClaim == null) {
             return null;
         }
@@ -65,7 +65,6 @@ public class GetSimilarLifeClaimService {
             }
 
         }
-
         // Returning list of best claims
         return minHeap.stream().toList();
 

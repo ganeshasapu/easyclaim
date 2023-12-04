@@ -1,6 +1,7 @@
 import SimilarClaimCard from "./Cards/SimilarClaimCard";
 
-const SimilarClaimsPanel = ({similar_claims}: {similar_claims: SimilarClaim[] | null}) => {
+const SimilarClaimsPanel = ({similar_claims, inbox_claim_id}: {similar_claims: SimilarClaim[] | null,
+    inbox_claim_id: string}) => {
     return (
       <>
         <div className="sticky top-0 border-b-2 border-gray-100 bg-white px-2 py-3 sm:px-6">
@@ -16,6 +17,7 @@ const SimilarClaimsPanel = ({similar_claims}: {similar_claims: SimilarClaim[] | 
             <SimilarClaimCard
               key={s.claim.claimNumber}
               claim_id={s.claim.claimNumber}
+              inbox_claim_id={inbox_claim_id}
               title={"Claim #: " + s.claim.claimNumber}
               dateOccured={s.claim.dateOccured}
               status={s.claim.status}
