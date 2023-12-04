@@ -104,121 +104,66 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
 
     @Override
     public List<LifeClaim> getFilteredLifeClaims(String type) throws InterruptedException, ExecutionException {
-        ArrayList<LifeClaim> filteredClaims = new ArrayList<LifeClaim>();
+        ArrayList<LifeClaim> filteredClaims = new ArrayList<>();
         Map<String, Boolean> filters = stringToDictionary(type);
         Firestore dbFirestore = FirestoreClient.getFirestore();
         String collectionName = "Historical Claims";
         CollectionReference refs = dbFirestore.collection(collectionName).document("Life")
                 .collection("Claims");
-        if (filters.get("1")){
-            ApiFuture<QuerySnapshot> future = refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 0)
-                    .whereLessThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000).get();
-            QuerySnapshot querySnapshot = future.get();
 
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists()){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-
-        }
-
-        if (filters.get("2")){
-            ApiFuture<QuerySnapshot> future = refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000)
-                    .whereLessThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 50000).get();
-            QuerySnapshot querySnapshot = future.get();
-
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists()){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-        }
-
-        if (filters.get("3")){
-            ApiFuture<QuerySnapshot> future = refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 50000).get();
-            QuerySnapshot querySnapshot = future.get();
-
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists()){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-        }
-
-        if (filters.get("4") && !filters.get("1") && !filters.get("2") && !filters.get("3")){
-            ApiFuture<QuerySnapshot> future = refs.whereGreaterThan("dateOccured", subtractOneMonth()).get();
-            QuerySnapshot querySnapshot = future.get();
-
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-        } else{
-            // Date threshold
-            String thresholdDate = subtractOneMonth();
-
-            // Iterate through the list and remove items meeting the condition
-            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) > 0);
-
-        }
-
-        if (filters.get("5") && !filters.get("1") && !filters.get("2") && !filters.get("3")){
-            ApiFuture<QuerySnapshot> future = refs.whereGreaterThan("dateOccured", subtractLastSixMonths()).get();
-            QuerySnapshot querySnapshot = future.get();
-
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-        } else{
-            // Date threshold
-            String thresholdDate = subtractLastSixMonths();
-
-            // Iterate through the list and remove items meeting the condition
-            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) > 0);
-        }
-
-        if (filters.get("6") && !filters.get("1") && !filters.get("2") && !filters.get("3")){
-            ApiFuture<QuerySnapshot> future = refs.whereGreaterThan("dateOccured", subtractLastYear()).get();
-            QuerySnapshot querySnapshot = future.get();
-
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-        } else{
-            // Date threshold
-            String thresholdDate = subtractLastYear();
-
-            // Iterate through the list and remove items meeting the condition
-            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) > 0);
-        }
-
-        if (filters.get("7") && !filters.get("1") && !filters.get("2") && !filters.get("3")){
-            ApiFuture<QuerySnapshot> future = refs.whereLessThan("dateOccured", subtractLastYear()).get();
-            QuerySnapshot querySnapshot = future.get();
-
-            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-                if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))){
-                    filteredClaims.add(document.toObject(LifeClaim.class));
-                }
-            }
-        } else{
-            // Date threshold
-            String thresholdDate = subtractLastYear();
-
-            // Iterate through the list and remove items meeting the condition
-            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) < 0);
-        }
+        applyAmountFilter(filters, refs, filteredClaims);
+        applyDateFilter(filters, refs, filteredClaims);
 
         if (!filteredClaims.isEmpty()) {
             return filteredClaims;
         } else {
             return getLifeClaims("Historical");
+        }
+    }
+
+    private void applyAmountFilter(Map<String, Boolean> filters, CollectionReference refs, ArrayList<LifeClaim> filteredClaims)
+            throws InterruptedException, ExecutionException {
+        if (filters.get("1")) {
+            addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 0)
+                    .whereLessThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000).get(), filteredClaims);
+        }
+
+        if (filters.get("2")) {
+            addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000)
+                    .whereLessThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 50000).get(), filteredClaims);
+        }
+
+        if (filters.get("3")) {
+            addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 50000).get(), filteredClaims);
+        }
+
+        if (filters.get("4") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
+            addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractOneMonth()).get(), filteredClaims);
+        }
+    }
+
+    private void applyDateFilter(Map<String, Boolean> filters, CollectionReference refs, ArrayList<LifeClaim> filteredClaims)
+            throws InterruptedException, ExecutionException {
+        if (filters.get("5") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
+            addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractLastSixMonths()).get(), filteredClaims);
+        }
+
+        if (filters.get("6") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
+            addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractLastYear()).get(), filteredClaims);
+        }
+
+        if (filters.get("7") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
+            addClaimsFromQuery(refs.whereLessThan("dateOccured", subtractLastYear()).get(), filteredClaims);
+        }
+    }
+
+    private void addClaimsFromQuery(ApiFuture<QuerySnapshot> future, ArrayList<LifeClaim> filteredClaims)
+            throws InterruptedException, ExecutionException {
+        QuerySnapshot querySnapshot = future.get();
+        for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
+            if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))) {
+                filteredClaims.add(document.toObject(LifeClaim.class));
+            }
         }
     }
 
@@ -287,10 +232,4 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
 
         return formattedDate;
     }
-
-
-
-
-
-
 }
