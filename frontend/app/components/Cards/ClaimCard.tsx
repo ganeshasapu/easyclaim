@@ -2,11 +2,12 @@
 import InfoCard from "@/app/components/Cards/InfoCard";
 import LoanCard from "@/app/components/Cards/LoanCard";
 import {PaperClipIcon} from "@heroicons/react/20/solid";
+import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
-const ClaimCard = ({claim_data, prefixString} : {claim_data: LifeClaim | null,
-    prefixString: string}) => {
+const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
+    prefixString: string, width: string, isHistorical: boolean}) => {
   return (
-      <div className="grid grid-cols-1 gap-4 lg:col-span-1">
+      <div className={`grid grid-cols-1 gap-4 lg:col-span-${width}`}>
           <section aria-labelledby="section-1-title">
               <div className="overflow-hidden rounded-lg bg-white shadow">
                   <div className="p-6">
@@ -20,6 +21,11 @@ const ClaimCard = ({claim_data, prefixString} : {claim_data: LifeClaim | null,
                                           </h1>
                                       ) : (
                                           <div className="bg-gray-200 w-[80%] animate-pulse h-[5vh] rounded-2xl"></div>
+                                      )}
+                                      {isHistorical ? (
+                                          <><br/><HistoricalClaimFooter/></>
+                                      ) : (
+                                          <></>
                                       )}
                                   </div>
                               </div>

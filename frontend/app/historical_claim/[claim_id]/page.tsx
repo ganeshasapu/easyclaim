@@ -5,6 +5,7 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ClaimCard from "@/app/components/Cards/ClaimCard";
+import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
 const user = {
     name: "Tom Cook",
@@ -13,20 +14,18 @@ const user = {
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 
-export default function CompareClaimView({params}: {params: {claim_ids: string}}) {
-    const [claim1_data, setClaim1Data] = useState<LifeClaim | null>(null);
-    const [claim2_data, setClaim2Data] = useState<LifeClaim | null>(null);
+export default function HistoricalClaimView({params}: {params: {claim_id: string}}) {
+    const [claim_data, setClaimData] = useState<LifeClaim | null>(null);
     const router = useRouter();
 
-    if (!params.claim_ids) {
+    if (!params.claim_id) {
         return <div>Missing info</div>
     }
 
-    const claim1_id = params.claim_ids.substring(0,6);
-    const claim2_id = params.claim_ids.substring(9);
+    const claim_id = params.claim_id;
 
     useEffect(() => {
-        const getLifeClaim = async (claim_id: string, claim1 : boolean) => {
+        const getLifeClaim = async (claim_id: string) => {
             const claim_url = `/api/get_life/claim/${claim_id}`;
             const claim_data = await fetch(claim_url).then((res) => res.json());
 
@@ -34,15 +33,10 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                 console.error(claim_data.error);
                 return;
             }
-            if (claim1) {
-                setClaim1Data(claim_data);
-            }else {
-                setClaim2Data(claim_data);
-            }
+            setClaimData(claim_data);
         };
 
-        getLifeClaim(claim1_id, true);
-        getLifeClaim(claim2_id, false);
+        getLifeClaim(claim_id);
     }, []);
 
     return (
@@ -99,16 +93,14 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                         <h1 className="sr-only">Page title</h1>
                         {/* Main 2 column grid */}
                         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-8">
-                            {/* Current Claim */}
-                            <ClaimCard claim_data={claim1_data} prefixString={"Current:"} width={'1'}
-                                       isHistorical={false}/>
-
-                            {/* Precedent Claim */}
-                           <ClaimCard claim_data={claim2_data} prefixString={"Precedent:"} width={'1'}
-                                      isHistorical={false}/>
+                            {/* Historical Claim */}
+                            <ClaimCard claim_data={claim_data} prefixString={"Historical:"} width={'2'}
+                                       isHistorical={true}/>
                         </div>
                     </div>
                 </main>
+                <Popover as="header" className="bg-[#0b9541] pb-24">
+                </Popover>
             </div>
         </>
     );

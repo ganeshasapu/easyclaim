@@ -1,253 +1,115 @@
-'use client'
-import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+"use client"
+
 import Link from "next/link";
+import {useRouter} from "next/navigation";
+import {useState, useEffect} from "react";
 
-const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
-// const subCategories = [
-//   { name: 'Totes', href: '#' },
-// ]
 const filters = [
-  {
-    id: 'amount',
-    name: 'Amount Applied For',
-    options: [
-      { value: '0-10K', label: '0-10K', checked: false },
-      { value: '10K-100K', label: '10K-100K', checked: false },
-      { value: '100K+', label: '100K+', checked: false },
-    ],
-  },
-  {
-    id: 'time',
-    name: 'Time',
-    options: [
-      { value: 'This month', label: 'This month', checked: false },
-      { value: 'Last 6 months', label: 'Last 6 months', checked: false },
-      { value: 'This year', label: 'This year', checked: false },
-      { value: 'More than a year', label: 'More than a year', checked: false },
-    ],
-  }
+    {
+        id: 'claim',
+        name: 'Claim Type',
+        options: [
+            { value: 'Claim Amount (High to Low)', label: 'Claim Amount (High to Low)', checked: false },
+            { value: 'Claim Amount (Low to High)', label: 'Claim Amount (Low to High)', checked: false },
+            { value: 'Date (New to Old)', label: 'Date (New to Old)', checked: true },
+            { value: 'Date (Old to New)', label: 'Date (Old to New)', checked: true },
+        ],
+    }
 ]
 
-function classNames(...classes: any[]) {
-  return classes.filter(Boolean).join(' ')
-}
+const user = {
+    name: "Tom Cook",
+    email: "tom@example.com",
+    imageUrl:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+};
 
 export default function Database() {
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
-  return (
-    <main className="flex h-screen w-full flex-col items-center justify-between">
-        <div className="flex w-full p-4 items-center border-b border-white">
-            <div className="flex w-full items-center justify-evenly p-2 gap-8">
-                <Link
-                    className="py-2 border rounded w-full px-4 text-center"
-                    href={"/inbox"}>
-                    Inbox
-                </Link>
-                <div
-                    className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold">
-                    Database
+    const router = useRouter()
+    const [currentClaims, setCurrentClaims] = useState<LifeClaim[]>([]);
+
+    useEffect(() => {
+        document.title = 'EasyClaim Dashboard';
+        getData();
+    }, []);
+
+    const getData = () => {
+        fetch("/api/get_life/Historical")
+            .then((response) => response.json())
+            .then((data: LifeClaim[]) => {
+                setCurrentClaims(data);
+            });
+    }
+
+    const routeToClaim = async (id: String) => {
+        try {
+            router.push('/historical_claim/' + id)
+        } catch (err) {}
+    }
+
+    return (
+        <main className="flex h-screen w-full flex-col items-center justify-between">
+            <div className="flex w-full p-4 items-center border-b border-white">
+                <div className="flex w-full items-center justify-evenly p-2 gap-8">
+                    <Link
+                        className="py-2 border rounded w-full px-4 text-center"
+                        href={"/inbox"}
+                    >
+                        Inbox
+                    </Link>
+                    <div
+                        className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold"
+
+                    >
+                        Database
+                    </div>
+                </div>
+                <div className="flex">
+                    <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
                 </div>
             </div>
-            <div className="flex">
-                <div className="rounded-full bg-green-300 w-10 h-10" />
+            <div className="pt-2 relative mx-auto text-gray-600">
+                <input className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                       type="search" name="search" placeholder="Search" width="10000px"></input>
+                <button type="submit" className="absolute right-0 top-0 mt-5 mr-4 border-gray">
+                    <svg className="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" width="1028px" height="512px">
+                        // style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                        <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                    </svg>
+                </button>
             </div>
-        </div>
-        <div className="w-full h-full flex">
-            <div className="w-full h-full text-white p-4">
-                <h1 className="text-3xl font-bold">Historical Claims</h1>
-                <div className="bg-white">
-                <div>
-                    {/* Mobile filter dialog */}
-                    <Transition.Root show={mobileFiltersOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-40 lg:hidden" onClose={setMobileFiltersOpen}>
-                        <Transition.Child
-                        as={Fragment}
-                        enter="transition-opacity ease-linear duration-300"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="transition-opacity ease-linear duration-300"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
-                        >
-                        <div className="fixed inset-0 bg-black bg-opacity-25" />
-                        </Transition.Child>
+            <div></div>
+            <div className="w-full h-full flex">
+                <div className="w-[20vw] h-full bg-black-50"></div>
+                <div className="w-full h-full text-black p-4">
+                    <h1 className="text-3xl font-bold">Processed Claims</h1>
 
-                        <div className="fixed inset-0 z-40 flex">
-                        <Transition.Child
-                            as={Fragment}
-                            enter="transition ease-in-out duration-300 transform"
-                            enterFrom="translate-x-full"
-                            enterTo="translate-x-0"
-                            leave="transition ease-in-out duration-300 transform"
-                            leaveFrom="translate-x-0"
-                            leaveTo="translate-x-full"
-                        >
-                            <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
-                            <div className="flex items-center justify-between px-4">
-                                <h2 className="text-lg font-medium text-gray-900">Filters</h2>
-                                <button
-                                type="button"
-                                className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
-                                onClick={() => setMobileFiltersOpen(false)}
-                                >
-                                <span className="sr-only">Close menu</span>
-                                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                                </button>
-                            </div>
-
-                            {/* Filters */}
-                            <form className="mt-4 border-t border-gray-200">
-                                <h3 className="sr-only">Categories</h3>
-                                {filters.map((section) => (
-                                <Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6">
-                                    {({ open }) => (
-                                    <>
-                                        <h3 className="-mx-2 -my-3 flow-root">
-                                        <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                            <span className="font-medium text-gray-900">{section.name}</span>
-                                            <span className="ml-6 flex items-center">
-                                            {open ? (
-                                                <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                                            ) : (
-                                                <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                                            )}
-                                            </span>
-                                        </Disclosure.Button>
-                                        </h3>
-                                        <Disclosure.Panel className="pt-6">
-                                        <div className="space-y-6">
-                                            {section.options.map((option, optionIdx) => (
-                                            <div key={option.value} className="flex items-center">
-                                                <input
-                                                id={`filter-mobile-${section.id}-${optionIdx}`}
-                                                name={`${section.id}[]`}
-                                                defaultValue={option.value}
-                                                type="checkbox"
-                                                defaultChecked={option.checked}
-                                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                                />
-                                                <label
-                                                htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                                className="ml-3 min-w-0 flex-1 text-gray-500"
-                                                >
-                                                {option.label}
-                                                </label>
-                                            </div>
-                                            ))}
-                                        </div>
-                                        </Disclosure.Panel>
-                                    </>
-                                    )}
-                                </Disclosure>
-                                ))}
-                            </form>
-                            </Dialog.Panel>
-                        </Transition.Child>
-                        </div>
-                    </Dialog>
-                    </Transition.Root>
-
-                    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-baseline justify-between border-b border-gray-200 pb-6">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900">Historical Claims</h1>
-
-                    <div className="flex items-center">
-                        <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-                            <span className="sr-only">View grid</span>
-                            <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-                        </button>
-                        <button
-                            type="button"
-                            className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-                            onClick={() => setMobileFiltersOpen(true)}
-                        >
-                            <span className="sr-only">Filters</span>
-                            <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-                        </button>
-                        </div>
+                    <div className="shadow-sm overflow-hidden my-8">
+                        <table className="border-collapse table-auto w-full text-sm">
+                            <thead>
+                            <tr>
+                                <th className="border-b white:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim ID</th>
+                                <th className="border-b white:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim Amount</th>
+                                <th className="border-b white:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim Type</th>
+                                <th className="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Date</th>
+                            </tr>
+                            </thead>
+                            <tbody className="bg-black dark:bg-slate-800">
+                            {currentClaims.map((currentClaim) => (
+                                <tr key={currentClaim.claimNumber}>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{currentClaim.claimNumber}</td>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">${currentClaim.generalLoanInformation.loanA.amountOfInsuranceAppliedFor}</td>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Life</td>
+                                    <td onClick={async () => {routeToClaim(currentClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">{currentClaim.dateOccured}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
                     </div>
 
-                    <section aria-labelledby="products-heading" className="pb-24 pt-6">
-                        <h2 id="products-heading" className="sr-only">
-                        Products
-                        </h2>
-
-                        <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                        {/* Filters */}
-                        <form className="hidden lg:block">
-                            <h3 className="sr-only">Categories</h3>
-                            {/* <ul role="list" className="space-y-4  pb-6 text-sm font-medium text-gray-900">
-                            {subCategories.map((category) => (
-                                <li key={category.name}>
-                                <a href={category.href}>{category.name}</a>
-                                </li>
-                            ))}
-                            </ul> */}
-
-                            {filters.map((section) => (
-                            <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
-                                {({ open }) => (
-                                <>
-                                    <h3 className="-my-3 flow-root">
-                                    <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                                        <span className="font-medium text-gray-900">{section.name}</span>
-                                        <span className="ml-6 flex items-center">
-                                        {open ? (
-                                            <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                                        ) : (
-                                            <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                                        )}
-                                        </span>
-                                    </Disclosure.Button>
-                                    </h3>
-                                    <Disclosure.Panel className="pt-6">
-                                    <div className="space-y-4">
-                                        {section.options.map((option, optionIdx) => (
-                                        <div key={option.value} className="flex items-center">
-                                            <input
-                                            id={`filter-${section.id}-${optionIdx}`}
-                                            name={`${section.id}[]`}
-                                            defaultValue={option.value}
-                                            type="checkbox"
-                                            defaultChecked={option.checked}
-                                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                            />
-                                            <label
-                                            htmlFor={`filter-${section.id}-${optionIdx}`}
-                                            className="ml-3 text-sm text-gray-600"
-                                            >
-                                            {option.label}
-                                            </label>
-                                        </div>
-                                        ))}
-                                    </div>
-                                    </Disclosure.Panel>
-                                </>
-                                )}
-                            </Disclosure>
-                            ))}
-                        </form>
-
-                        {/* Product grid */}
-                        <div className="lg:col-span-3">{/* Your content */}</div>
-                        </div>
-                    </section>
-                    </main>
-                </div>
                 </div>
             </div>
-        </div>
-    </main>
-
-  )
+        </main>
+    );
 }
