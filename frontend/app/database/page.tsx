@@ -1,17 +1,13 @@
 'use client'
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import Link from "next/link";
+import { get } from 'http'
 
-const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
+
 // const subCategories = [
 //   { name: 'Totes', href: '#' },
 // ]
@@ -20,29 +16,80 @@ const filters = [
     id: 'amount',
     name: 'Amount Applied For',
     options: [
-      { value: '0-10K', label: '0-10K', checked: false },
-      { value: '10K-100K', label: '10K-100K', checked: false },
-      { value: '100K+', label: '100K+', checked: false },
+        { value: '1', label: '0-25K', checked: false },
+        { value: '2', label: '25K-50K', checked: false },
+        { value: '3', label: '50K+', checked: false },
     ],
-  },
-  {
+},
+{
     id: 'time',
     name: 'Time',
     options: [
-      { value: 'This month', label: 'This month', checked: false },
-      { value: 'Last 6 months', label: 'Last 6 months', checked: false },
-      { value: 'This year', label: 'This year', checked: false },
-      { value: 'More than a year', label: 'More than a year', checked: false },
+        { value: '4', label: 'This month', checked: false },
+        { value: '5', label: 'Last 6 months', checked: false },
+        { value: '6', label: 'This year', checked: false },
+        { value: '7', label: 'More than a year', checked: false },
     ],
   }
 ]
 
-function classNames(...classes: any[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function Database() {
+    const [historicalClaims, setHistoricalClaims] = useState<LifeClaim[]>([]);
+    const router = useRouter()
+
+    useEffect(() => {
+        document.title = 'EasyClaim Dashboard';
+        // Convert your dictionary to query parameters
+        getData();
+    }, []);
+
+    const routeToClaim = async (id: String) => {
+        try {
+            router.push('/claim/' + id)
+        } catch (err) {}
+    }
+
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const [checkboxState, setCheckboxState] = useState({
+    '1': false,
+    '2': false,
+    '3': false,
+    '4': false,
+    '5': false,
+    '6': false,
+    '7': false,
+  });
+
+  // Handle checkbox change
+  const handleCheckboxChange = (optionValue) => {
+    setCheckboxState((prevCheckboxState) => {
+      const newState = { ...prevCheckboxState, [optionValue]: !prevCheckboxState[optionValue] };
+  
+      const queryParams = new URLSearchParams(newState as any);
+  
+  
+      // Append the query parameters to the API endpoint
+      getFilteredData(`${queryParams}`);
+      return newState;
+    });   
+  };
+
+  const getData = () => {
+    fetch("/api/get_life/Historical")
+        .then((response) => response.json())
+        .then((data: LifeClaim[]) => {
+            setHistoricalClaims(data);
+        });
+    }
+
+  const getFilteredData = (params: String) => {
+    console.log("/api/get_filtered/" + params)
+    fetch("/api/get_filtered/" + params)
+        .then((response) => response.json())
+        .then((data: LifeClaim[]) => {
+            setHistoricalClaims(data);
+        }).catch((error) => {console.log(error)});
+}
 
   return (
     <main className="flex h-screen w-full flex-col items-center justify-between">
@@ -124,26 +171,27 @@ export default function Database() {
                                         </Disclosure.Button>
                                         </h3>
                                         <Disclosure.Panel className="pt-6">
-                                        <div className="space-y-6">
-                                            {section.options.map((option, optionIdx) => (
-                                            <div key={option.value} className="flex items-center">
-                                                <input
-                                                id={`filter-mobile-${section.id}-${optionIdx}`}
-                                                name={`${section.id}[]`}
-                                                defaultValue={option.value}
-                                                type="checkbox"
-                                                defaultChecked={option.checked}
-                                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                                />
-                                                <label
-                                                htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                                className="ml-3 min-w-0 flex-1 text-757575"
-                                                >
-                                                {option.label}
-                                                </label>
+                                            <div className="space-y-4">
+                                                {section.options.map((option, optionIdx) => (
+                                                    <div key={option.value} className="flex items-center">
+                                                    <input
+                                                        id={`filter-${section.id}-${optionIdx}`}
+                                                        name={`${section.id}[]`}
+                                                        defaultValue={option.value}
+                                                        type="checkbox"
+                                                        // checked={checkboxState[option.value]}
+                                                        onChange={() => handleCheckboxChange(option.value)}
+                                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                    />
+                                                    <label
+                                                        htmlFor={`filter-${section.id}-${optionIdx}`}
+                                                        className="ml-3 text-sm text-757575"
+                                                    >
+                                                        {option.label}
+                                                    </label>
+                                                    </div>
+                                                ))}
                                             </div>
-                                            ))}
-                                        </div>
                                         </Disclosure.Panel>
                                     </>
                                     )}
@@ -210,26 +258,27 @@ export default function Database() {
                                     </Disclosure.Button>
                                     </h3>
                                     <Disclosure.Panel className="pt-6">
-                                    <div className="space-y-4">
-                                        {section.options.map((option, optionIdx) => (
-                                        <div key={option.value} className="flex items-center">
-                                            <input
-                                            id={`filter-${section.id}-${optionIdx}`}
-                                            name={`${section.id}[]`}
-                                            defaultValue={option.value}
-                                            type="checkbox"
-                                            defaultChecked={option.checked}
-                                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                            />
-                                            <label
-                                            htmlFor={`filter-${section.id}-${optionIdx}`}
-                                            className="ml-3 text-sm text-757575"
-                                            >
-                                            {option.label}
-                                            </label>
+                                        <div className="space-y-4">
+                                            {section.options.map((option, optionIdx) => (
+                                                <div key={option.value} className="flex items-center">
+                                                <input
+                                                    id={`filter-${section.id}-${optionIdx}`}
+                                                    name={`${section.id}[]`}
+                                                    defaultValue={option.value}
+                                                    type="checkbox"
+                                                    // checked={checkboxState[option.value]}
+                                                    onChange={() => handleCheckboxChange(option.value)}
+                                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                />
+                                                <label
+                                                    htmlFor={`filter-${section.id}-${optionIdx}`}
+                                                    className="ml-3 text-sm text-757575"
+                                                >
+                                                    {option.label}
+                                                </label>
+                                                </div>
+                                            ))}
                                         </div>
-                                        ))}
-                                    </div>
                                     </Disclosure.Panel>
                                 </>
                                 )}
@@ -240,6 +289,35 @@ export default function Database() {
                         {/* Product grid */}
                         <div className="lg:col-span-3">{/* Your content */}</div>
                         </div>
+                        <div className="w-full h-full flex">
+                            <div className="w-[20vw] h-full bg-black-50"></div>
+                            <div className="w-full h-full text-black p-4">
+                                <div className="shadow-sm overflow-hidden my-8">
+                                    <table className="border-collapse table-auto w-full text-sm">
+                                        <thead>
+                                        <tr>
+                                            <th className="border-b white:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim ID</th>
+                                            <th className="border-b white:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim Amount</th>
+                                            <th className="border-b white:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Claim Type</th>
+                                            <th className="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Date</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody className="bg-black dark:bg-slate-800">
+                                        {historicalClaims.map((historicalClaim) => (
+                                            <tr key={historicalClaim.claimNumber}>
+                                                <td onClick={async () => {routeToClaim(historicalClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{historicalClaim.claimNumber}</td>
+                                                <td onClick={async () => {routeToClaim(historicalClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">${historicalClaim.generalLoanInformation.loanA.amountOfInsuranceAppliedFor}</td>
+                                                <td onClick={async () => {routeToClaim(historicalClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Life</td>
+                                                <td onClick={async () => {routeToClaim(historicalClaim.claimNumber)}} className="cursor-pointer border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">{historicalClaim.dateOccured}</td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </section>
                     </main>
                 </div>

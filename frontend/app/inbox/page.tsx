@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import {useState, useEffect} from "react";
+import { useAuth } from "../context/AuthContext";
 import {set} from "@firebase/database";
 
 const filters = [
@@ -26,7 +27,6 @@ const user = {
 };
 
 export default function Inbox() {
-
     const router = useRouter()
     const [currentClaims, setCurrentClaims] = useState<LifeClaim[]>([]);
 
