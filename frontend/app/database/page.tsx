@@ -83,7 +83,7 @@ export default function Database() {
             <div className="w-full h-full flex">
                 <div className="w-[20vw] h-full bg-black-50"></div>
                 <div className="w-full h-full text-black p-4">
-                    <h1 className="text-3xl font-bold">Claims to Process</h1>
+                    <h1 className="text-3xl font-bold">Processed Claims</h1>
 
                     <div className="shadow-sm overflow-hidden my-8">
                         <table className="border-collapse table-auto w-full text-sm">
