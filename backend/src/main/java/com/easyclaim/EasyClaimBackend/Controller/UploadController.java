@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class UploadController {
 
-    private UploadService uploadService;
+    private final UploadService uploadService;
 
     @Autowired
     public UploadController(UploadService service) {
