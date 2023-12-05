@@ -142,7 +142,7 @@ export default function Database() {
         <div className="flex justify-center w-full border-gray-200 border-t  bg-gray-50 ">
           <div className="w-[90%] h-full pt-8 text-2xl font-semibold">
             <div className="min-w-full p-4 drop-shadow-md rounded-md border bg-white flex flex-col gap-2">
-              <div className="">Historical Claims</div>
+              <div className="">Processed Claims</div>
               <div className="flex items-center">
                 <div className="text-sm text-gray-500 font-normal">
                   These claims have already been processed
