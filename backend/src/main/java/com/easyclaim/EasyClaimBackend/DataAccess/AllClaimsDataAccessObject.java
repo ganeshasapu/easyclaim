@@ -22,23 +22,24 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
          UploadLifeClaimDataAccessInterface, GetFilteredLifeClaimsDataAccessInterface {
     @Override
     public List<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {
-        ArrayList<LifeClaim> claims = new ArrayList<LifeClaim>();
         Firestore dbFirestore = FirestoreClient.getFirestore();
         String collectionName = type + " Claims";
-        Iterable<DocumentReference> refs = dbFirestore.collection(collectionName).document("Life")
-                .collection("Claims").listDocuments();
-        for (DocumentReference ref: refs) {
-            ApiFuture<DocumentSnapshot> futureSnapshot = ref.get();
-            DocumentSnapshot doc = futureSnapshot.get();
-            if (doc.exists()) {
-                claims.add(doc.toObject(LifeClaim.class));
+
+        ApiFuture<QuerySnapshot> future = dbFirestore.collection(collectionName)
+                .document("Life")
+                .collection("Claims")
+                .get();
+
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+        List<LifeClaim> claims = new ArrayList<>();
+
+        for (QueryDocumentSnapshot document : documents) {
+            if (document.exists()) {
+                claims.add(document.toObject(LifeClaim.class));
             }
         }
-        if (!claims.isEmpty()) {
-            return claims;
-        } else {
-            return null;
-        }
+
+        return claims.isEmpty() ? null : claims;
     }
 
     @Override
