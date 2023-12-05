@@ -49,7 +49,7 @@ const CurrentClaimFooter = (props: {
   const precedents = props.similarClaims.map((similarClaim, i) => {
     const claimNumber = similarClaim.claim.claimNumber;
     return (
-      <>
+      <div className="flex items-center me-4">
         <input
           id={"inline-checkbox" + (i).toString()}
           type="checkbox"
@@ -62,7 +62,7 @@ const CurrentClaimFooter = (props: {
         >
           {claimNumber}
         </label>
-      </>
+      </div>
     );
   });
 
