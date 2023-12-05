@@ -156,7 +156,7 @@ export default function Inbox() {
           </div>
         </div>
         <div className="w-full h-[75%] flex justify-center bg-gray-50">
-          <div className="w-[90%] flow-root shadow-xl border bg-white rounded-md overflow-scroll no-scrollbar">
+          <div className="w-[90%] h-screen flow-root shadow-xl border bg-white rounded-md overflow-scroll no-scrollbar">
             <div className="">
               <div className="inline-block min-w-full py-2 align-middle lg:px-4">
                 <table className="min-w-full divide-y divide-gray-300">

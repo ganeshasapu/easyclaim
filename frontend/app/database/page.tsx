@@ -139,7 +139,7 @@ export default function Database() {
             </svg>
           </button>
         </div>
-        <div className="flex h-full justify-center w-full border-gray-200 border-t  bg-gray-50 ">
+        <div className="flex justify-center w-full border-gray-200 border-t  bg-gray-50 ">
           <div className="w-[90%] h-full pt-8 text-2xl font-semibold">
             <div className="min-w-full p-4 drop-shadow-md rounded-md border bg-white flex flex-col gap-2">
               <div className="">Historical Claims</div>
@@ -152,8 +152,8 @@ export default function Database() {
           </div>
         </div>
         <div className="w-full h-[75%] bg-gray-50 flex justify-center">
-          <div className="w-[90%] flex gap-4 justify-between bg-gray-50 py-4">
-            <div className="w-[30%] flow-root shadow-xl border bg-white rounded-md overflow-scroll no-scrollbar">
+          <div className="w-[90%] h-full flex gap-4 justify-between bg-gray-50 py-4">
+            <div className="w-[30%] h-full flow-root shadow-xl border bg-white rounded-md overflow-scroll no-scrollbar">
               <form className="hidden lg:block p-4">
                 {filters.map((section) => (
                   <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
@@ -200,7 +200,7 @@ export default function Database() {
                 ))}
               </form>
             </div>
-            <div className="w-full flow-root shadow-xl border bg-white rounded-md overflow-scroll no-scrollbar">
+            <div className="w-full h-[screen] flow-root shadow-xl border bg-white rounded-md overflow-scroll no-scrollbar">
               <div className="">
                 <div className="inline-block min-w-full py-2 align-middle lg:px-4">
                   <table className="min-w-full divide-y divide-gray-300">
