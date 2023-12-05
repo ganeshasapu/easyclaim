@@ -5,6 +5,7 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ClaimCard from "@/app/components/Cards/ClaimCard";
+import CurrentClaimFooter from "@/app/components/CurrentClaimFooter";
 
 const user = {
     name: "Tom Cook",
@@ -16,7 +17,29 @@ const user = {
 export default function CompareClaimView({params}: {params: {claim_ids: string}}) {
     const [claim1_data, setClaim1Data] = useState<LifeClaim | null>(null);
     const [claim2_data, setClaim2Data] = useState<LifeClaim | null>(null);
+    const [similar_claims, setSimilarClaims] = useState<SimilarClaim[] | null>(null);
     const router = useRouter();
+
+    useEffect(() => {
+        const getSimilarClaim = async (claim_id: string) => {
+          const similar_claims_url = `/api/get_similar_life/${claim_id}`;
+          const similar_claims = await fetch(similar_claims_url).then((res) => res.json());
+    
+          if (similar_claims.error) {
+            console.error(similar_claims.error);
+            return;
+          }
+    
+          similar_claims.sort(
+            (a: SimilarClaim, b: SimilarClaim) => b.similarityScore - a.similarityScore
+          );
+    
+          setSimilarClaims(similar_claims);
+        };
+        getSimilarClaim(claim1_id);
+      }, []);
+    
+  
 
     if (!params.claim_ids) {
         return <div>Missing info</div>
@@ -108,6 +131,12 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                                       isHistorical={false}/>
                         </div>
                     </div>
+                              {/* Footer */}
+                {claim1_data  && similar_claims ? (
+                    <CurrentClaimFooter urlSegment={claim1_id} similarClaims={similar_claims!}/>
+                ) : (
+                    <div className="bg-gray-200 w-full animate-pulse h-[5vh] rounded-2xl" />
+                )}
                 </main>
             </div>
         </>
