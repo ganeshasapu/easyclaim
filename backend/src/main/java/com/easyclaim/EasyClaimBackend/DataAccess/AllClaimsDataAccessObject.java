@@ -61,7 +61,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
                 .collection("Claims").listDocuments();
 
         // Iterating through all current life claims
-        for (DocumentReference ref: refs) {
+        for (DocumentReference ref : refs) {
             ApiFuture<DocumentSnapshot> futureSnapshot = ref.get();
             DocumentSnapshot doc = futureSnapshot.get();
 
@@ -90,9 +90,9 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         DocumentSnapshot document_historical = future_historical.get();
         if (document_historical.exists()) {
             return document_historical.toObject(LifeClaim.class);
-        } else if (document_current.exists()){
+        } else if (document_current.exists()) {
             return document_current.toObject(LifeClaim.class);
-        } else{
+        } else {
             return null;
         }
     }
@@ -119,17 +119,22 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
 
         if (!filteredClaims.isEmpty()) {
             return filteredClaims;
-        } else {
+        } else if ((filters.get("1") || filters.get("2") || filters.get("3") ||
+                filters.get("4") || filters.get("5") || filters.get("6") || filters.get("7"))){
+            return new ArrayList<>();
+        }else {
             return getLifeClaims("Historical");
         }
+
     }
+
 
     private void applyAmountFilter(Map<String, Boolean> filters, CollectionReference refs, ArrayList<LifeClaim> filteredClaims)
             throws InterruptedException, ExecutionException {
         if (filters.get("1")) {
             addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 0)
                     .whereLessThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000).get(), filteredClaims);
-        }
+        } 
 
         if (filters.get("2")) {
             addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000)
@@ -139,24 +144,48 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         if (filters.get("3")) {
             addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 50000).get(), filteredClaims);
         }
-
-        if (filters.get("4") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
-            addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractOneMonth()).get(), filteredClaims);
-        }
     }
 
     private void applyDateFilter(Map<String, Boolean> filters, CollectionReference refs, ArrayList<LifeClaim> filteredClaims)
             throws InterruptedException, ExecutionException {
+        if (filters.get("4") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
+            addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractOneMonth()).get(), filteredClaims);
+        } else if (filters.get("4") && (filters.get("1") || filters.get("2") || filters.get("3"))){
+            // Date threshold
+            String thresholdDate = subtractOneMonth();
+
+            // Iterate through the list and remove items meeting the condition
+            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) < 0);
+        }
+
         if (filters.get("5") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
             addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractLastSixMonths()).get(), filteredClaims);
+        } else if (filters.get("5") && (filters.get("1") || filters.get("2") || filters.get("3"))){
+            // Date threshold
+            String thresholdDate = subtractLastSixMonths();
+
+            // Iterate through the list and remove items meeting the condition
+            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) < 0);
         }
 
         if (filters.get("6") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
             addClaimsFromQuery(refs.whereGreaterThan("dateOccured", subtractLastYear()).get(), filteredClaims);
+        } else if (filters.get("6") && (filters.get("1") || filters.get("2") || filters.get("3"))){
+            // Date threshold
+            String thresholdDate = subtractLastYear();
+
+            // Iterate through the list and remove items meeting the condition
+            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) < 0);
         }
 
         if (filters.get("7") && !filters.get("1") && !filters.get("2") && !filters.get("3")) {
             addClaimsFromQuery(refs.whereLessThan("dateOccured", subtractLastYear()).get(), filteredClaims);
+        } else if (filters.get("7") && (filters.get("1") || filters.get("2") || filters.get("3"))){
+            // Date threshold
+            String thresholdDate = subtractLastYear();
+
+            // Iterate through the list and remove items meeting the condition
+            filteredClaims.removeIf(lifeClaim -> lifeClaim.getDateOccured().compareTo(thresholdDate) > 0);
         }
     }
 
