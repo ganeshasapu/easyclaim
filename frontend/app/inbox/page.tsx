@@ -5,6 +5,10 @@ import {useRouter} from "next/navigation";
 import {useState, useEffect} from "react";
 import { useAuth } from "../context/AuthContext";
 import {set} from "@firebase/database";
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import stacy from "/public/stacy.png"
 
 const filters = [
     {
@@ -20,11 +24,21 @@ const filters = [
 ]
 
 const user = {
-    name: "Tom Cook",
+    name: "Stacy",
     email: "tom@example.com",
-    imageUrl:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    image: "/public/stacy.png",
+    imageUrl: "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
 };
+
+const top_space = {
+    padding: 10,
+    width: 85,
+    height: 70,
+  };
+
+export const images : {[key:string] : any} = {
+    "/public/stacy.png": stacy,
+}
 
 export default function Inbox() {
     const router = useRouter()
@@ -52,6 +66,9 @@ export default function Inbox() {
     return (
         <main className="flex h-screen w-full flex-col items-center justify-between">
             <div className="flex w-full p-4 items-center border-b border-white">
+                <Link href="https://www.securiancanada.ca/?utm_source=google&utm_medium=ps&utm_campaign=brand&utm_content=english&utm_term=securian-canada&gad_source=1">
+                    <img className="h-8 w-8 rounded-full" src="/Logo.png" alt="Your Company" style={top_space}/>
+                </Link>
                 <div className="flex w-full items-center justify-evenly p-2 gap-8">
                     <div
                         className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold"
@@ -68,7 +85,44 @@ export default function Inbox() {
                     </Link>
                 </div>
                 <div className="flex">
-                <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                    
+                    {/* <Dropdown inline label="">
+                        <Dropdown.Item>
+                        <Link href="/" className="block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 light:hover:text-black">Log Out</Link>
+                        </Dropdown.Item>
+                    </Dropdown> */}
+                    <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button className="inline-flex w-full rounded-md bg-white px-1 py-1 text-sm font-semibold">
+          {/* <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
+          <img className="h-9 w-5 rounded-full" src={user.imageUrl} alt="Stacy" style={top_space} />
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95">
+            
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-20 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-center">
+          <div className="py-1">
+            <form method="POST" action="#">
+              <Menu.Item>
+                {({ active }) => (
+                  <button type="submit">
+                    Log Out
+                  </button>
+                )}
+              </Menu.Item>
+            </form>
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
                 </div>
             </div>
             <div className="pt-2 relative mx-auto text-gray-600">
