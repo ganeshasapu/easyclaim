@@ -46,25 +46,25 @@ const CurrentClaimFooter = (props: {
     }
   }
 
-  // const precedents = props.similarClaims.map((similarClaim, i) => {
-  //   const claimNumber = similarClaim.claim.claimNumber;
-  //   return (
-  //     <>
-  //       <input
-  //         id={"inline-checkbox" + (i).toString()}
-  //         type="checkbox"
-  //         value=""
-  //         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-  //       />
-  //       <label
-  //         htmlFor={"inline-checkbox" + (i).toString()}
-  //         className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-  //       >
-  //         {claimNumber}
-  //       </label>
-  //     </>
-  //   );
-  // });
+  const precedents = props.similarClaims.map((similarClaim, i) => {
+    const claimNumber = similarClaim.claim.claimNumber;
+    return (
+      <div className="flex items-center me-4">
+        <input
+          id={"inline-checkbox" + (i).toString()}
+          type="checkbox"
+          value=""
+          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+        />
+        <label
+          htmlFor={"inline-checkbox" + (i).toString()}
+          className="ms-2 text-sm font-medium text-gray-900 "
+        >
+          {claimNumber}
+        </label>
+      </div>
+    );
+  });
 
   return (
     <>
@@ -108,37 +108,37 @@ const CurrentClaimFooter = (props: {
                       />
                     </div>
 
-                    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="h-px my-5 bg-gray-200 border-0 " />
 
                     <label
                       htmlFor="message"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-900 "
                     >
                       Precedent(s) used to process this claim:
                     </label>
                     <div className="flex">
                       <div className="flex">
                         <div className="flex items-center me-4">
-                         {/* {precedents} */}
+                         {precedents}
                         </div>
                       </div>
                     </div>
 
-                    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="h-px my-5 bg-gray-200 border-0" />
 
                     <label
                       htmlFor="message"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-900"
                     >
                       Additional Notes
                     </label>
                     <textarea
                       id="message"
                       rows={4}
-                      className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                       placeholder="Enter reason for approval..."
                     ></textarea>
-                    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="h-px my-5 bg-gray-200 border-0 " />
                     <div className="mt-3 text-center sm:mt-5">
                       <Dialog.Title
                         as="h3"
@@ -213,34 +213,34 @@ const CurrentClaimFooter = (props: {
                         aria-hidden="true"
                       />
                     </div>
-                    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="h-px my-5 bg-gray-200 border-0 " />
                     <label
                       htmlFor="message"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-900"
                     >
                       Precedent(s) used to process this claim:
                     </label>
                     <div className="flex">
                       <div className="flex">
                         <div className="flex items-center me-4">
-                          {/* {precedents} */}
+                          {precedents}
                         </div>
                       </div>
                     </div>
-                    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="h-px my-5 bg-gray-200 border-0 " />
                     <label
                       htmlFor="message"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-900 "
                     >
                       Additional Notes
                     </label>
                     <textarea
                       id="message"
                       rows={4}
-                      className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                       placeholder="Enter reason for denial..."
                     ></textarea>
-                    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="h-px my-5 bg-gray-200 border-0 " />
                     <div className="mt-3 text-center sm:mt-5">
                       <Dialog.Title
                         as="h3"
