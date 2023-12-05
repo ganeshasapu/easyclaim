@@ -319,7 +319,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
             </div>
           </div>
           {/* Footer */}
-          {claim_data ? (
+          {claim_data  && similar_claims ? (
             <CurrentClaimFooter urlSegment={claim_id} similarClaims={similar_claims!}/>
           ) : (
             <div className="bg-gray-200 w-full animate-pulse h-[5vh] rounded-2xl" />
