@@ -73,13 +73,6 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
   }, []);
 
 
-  const handleApproveClaim = async () => {
-  }
-
-  const handleDenyClaim = async () => {
-
-  }
-
   return (
     <>
       <div className="min-h-full bg-gray-50">
@@ -327,7 +320,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
           </div>
           {/* Footer */}
           {claim_data ? (
-            claim_data.status === "Received" ? <HistoricalClaimFooter /> : <CurrentClaimFooter />
+            <CurrentClaimFooter urlSegment={claim_id} similarClaims={similar_claims!}/>
           ) : (
             <div className="bg-gray-200 w-full animate-pulse h-[5vh] rounded-2xl" />
           )}

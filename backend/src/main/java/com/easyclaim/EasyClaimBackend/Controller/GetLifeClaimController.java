@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class GetLifeClaimController {
 
-  private GetLifeClaimService lifeClaimService;
+  private final GetLifeClaimService lifeClaimService;
 
   @Autowired
   public GetLifeClaimController(GetLifeClaimService service) {

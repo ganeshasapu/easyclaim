@@ -3,22 +3,21 @@ package com.easyclaim.EasyClaimBackend.UseCase;
 import java.util.concurrent.ExecutionException;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 
 @Service
 @RequiredArgsConstructor
-public class DenyLifeClaimService {
+public class ProcessLifeClaimService {
 
     private final GetLifeClaimsDataAccessInterface getLifeDataAccessObject;
 
     private final DeleteLifeClaimDataAccessInterface deleteClaimDataAccessObject;
 
     private final UploadLifeClaimDataAccessInterface uploadDataAccessObject;
-    
-    public void denyClaim(String claimNumber) throws InterruptedException, ExecutionException {
+
+    private void processClaim(String claimNumber, String decision) throws InterruptedException, ExecutionException {
 
         // Finding claim in database
         LifeClaim currentClaim = getLifeDataAccessObject.findLifeClaimOfType("Current", claimNumber);
@@ -26,11 +25,23 @@ public class DenyLifeClaimService {
             return;
         }
 
-        // Change status to Denied and move to claim to Historical
-        currentClaim.setStatus("Denied");
+        // Change claim status and move to claim to Historical
+        currentClaim.setStatus(decision);
         uploadDataAccessObject.uploadLife("Historical", currentClaim);
         deleteClaimDataAccessObject.deleteLifeClaim("Current", currentClaim.getClaimNumber());
+
+    }
     
+    public void denyClaim(String claimNumber) throws InterruptedException, ExecutionException {
+
+        processClaim(claimNumber, "Denied");
+    
+    }
+
+    public void approveClaim(String claimNumber) throws InterruptedException, ExecutionException {
+
+        processClaim(claimNumber, "Approved");
+
     }
 
 }
