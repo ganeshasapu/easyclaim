@@ -46,25 +46,25 @@ const CurrentClaimFooter = (props: {
     }
   }
 
-  const precedents = props.similarClaims.map((similarClaim, i) => {
-    const claimNumber = similarClaim.claim.claimNumber;
-    return (
-      <div className="flex items-center me-4">
-        <input
-          id={"inline-checkbox" + (i).toString()}
-          type="checkbox"
-          value=""
-          className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          htmlFor={"inline-checkbox" + (i).toString()}
-          className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          {claimNumber}
-        </label>
-      </div>
-    );
-  });
+  // const precedents = props.similarClaims.map((similarClaim, i) => {
+  //   const claimNumber = similarClaim.claim.claimNumber;
+  //   return (
+  //     <>
+  //       <input
+  //         id={"inline-checkbox" + (i).toString()}
+  //         type="checkbox"
+  //         value=""
+  //         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+  //       />
+  //       <label
+  //         htmlFor={"inline-checkbox" + (i).toString()}
+  //         className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+  //       >
+  //         {claimNumber}
+  //       </label>
+  //     </>
+  //   );
+  // });
 
   return (
     <>
@@ -119,7 +119,7 @@ const CurrentClaimFooter = (props: {
                     <div className="flex">
                       <div className="flex">
                         <div className="flex items-center me-4">
-                         {precedents}
+                         {/* {precedents} */}
                         </div>
                       </div>
                     </div>
@@ -223,7 +223,7 @@ const CurrentClaimFooter = (props: {
                     <div className="flex">
                       <div className="flex">
                         <div className="flex items-center me-4">
-                          {precedents}
+                          {/* {precedents} */}
                         </div>
                       </div>
                     </div>
