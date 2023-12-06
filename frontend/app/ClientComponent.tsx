@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import jsonData from '../../dummy_data/life_claims/life_claim_data.json';
+import { time } from 'console';
 
 
 interface UserData{
@@ -110,6 +111,7 @@ export default function ClientComponent() {
 
   const uploadHistoricalLife = async () => {
     jsonData.forEach( async (claim) => {
+      await new Promise(r => setTimeout(r, 1000));
       console.log(claim)
       try {
         const apiUrl = 'api/upload_life/historical'

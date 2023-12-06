@@ -9,7 +9,7 @@ public class LifeClaim {
     private MedicalInformation medicalInformation;
     private EmploymentInformation employmentInformation;
     private GeneralLoanInformation generalLoanInformation;
-    private String status = "Recieved";
+    private String status;
 
     public LifeClaim(String claimNumber) {
         this.claimNumber = claimNumber;

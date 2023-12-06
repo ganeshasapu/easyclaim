@@ -29,19 +29,19 @@ def create_file(file_name, data, first, last):
     file.close()
 
 
-def create_life_claims(count):
+def create_life_claims(count, current):
     """Generate the specified number of life claims."""
 
     # Calling helper function 'count' times
     for i in range(1, count + 1):
         if count == 1:
-            create_life_claim(True, True)
+            create_life_claim(True, True, current)
         elif i == count:
-            create_life_claim(False, True)
+            create_life_claim(False, True, current)
         elif i == 1:
-            create_life_claim(True, False)
+            create_life_claim(True, False, current)
         else:
-            create_life_claim(False, False)
+            create_life_claim(False, False, current)
 
 
 def create_disability_claims(count):
@@ -74,7 +74,7 @@ def create_employment_claims(count):
             create_employment_claim(False, False)
 
 
-def create_life_claim(first, last):
+def create_life_claim(first, last, current):
     """Create dummy data for the life claim JSON model, specified here:
 	https://github.com/ganeshasapu/easyclaim/blob/main/life_claim.json"""
 
@@ -116,7 +116,8 @@ def create_life_claim(first, last):
                 "typeOrPurposeOfLoan": "",
                 "balanceOnDateOfDeath": ""
             }
-        }
+        },
+        "status": ""
     }
 
     # Generating death information
@@ -172,6 +173,11 @@ def create_life_claim(first, last):
         data["generalLoanInformation"][loan_string]["typeOrPurposeOfLoan"] = options[index]
         data["generalLoanInformation"][loan_string]["balanceOnDateOfDeath"] = balance
 
+    if current: 
+        data["status"] = "Recieved"
+    else: 
+        num = random.randint(0, 1)
+        data["status"] = "Approved" if num == 0 else "Denied"
     # Saving JSON file
     file_name = f"dummy_data/life_claims/life_claim_data.json"
     create_file(file_name, data, first, last)
@@ -221,7 +227,8 @@ def create_disability_claim(first, last):
             "wasReferred": "",
             "treatedPastTwoYears": "",
             "treatedByAnother": ""
-        }
+        }, 
+        "status": ""
     }
 
     # Generating DOB and lending institution
@@ -348,7 +355,8 @@ def create_employment_claim(first, last):
         },
         "authorizedRep": {
             "companyName": "",
-        }
+        }, 
+        "status": ""
     }
     claim_number = random.randint(100000, 999999)
     month = random.randint(1, 12)
@@ -431,11 +439,11 @@ if __name__ == "__main__":
             os.remove(filename)
 
     # Specifying counts for each claim
-    life_claim_count = 10
+    life_claim_count = 20
     disability_claim_count = 14
     employment_claim_count = 20
 
     # Generating claims using helper functions
-    create_life_claims(life_claim_count)
+    create_life_claims(life_claim_count, False)
     create_disability_claims(disability_claim_count)
     create_employment_claims(employment_claim_count)
