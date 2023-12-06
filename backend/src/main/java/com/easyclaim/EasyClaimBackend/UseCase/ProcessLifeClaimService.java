@@ -22,6 +22,7 @@ public class ProcessLifeClaimService {
         // Finding claim in database
         LifeClaim currentClaim = getLifeDataAccessObject.findLifeClaimOfType("Current", claimNumber);
         if (currentClaim == null) {
+            System.out.println("we are returning");
             return;
         }
 
