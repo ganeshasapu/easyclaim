@@ -22,6 +22,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
          UploadLifeClaimDataAccessInterface, GetFilteredLifeClaimsDataAccessInterface {
     @Override
     public List<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {
+        System.out.println("Type: " + type);
         Firestore dbFirestore = FirestoreClient.getFirestore();
         String collectionName = type + " Claims";
 
@@ -33,10 +34,10 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         List<LifeClaim> claims = new ArrayList<>();
 
+        System.out.println(documents);
+
         for (QueryDocumentSnapshot document : documents) {
-            if (document.exists()) {
-                claims.add(document.toObject(LifeClaim.class));
-            }
+            claims.add(document.toObject(LifeClaim.class));
         }
 
         return claims.isEmpty() ? null : claims;
@@ -51,10 +52,10 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
             List<QueryDocumentSnapshot> documents = future.get().getDocuments();
             List<LifeClaim> claims = new ArrayList<>();
 
+            System.out.println(documents);
+
             for (QueryDocumentSnapshot document : documents) {
-                if (document.exists()) {
-                    claims.add(document.toObject(LifeClaim.class));
-                }
+                claims.add(document.toObject(LifeClaim.class));
             }
 
             return claims.isEmpty() ? new ArrayList<>() : claims;
@@ -75,9 +76,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         List<LifeClaim> claims = new ArrayList<>();
 
         for (QueryDocumentSnapshot document : documents) {
-            if (document.exists()) {
-                claims.add(document.toObject(LifeClaim.class));
-            }
+            claims.add(document.toObject(LifeClaim.class));
         }
 
         return claims.isEmpty() ? new ArrayList<>() : claims;
@@ -98,22 +97,14 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         // Creating iterable object for current life claims
         LifeClaim currentClaim = null;
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        Iterable<DocumentReference> refs = dbFirestore.collection(type + " Claims").document("Life")
-                .collection("Claims").listDocuments();
+        CollectionReference refs = dbFirestore.collection(type + " Claims").document("Life")
+                .collection("Claims");
+        ApiFuture<QuerySnapshot> future = refs.whereEqualTo("claimNumber", claimNumber).get();
 
-        // Iterating through all current life claims
-        for (DocumentReference ref : refs) {
-            ApiFuture<DocumentSnapshot> futureSnapshot = ref.get();
-            DocumentSnapshot doc = futureSnapshot.get();
+        QuerySnapshot querySnapshot = future.get();
 
-            // Parsing document into LifeClaim object and checking claimNumber attribute
-            if (doc.exists()) {
-                currentClaim = doc.toObject(LifeClaim.class);
-                assert currentClaim != null;
-                if (currentClaim.getClaimNumber().equals(claimNumber)) {
-                    break;
-                }
-            }
+        for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
+            currentClaim = document.toObject(LifeClaim.class);
         }
         return currentClaim;
     }
@@ -234,7 +225,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
             throws InterruptedException, ExecutionException {
         QuerySnapshot querySnapshot = future.get();
         for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-            if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))) {
+            if (!filteredClaims.contains(document.toObject(LifeClaim.class))) {
                 filteredClaims.add(document.toObject(LifeClaim.class));
             }
         }
