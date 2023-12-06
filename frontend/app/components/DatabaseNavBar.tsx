@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Menu } from "@headlessui/react"
 import { Transition } from '@headlessui/react'
 import { Fragment } from 'react'
+import AuthProviderWrapper from '../AuthProviderWrapper';
+import { useAuth } from "../context/AuthContext";
 
 const top_space = {
     padding: 10,
@@ -16,7 +18,20 @@ const top_space = {
         "/stacy.png",
 };
 
+
+
 const DatabaseNavBar = () => {
+  const { user1, logout } = useAuth();
+  const handleLogout = async (e: any) => {
+    e.preventDefault()
+  
+    try {
+      await logout()
+      console.info('trying to logout')
+    } catch (err) {
+      console.error('error logging out')
+    }
+  }
     return(
       
         <div className="flex w-full p-4 items-center border-b border-white gradient-crown bg-white">
@@ -56,7 +71,7 @@ const DatabaseNavBar = () => {
             <form method="POST" action="#">
               <Menu.Item>
                 {({ active }) => (
-                  <button type="submit">
+                  <button type="submit" onClick={() => handleLogout }>
                     <Link href="/"> Log Out</Link>
                   </button>
                 )}
@@ -66,13 +81,6 @@ const DatabaseNavBar = () => {
         </Menu.Items>
       </Transition>
     </Menu>
-              
-  
-
-
-
-
-
           </div>
           
         </div>
@@ -80,4 +88,10 @@ const DatabaseNavBar = () => {
     )
 }
 
-export default DatabaseNavBar;
+const DatabaseNavBarAuthProvider = () => (
+  <AuthProviderWrapper>
+    <DatabaseNavBar />
+  </AuthProviderWrapper>
+);
+
+export default DatabaseNavBarAuthProvider;
