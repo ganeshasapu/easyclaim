@@ -20,8 +20,8 @@ public class GetFilteredLifeClaimController {
     @Autowired
     private GetFilteredLifeClaimService FilteredlifeClaimService;
 
-    @GetMapping("/get_filtered/{type}")
-    public List<LifeClaim> getFilteredLifeClaims(@PathVariable String type) throws InterruptedException, ExecutionException {
-        return FilteredlifeClaimService.getFilteredLifeClaims(type);
+    @GetMapping("/get_filtered/{type}/{lastClaimIndex}")
+    public List<LifeClaim> getFilteredLifeClaims(@PathVariable String type, @PathVariable int lastClaimIndex) throws InterruptedException, ExecutionException {
+        return FilteredlifeClaimService.getFilteredLifeClaims(type, lastClaimIndex);
     }
 }
