@@ -93,7 +93,6 @@ export default function Database() {
     fetch(`/api/get_filtered/${params}/${claimIndex}`)
       .then((response) => response.json())
       .then((data: LifeClaim[]) => {
-        console.log(data);
         if (claimIndex === 0) {
           setHistoricalClaims(data);
         }

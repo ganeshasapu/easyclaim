@@ -83,7 +83,7 @@ export default function ClientComponent() {
 
   const uploadCurrentLife = async () => {
     for (let i=0 ; i<jsonData.length; i++){
-      await new Promise((r) => setTimeout(r, 500));
+      await new Promise((r) => setTimeout(r, 150));
       try {
         const apiUrl = 'api/upload_life/current'
         const requestBodyJSON = JSON.stringify(jsonData[i]);
@@ -111,7 +111,7 @@ export default function ClientComponent() {
 
   const uploadHistoricalLife = async () => {
     for (let i = 0; i < jsonData.length; i++) {
-      await new Promise((r) => setTimeout(r, 500));
+      await new Promise((r) => setTimeout(r, 150));
       try {
         const apiUrl = "api/upload_life/historical";
         const requestBodyJSON = JSON.stringify(jsonData[i]);

@@ -18,23 +18,20 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
     const [claim1_data, setClaim1Data] = useState<LifeClaim | null>(null);
     const [claim2_data, setClaim2Data] = useState<LifeClaim | null>(null);
     const [similar_claims, setSimilarClaims] = useState<SimilarClaim[] | null>(null);
-    const [similarity_score, setSimilarityScore] = useState<number>(0.0); 
+    const [similarity_score, setSimilarityScore] = useState<number>(0.0);
     const router = useRouter();
 
-    
+
     useEffect(() => {
         const getSimilarClaim = async (claim_id: string) => {
             const similar_claims_url = `/api/get_similar_life/${claim_id}`;
             const similar_claims = await fetch(similar_claims_url).then((res) => res.json());
-            
+
             const findSimilarityScore = async () => {
                 const similar_claim_score = await fetch(similar_claims_url).then((res) => res.json()).then((data) => {
-                    console.log(data)
                     return data.find((similarClaim: SimilarClaim) => similarClaim.claim.claimNumber === claim2_id).similarityScore
                 })
-                console.log(similar_claim_score)
                 setSimilarityScore(similar_claim_score)
-                console.log(similarity_score)
             }
 
             findSimilarityScore()
@@ -44,17 +41,17 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
             console.error(similar_claims.error);
             return;
           }
-    
+
           similar_claims.sort(
             (a: SimilarClaim, b: SimilarClaim) => b.similarityScore - a.similarityScore
           );
-    
+
           setSimilarClaims(similar_claims);
         };
         getSimilarClaim(claim1_id);
       }, []);
-    
-  
+
+
 
     if (!params.claim_ids) {
         return <div>Missing info</div>

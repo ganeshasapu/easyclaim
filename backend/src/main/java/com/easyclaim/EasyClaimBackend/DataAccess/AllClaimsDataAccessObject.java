@@ -145,6 +145,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         applyAmountFilter(filters, refs, filteredClaims);
         applyDateFilter(filters, refs, filteredClaims);
 
+
         if (!filteredClaims.isEmpty()) {
             if (lastClaimIndex * 10 > filteredClaims.size()) {
                 return new ArrayList<>();
@@ -154,15 +155,15 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
                 filters.get("4") || filters.get("5") || filters.get("6") || filters.get("7"))){
             return new ArrayList<>();
         }else {
-            if (lastClaimIndex * 10 > filteredClaims.size()) {
-                return new ArrayList<>();
-            }
             List<LifeClaim> claims = getLifeClaims("Historical");
             if (lastClaimIndex * 10 > claims.size()) {
                 return new ArrayList<>();
             }
-
-            return claims.subList(lastClaimIndex * 10, Math.min(claims.size(), (lastClaimIndex * 10) + 10));
+            if (lastClaimIndex * 10 > claims.size()) {
+                return new ArrayList<>();
+            }
+            List<LifeClaim> claimsSubset = claims.subList(lastClaimIndex * 10, Math.min(claims.size(), (lastClaimIndex * 10) + 10));
+            return claimsSubset;
         }
 
     }
