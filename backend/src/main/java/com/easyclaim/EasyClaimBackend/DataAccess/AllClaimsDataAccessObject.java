@@ -22,6 +22,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
          UploadLifeClaimDataAccessInterface, GetFilteredLifeClaimsDataAccessInterface {
     @Override
     public List<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {
+        System.out.println("Type: " + type);
         Firestore dbFirestore = FirestoreClient.getFirestore();
         String collectionName = type + " Claims";
 
@@ -33,10 +34,10 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         List<LifeClaim> claims = new ArrayList<>();
 
+        System.out.println(documents);
+
         for (QueryDocumentSnapshot document : documents) {
-            if (document.exists()) {
-                claims.add(document.toObject(LifeClaim.class));
-            }
+            claims.add(document.toObject(LifeClaim.class));
         }
 
         return claims.isEmpty() ? null : claims;
@@ -51,10 +52,10 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
             List<QueryDocumentSnapshot> documents = future.get().getDocuments();
             List<LifeClaim> claims = new ArrayList<>();
 
+            System.out.println(documents);
+
             for (QueryDocumentSnapshot document : documents) {
-                if (document.exists()) {
-                    claims.add(document.toObject(LifeClaim.class));
-                }
+                claims.add(document.toObject(LifeClaim.class));
             }
 
             return claims.isEmpty() ? new ArrayList<>() : claims;
@@ -75,9 +76,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         List<LifeClaim> claims = new ArrayList<>();
 
         for (QueryDocumentSnapshot document : documents) {
-            if (document.exists()) {
-                claims.add(document.toObject(LifeClaim.class));
-            }
+            claims.add(document.toObject(LifeClaim.class));
         }
 
         return claims.isEmpty() ? new ArrayList<>() : claims;
@@ -234,7 +233,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
             throws InterruptedException, ExecutionException {
         QuerySnapshot querySnapshot = future.get();
         for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
-            if (document.exists() && !filteredClaims.contains(document.toObject(LifeClaim.class))) {
+            if (!filteredClaims.contains(document.toObject(LifeClaim.class))) {
                 filteredClaims.add(document.toObject(LifeClaim.class));
             }
         }
