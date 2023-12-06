@@ -17,20 +17,16 @@ const Login = () => {
     email: '',
     password: '',
   })
-  console.log(login)
 
   const handleLogin = async (e: any) => {
     e.preventDefault()
 
-    console.log(user)
     try {
-        console.log(data.email, data.password)
         await login(data.email, data.password)
         router.push('/inbox')
-        console.log('trying to login')
     } catch (err) {
-        console.log(err)
-        console.log('error logging in')
+        console.error(err)
+        console.error('error logging in')
     }
   }
 

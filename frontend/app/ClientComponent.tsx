@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import jsonData from '../../dummy_data/life_claims/life_claim_data.json';
 import { time } from 'console';
+import { json } from 'stream/consumers';
 
 
 interface UserData{
@@ -80,12 +81,12 @@ export default function ClientComponent() {
     }
   };
 
-  const uploadCurrentLife = () => {
-    jsonData.forEach( async (claim) => {
-      console.log(claim)
+  const uploadCurrentLife = async () => {
+    for (let i=0 ; i<jsonData.length; i++){
+      await new Promise((r) => setTimeout(r, 150));
       try {
         const apiUrl = 'api/upload_life/current'
-        const requestBodyJSON = JSON.stringify(claim);
+        const requestBodyJSON = JSON.stringify(jsonData[i]);
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
@@ -105,38 +106,35 @@ export default function ClientComponent() {
         } catch (error) {
           console.log('Error creating user:', error);
         }
-    });
-
+    }
   }
 
   const uploadHistoricalLife = async () => {
-    jsonData.forEach( async (claim) => {
-      await new Promise(r => setTimeout(r, 1000));
-      console.log(claim)
+    for (let i = 0; i < jsonData.length; i++) {
+      await new Promise((r) => setTimeout(r, 150));
       try {
-        const apiUrl = 'api/upload_life/historical'
-        const requestBodyJSON = JSON.stringify(claim);
+        const apiUrl = "api/upload_life/historical";
+        const requestBodyJSON = JSON.stringify(jsonData[i]);
         const response = await fetch(apiUrl, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
-          body: requestBodyJSON
+          body: requestBodyJSON,
         });
 
         console.log(response);
 
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
 
         const data = await response.json();
-          console.log(`Create result: ${JSON.stringify(data)}`);
-        } catch (error) {
-          console.log('Error creating user:', error);
-        }
-    });
-
+        console.log(`Create result: ${JSON.stringify(data)}`);
+      } catch (error) {
+        console.log("Error creating user:", error);
+      }
+    }
   }
 
   const getCurrentLifeClaims = async () => {

@@ -41,10 +41,8 @@ public class GetLifeIntegrationTests {
                 andExpect(status().isOk()).andExpect(content().contentType("application/json")).andReturn();
 
 
-        System.out.println(result.getResponse().getContentAsString());
         LifeClaim claim = mapper.readValue(result.getResponse().getContentAsString(), LifeClaim.class);
 
-        System.out.println(claim.getClaimNumber());
         Assertions.assertEquals(claim.getClaimNumber(), "352143");
 
     }
@@ -68,7 +66,6 @@ public class GetLifeIntegrationTests {
                         get("/api/get_life/{type}", "Historical")).andDo(print()).
                 andExpect(status().isOk()).andExpect(content().contentType("application/json")).andReturn();
 
-        System.out.println(result.getResponse().getContentAsString());
         LifeClaim[] claims = mapper.readValue(result.getResponse().getContentAsString(), LifeClaim[].class);
 
         for (LifeClaim claim: claims) {

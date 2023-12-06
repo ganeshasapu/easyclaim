@@ -31,7 +31,7 @@ export default function Inbox() {
         .then((data: LifeClaim[]) => {
           setDataLoading(false);
           if (data.length === 0) {
-            console.log("No more data to load")
+            console.info("No more data to load")
             return;
           }
           setDataLoading(false);

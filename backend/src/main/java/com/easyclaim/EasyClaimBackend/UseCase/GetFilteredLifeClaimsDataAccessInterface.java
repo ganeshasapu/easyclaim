@@ -6,6 +6,6 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public interface GetFilteredLifeClaimsDataAccessInterface {
-    List<LifeClaim> getFilteredLifeClaims(String type) throws InterruptedException, ExecutionException;
+    List<LifeClaim> getFilteredLifeClaims(String type, int lastClaimIndex) throws InterruptedException, ExecutionException;
 
 }
