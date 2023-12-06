@@ -148,13 +148,13 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                                           aria-hidden="true"
                                       />
                                       <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                                          <span className="truncate font-medium">Form1.pdf</span>
-                                          <span className="flex-shrink-0 text-gray-400">4.5mb</span>
+                                          <span className="truncate font-medium">Certification of Death.pdf</span>
+                                          <span className="flex-shrink-0 text-gray-400">48 KB</span>
                                       </div>
                                   </div>
                                   <div className="ml-4 flex-shrink-0">
                                       <a
-                                          href="#"
+                                          href="/COD.pdf" target="_blank"
                                           className="font-medium text-[#0b9541] text-[#0b9541]"
                                       >
                                           Download
@@ -168,13 +168,33 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                                           aria-hidden="true"
                                       />
                                       <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                                          <span className="truncate font-medium">Form2.pdf</span>
-                                          <span className="flex-shrink-0 text-gray-400">4.5mb</span>
+                                          <span className="truncate font-medium">Life Claim Information Request.pdf</span>
+                                          <span className="flex-shrink-0 text-gray-400">35 KB</span>
                                       </div>
                                   </div>
                                   <div className="ml-4 flex-shrink-0">
                                       <a
-                                          href="#"
+                                          href="/InfoReq.pdf" target="_blank"
+                                          className="font-medium text-[#0b9541] hover:text-[#0b9541]"
+                                      >
+                                          Download
+                                      </a>
+                                  </div>
+                              </li>
+                              <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                  <div className="flex w-0 flex-1 items-center">
+                                      <PaperClipIcon
+                                          className="h-5 w-5 flex-shrink-0 text-gray-400"
+                                          aria-hidden="true"
+                                      />
+                                      <div className="ml-4 flex min-w-0 flex-1 gap-2">
+                                          <span className="truncate font-medium">Life Claim Initiation.pdf</span>
+                                          <span className="flex-shrink-0 text-gray-400">25 KB</span>
+                                      </div>
+                                  </div>
+                                  <div className="ml-4 flex-shrink-0">
+                                      <a
+                                          href="/Initiation.pdf" target="_blank"
                                           className="font-medium text-[#0b9541] hover:text-[#0b9541]"
                                       >
                                           Download
