@@ -37,13 +37,13 @@ public class GetLifeIntegrationTests {
     @Test
     void getLifeClaim_receiveClaimFromDB_matchingClaimNumbers() throws Exception {
         MvcResult result = this.mockMvc.perform(MockMvcRequestBuilders.
-                        get("/api/get_life/claim/{claimNumber}", "352143")).andDo(print()).
+                        get("/api/get_life/claim/{claimNumber}", "117539")).andDo(print()).
                 andExpect(status().isOk()).andExpect(content().contentType("application/json")).andReturn();
 
 
         LifeClaim claim = mapper.readValue(result.getResponse().getContentAsString(), LifeClaim.class);
 
-        Assertions.assertEquals(claim.getClaimNumber(), "352143");
+        Assertions.assertEquals(claim.getClaimNumber(), "117539");
 
     }
 
@@ -56,7 +56,7 @@ public class GetLifeIntegrationTests {
         LifeClaim[] claims = mapper.readValue(result.getResponse().getContentAsString(), LifeClaim[].class);
 
         for (LifeClaim claim: claims) {
-            Assertions.assertEquals(claim.getStatus(), "Recieved");
+            Assertions.assertEquals("Recieved", claim.getStatus());
         }
     }
 

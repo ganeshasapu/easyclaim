@@ -41,6 +41,9 @@ public class ProcessLifeClaimServiceTests {
     }
 
     void processClaimTestSetup(boolean claimExists) throws ExecutionException, InterruptedException {
+        if (claimExists) {
+            claim.setStatus("Recieved");
+        }
         when(getLifeDataAccessObject.findLifeClaimOfType("Current", claimNumber))
                 .thenReturn(claimExists ? current.get(0) : null);
 
@@ -51,6 +54,7 @@ public class ProcessLifeClaimServiceTests {
                 }
 
         );
+
 
         when(deleteLifeDataAccessObject.deleteLifeClaim("Current", claimNumber))
                 .thenAnswer(
@@ -83,7 +87,7 @@ public class ProcessLifeClaimServiceTests {
 
         Assertions.assertEquals(0, historical.size());
         Assertions.assertEquals(1, current.size());
-        Assertions.assertEquals(claim.getStatus(), "Recieved");
+        Assertions.assertNull(claim.getStatus());
     }
 
     @Test
@@ -107,6 +111,6 @@ public class ProcessLifeClaimServiceTests {
 
         Assertions.assertEquals(0, historical.size());
         Assertions.assertEquals(1, current.size());
-        Assertions.assertEquals(claim.getStatus(), "Recieved");
+        Assertions.assertNull(claim.getStatus());
     }
 }

@@ -17,7 +17,6 @@ const top_space = {
         "/stacy.png",
 };
 
-
 const InboxNavBar = () => {
   const { user1, logout } = useAuth();
   const handleLogout = async (e: any) => {
