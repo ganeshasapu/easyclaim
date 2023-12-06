@@ -5,13 +5,12 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ClaimCard from "@/app/components/Cards/ClaimCard";
-import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
 const user = {
-    name: "Stacy",
-    email: "tom@example.com",
-    image: "/stacy.jpeg",
-    imageUrl: "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
+    name: "Stacy Grace",
+    email: "stacy.grace@mail.securian.com",
+    imageUrl:
+        "/stacy.png",
 };
 
 export default function HistoricalClaimView({params}: {params: {claim_id: string}}) {
@@ -68,7 +67,7 @@ export default function HistoricalClaimView({params}: {params: {claim_id: string
                                                 <Menu.Button className="relative flex rounded-full bg-white text-sm ring-2 ring-white ring-opacity-20 focus:outline-none focus:ring-opacity-100">
                                                     <span className="absolute -inset-1.5" />
                                                     <span className="sr-only">Open user menu</span>
-                                                    <img className="h-8 w-8 rounded-full" src={user.image} alt="" />
+                                                    <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
                                                 </Menu.Button>
                                             </div>
                                         </Menu>

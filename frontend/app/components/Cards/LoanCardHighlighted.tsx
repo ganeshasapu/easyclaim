@@ -2,33 +2,19 @@ import { highlightContext } from "@/utils";
 
 import { useContext } from "react";
 
-const field_to_dict = {
+const field_to_dict: any = {
   "Loan A": "loanA",
   "Loan B": "loanB",
   "Loan C": "loanC",
-};
+}
 
-// react component
-const LoanCardHighlighted = ({
-  title,
-  type,
-  amount,
-  balance,
-  appliedFor,
-}: {
-  title: string;
-  type: string;
-  amount: number;
-  balance: number;
-  appliedFor: number;
-}) => {
-  const hightlightDict = useContext(highlightContext);
+const LoanCardHighlighted = ({ title, type, amount, balance, appliedFor }: { title: string; type: string; amount: number; balance: number; appliedFor: number }) => {
+  const hightlightDict: any = useContext(highlightContext);
   if (Object.keys(hightlightDict).length == 0) {
     return null;
   }
-  const titleHighlight = hightlightDict.generalLoanInformation[field_to_dict[title]];
-  console.log(222222222222, titleHighlight);
-  console.log(111111111111111111, appliedFor);
+  const titleHighlight = hightlightDict.generalLoanInformation[field_to_dict[title]]
+  
   return (
     <div className="flex w-full justify-around gap-4">
       <div className="border border-gray-150 rounded-lg my-2 flex-grow">

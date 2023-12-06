@@ -1,34 +1,13 @@
 "use client";
-import { Fragment, useState, useEffect } from "react";
+
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
 import {
-  ChevronDownIcon,
-  FunnelIcon,
   MinusIcon,
   PlusIcon,
-  Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import DatabaseNavBar from "@/app/components/DatabaseNavBar";
-
-// const subCategories = [
-//   { name: 'Totes', href: '#' },
-// ]
-
-const user = {
-  name: "Stacy",
-  email: "stacy@mail.securian.com",
-  imageUrl:
-    "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
-};
-
-const top_space = {
-    padding: 10,
-    width: 85,
-    height: 70,
-  };
 
 const filters = [
   {
@@ -129,47 +108,6 @@ const top_space = {
     <>
       <main className="flex h-screen w-full flex-col items-center justify-between">
         <DatabaseNavBar></DatabaseNavBar>
-        {/* <div className="flex w-full p-4 items-center border-b border-white">
-        <Link href="https://www.securiancanada.ca/?utm_source=google&utm_medium=ps&utm_campaign=brand&utm_content=english&utm_term=securian-canada&gad_source=1">
-                    <img className="h-8 w-8 rounded-full" src="/Logo.png" alt="Your Company" style={top_space}/>
-                </Link>
-          <div className="flex w-full items-center justify-evenly p-2 gap-8">
-            <Link className="py-2 border rounded w-full px-4 text-center" href={"/inbox"}>
-              Inbox
-            </Link>
-            <div className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold">
-              Database
-            </div>
-          </div>
-          <div className="flex">
-            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt=""  style={top_space}/>
-          </div>
-        </div>
-        <div className="pt-2 relative mx-auto text-gray-600">
-          <input
-            className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-            type="search"
-            name="search"
-            placeholder="Search"
-            width="10000px"
-          ></input>
-          <button type="submit" className="absolute right-0 top-0 mt-5 mr-4 border-gray">
-            <svg
-              className="text-gray-600 h-4 w-4 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 56.966 56.966"
-              width="1028px"
-              height="512px"
-            >
-              // style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
-              <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-            </svg>
-          </button>
-        </div> */}
         <div className="flex justify-center w-full border-gray-200 border-t  bg-gray-50 ">
           <div className="w-[90%] h-full pt-8 text-2xl font-semibold">
             <div className="min-w-full p-4 drop-shadow-md rounded-md border bg-white flex flex-col gap-2">

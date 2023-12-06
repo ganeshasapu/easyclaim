@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Login from './components/login';
 import { AuthContextProvider } from './context/AuthContext';
 
-const ClientComponent = dynamic(() => import('./ClientComponent'), {
+const ClientComponent = dynamic(() => import('./EndpointTester'), {
   ssr: false,
 });
 

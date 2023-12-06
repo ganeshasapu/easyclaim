@@ -1,5 +1,4 @@
 
-// react component
 const InfoCard = ({
   title,
   fields,
