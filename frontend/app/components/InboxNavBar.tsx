@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Transition, Menu} from '@headlessui/react'
 import { Fragment } from 'react'
+import { useAuth } from "../context/AuthContext";
+import AuthProviderWrapper from '../AuthProviderWrapper';
 
 const top_space = {
     padding: 10,
@@ -16,7 +18,18 @@ const top_space = {
 };
 
 const InboxNavBar = () => {
-    return(
+  const { user1, logout } = useAuth();
+  const handleLogout = async (e: any) => {
+    e.preventDefault()
+  
+    try {
+      await logout()
+      console.info('trying to logout')
+    } catch (err) {
+      console.error('error logging out')
+    }
+  }
+  return(
         <div className="flex w-full p-4 items-center border-b border-white">
             <Link href="/">
               <img className="h-8 w-8 rounded-full" src="/Logo.png" alt="Your Company" style={top_space}/>
@@ -53,7 +66,7 @@ const InboxNavBar = () => {
             <form method="POST" action="#">
               <Menu.Item>
                 {({ active }) => (
-                  <button type="submit">
+                  <button type="submit" onClick={() => handleLogout }>
                     <Link href="/"> Log Out</Link>
                   </button>
                 )}
@@ -68,4 +81,10 @@ const InboxNavBar = () => {
     )
 }
 
-export default InboxNavBar;
+const InboxNavBarAuthProvider = () => (
+  <AuthProviderWrapper>
+    <InboxNavBar />
+  </AuthProviderWrapper>
+);
+
+export default InboxNavBarAuthProvider;
