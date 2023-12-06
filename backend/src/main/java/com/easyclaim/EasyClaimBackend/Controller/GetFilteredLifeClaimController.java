@@ -27,6 +27,6 @@ public class GetFilteredLifeClaimController {
 
     @GetMapping("/get_filtered/{type}/{lastClaimIndex}")
     public List<LifeClaim> getFilteredLifeClaims(@PathVariable String type, @PathVariable int lastClaimIndex) throws InterruptedException, ExecutionException {
-        return FilteredlifeClaimService.getFilteredLifeClaims(type, lastClaimIndex);
+        return filteredlifeClaimService.getFilteredLifeClaims(type, lastClaimIndex);
     }
 }
