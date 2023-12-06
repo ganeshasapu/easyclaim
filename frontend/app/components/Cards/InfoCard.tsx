@@ -1,8 +1,9 @@
+
 // react component
 const InfoCard = ({
-    title,
-    fields,
-    values
+  title,
+  fields,
+  values
 }: {
   title: string;
   fields: string[];
