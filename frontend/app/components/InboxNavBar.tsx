@@ -20,12 +20,6 @@ const user = {
 //   "background-image": "linear-gradient(red, yellow);",
 // }
 
-const TopHeading = document.getElementById("TopHeading");
-
-if (TopHeading) {
-  TopHeading.classList.add("gradient-div");
-}
-
 const InboxNavBar = () => {
     return(
         <div className="flex w-full p-4 items-center border-b border-white">
