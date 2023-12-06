@@ -89,8 +89,8 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
                         router.back();
                       }}
                     >
-                      <ArrowLeftIcon className="h-6 w-6" />
-                      <div>Back</div>
+                      <ArrowLeftIcon className="h-6 w-6 text-white" />
+                      <div className="text-white">Back</div>
                     </button>
                   </div>
 
@@ -271,7 +271,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
                             <div className="ml-4 flex-shrink-0">
                               <a
                                 href="#"
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
+                                className="font-medium text-[#0b9541] hover:text-[#0b9541]"
                               >
                                 Download
                               </a>
@@ -291,7 +291,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
                             <div className="ml-4 flex-shrink-0">
                               <a
                                 href="#"
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
+                                className="font-medium text-[#0b9541] text-[#0b9541]"
                               >
                                 Download
                               </a>

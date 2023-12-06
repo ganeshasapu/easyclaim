@@ -26,6 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+::selection{
+  background-color: rgb(86, 216, 86);
+}
+
 
 input:focus-visible {
   outline: none;

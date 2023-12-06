@@ -2,6 +2,7 @@ package com.easyclaim.EasyClaimBackend.Controller;
 
 
 import com.easyclaim.EasyClaimBackend.UseCase.GetFilteredLifeClaimService;
+import com.easyclaim.EasyClaimBackend.UseCase.GetSimilarLifeClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,12 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class GetFilteredLifeClaimController {
 
+    private GetFilteredLifeClaimService filteredlifeClaimService;
+
     @Autowired
-    private GetFilteredLifeClaimService FilteredlifeClaimService;
+    public GetFilteredLifeClaimController(GetFilteredLifeClaimService service) {
+        this.filteredlifeClaimService = service;
+    }
 
     @GetMapping("/get_filtered/{type}/{lastClaimIndex}")
     public List<LifeClaim> getFilteredLifeClaims(@PathVariable String type, @PathVariable int lastClaimIndex) throws InterruptedException, ExecutionException {
