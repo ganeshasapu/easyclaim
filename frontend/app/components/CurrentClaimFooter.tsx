@@ -6,6 +6,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 import { Fragment, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const CurrentClaimFooter = (props: {
   urlSegment: string;
@@ -16,6 +17,7 @@ const CurrentClaimFooter = (props: {
 
   const approveButtonRef = useRef(null);
   const denyButtonRef = useRef(null);
+  const router = useRouter();
 
   async function handleApproveClaim() {
     try {
@@ -24,6 +26,7 @@ const CurrentClaimFooter = (props: {
       const response = await fetch(url);
       if (response.ok) {
         console.log("claim successfully approved");
+        router.push("/inbox");
       } else {
         throw new Error("could not approve claim");
       }
@@ -38,6 +41,7 @@ const CurrentClaimFooter = (props: {
       const response = await fetch(url);
       if (response.ok) {
         console.log("claim successfully denied");
+        router.push("/inbox");
       } else {
         throw new Error("could not deny claim");
       }

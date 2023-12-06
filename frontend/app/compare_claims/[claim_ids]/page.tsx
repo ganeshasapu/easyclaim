@@ -18,13 +18,28 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
     const [claim1_data, setClaim1Data] = useState<LifeClaim | null>(null);
     const [claim2_data, setClaim2Data] = useState<LifeClaim | null>(null);
     const [similar_claims, setSimilarClaims] = useState<SimilarClaim[] | null>(null);
+    const [similarity_score, setSimilarityScore] = useState<number>(0.0); 
     const router = useRouter();
 
+    
     useEffect(() => {
         const getSimilarClaim = async (claim_id: string) => {
-          const similar_claims_url = `/api/get_similar_life/${claim_id}`;
-          const similar_claims = await fetch(similar_claims_url).then((res) => res.json());
-    
+            const similar_claims_url = `/api/get_similar_life/${claim_id}`;
+            const similar_claims = await fetch(similar_claims_url).then((res) => res.json());
+            
+            const findSimilarityScore = async () => {
+                const similar_claim_score = await fetch(similar_claims_url).then((res) => res.json()).then((data) => {
+                    console.log(data)
+                    return data.find((similarClaim: SimilarClaim) => similarClaim.claim.claimNumber === claim2_id).similarityScore
+                })
+                console.log(similar_claim_score)
+                setSimilarityScore(similar_claim_score)
+                console.log(similarity_score)
+            }
+
+            findSimilarityScore()
+
+
           if (similar_claims.error) {
             console.error(similar_claims.error);
             return;
@@ -84,8 +99,8 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                                                 router.back();
                                             }}
                                         >
-                                            <ArrowLeftIcon className="h-6 w-6" />
-                                            <div>Back</div>
+                                            <ArrowLeftIcon className="h-6 w-6 text-white" />
+                                            <div className="text-white">Back</div>
                                         </button>
                                     </div>
 
@@ -126,9 +141,13 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                             <ClaimCard claim_data={claim1_data} prefixString={"Current:"} width={'1'}
                                        isHistorical={false}/>
 
+
                             {/* Precedent Claim */}
                            <ClaimCard claim_data={claim2_data} prefixString={"Precedent:"} width={'1'}
                                       isHistorical={false}/>
+                            <div className="absolute top-[8.6rem] left-[78.5rem] h-10 w-10 rounded-lg flex items-center justify-center shadow-md p-4" style={{
+                backgroundColor: `${similarity_score >= 75 ? "#0b9541" : similarity_score >= 50 ? "#e0911b" : "#c4221a"}`,
+              }}><p className="text-[#dbeafe] font-bold text-sm">{similarity_score}%</p></div>
                         </div>
                     </div>
                               {/* Footer */}
