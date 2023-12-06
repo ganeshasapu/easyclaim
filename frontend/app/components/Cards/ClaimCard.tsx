@@ -4,8 +4,8 @@ import LoanCard from "@/app/components/Cards/LoanCard";
 import {PaperClipIcon} from "@heroicons/react/20/solid";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
-const ClaimCard = ({claim_data, prefixString, width, isHistorical, highlights} : {claim_data: LifeClaim | null,
-    prefixString: string, width: string, isHistorical: boolean, highlights: Object}) => {
+const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
+    prefixString: string, width: string, isHistorical: boolean}) => {
   return (
       <div className={`grid grid-cols-1 gap-4 lg:col-span-${width}`}>
           <section aria-labelledby="section-1-title">
