@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import InboxNavBar from "@/app/components/InboxNavBar";
 
 const user = {
-    name: "Tom Cook",
-    email: "tom@example.com",
+    name: "Stacy",
+    email: "stacy@mail.securian.com",
     imageUrl:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
 };
 
 export default function Inbox() {
@@ -51,24 +52,20 @@ export default function Inbox() {
     } catch (err) {}
   };
 
+  const top_space = {
+    padding: 10,
+    width: 85,
+    height: 70,
+  };
+
   return (
     <>
       <main className="flex h-screen w-full flex-col items-center justify-between">
-        <div className="flex w-full p-4 items-center border-b border-white">
-          <div className="flex w-full items-center justify-evenly p-2 gap-8">
-            <div className="py-2 border rounded w-full px-4 bg-green-50 text-black text-center font-bold">
-              Inbox
-            </div>
+        <InboxNavBar></InboxNavBar>
 
-            <Link className="py-2 border rounded w-full px-4 text-center" href={"/database"}>
-              Database
-            </Link>
-          </div>
-          <div className="flex">
-            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
-          </div>
-        </div>
-        <div className="pt-2 relative mx-auto text-gray-600">
+        {/* Search Bar */}
+
+        {/* <div className="pt-2 relative mx-auto text-gray-600">
           <input
             className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
             type="search"
@@ -92,7 +89,10 @@ export default function Inbox() {
               <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
             </svg>
           </button>
-        </div>
+        </div> */}
+
+        {/*====*/}
+
         <div className="flex h-full justify-center w-full border-gray-200 border-t  bg-gray-50 py-2">
           <div className="w-[90%] h-full pt-8 text-2xl font-semibold">
             <div className="min-w-full p-4 drop-shadow-md rounded-md border bg-white flex flex-col gap-2">
