@@ -5,6 +5,7 @@ import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import Link from "next/link";
+import DatabaseNavBar from "@/app/components/DatabaseNavBar";
 
 
 // const subCategories = [
@@ -12,10 +13,10 @@ import Link from "next/link";
 // ]
 
 const user = {
-  name: "Stacy Grace",
-  email: "stacy.grace@mail.securian.com",
+  name: "Stacy",
+  email: "stacy@mail.securian.com",
   imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
 };
 
 const top_space = {
@@ -104,10 +105,20 @@ export default function Database() {
         }).catch((error) => {console.log(error)});
 }
 
+const top_space = {
+  padding: 10,
+  width: 85,
+  height: 70,
+};
+
   return (
     <>
       <main className="flex h-screen w-full flex-col items-center justify-between">
-        <div className="flex w-full p-4 items-center border-b border-white">
+        <DatabaseNavBar></DatabaseNavBar>
+        {/* <div className="flex w-full p-4 items-center border-b border-white">
+        <Link href="https://www.securiancanada.ca/?utm_source=google&utm_medium=ps&utm_campaign=brand&utm_content=english&utm_term=securian-canada&gad_source=1">
+                    <img className="h-8 w-8 rounded-full" src="/Logo.png" alt="Your Company" style={top_space}/>
+                </Link>
           <div className="flex w-full items-center justify-evenly p-2 gap-8">
             <Link className="py-2 border rounded w-full px-4 text-center" href={"/inbox"}>
               Inbox
@@ -117,7 +128,7 @@ export default function Database() {
             </div>
           </div>
           <div className="flex">
-            <div className="rounded-full bg-green-300 w-10 h-10" />
+            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt=""  style={top_space}/>
           </div>
         </div>
         <div className="pt-2 relative mx-auto text-gray-600">
@@ -144,7 +155,7 @@ export default function Database() {
               <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
             </svg>
           </button>
-        </div>
+        </div> */}
         <div className="flex justify-center w-full border-gray-200 border-t  bg-gray-50 ">
           <div className="w-[90%] h-full pt-8 text-2xl font-semibold">
             <div className="min-w-full p-4 drop-shadow-md rounded-md border bg-white flex flex-col gap-2">
