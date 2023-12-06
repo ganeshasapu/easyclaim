@@ -13,7 +13,7 @@ const user = {
   name: "Stacy Grace",
   email: "stacy.grace@mail.securian.com",
   imageUrl:
-      "/stacy.png",
+      "/stacy.png"
 };
 
 export default function CurrentClaimView({params}: {params: {claim_id: string}}) {
@@ -87,7 +87,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
                         <Menu.Button className="relative flex rounded-full bg-white text-sm ring-2 ring-white ring-opacity-20 focus:outline-none focus:ring-opacity-100">
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">Open user menu</span>
-                          <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                          <img className="h-8 w-8 rounded-full" src={user.image} alt="" />
                         </Menu.Button>
                       </div>
                     </Menu>
