@@ -1,20 +1,29 @@
-import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
+import { highlightContext } from "@/utils";
+
 import { useContext } from "react";
 
 const field_to_dict = {
   "Loan A": "loanA",
   "Loan B": "loanB",
   "Loan C": "loanC",
-}
-
-
-
+};
 
 // react component
-const LoanCard = ({ title, type, amount, balance, appliedFor }: { title: string; type: string; amount: number; balance: number; appliedFor: number }) => {
+const LoanCard = ({
+  title,
+  type,
+  amount,
+  balance,
+  appliedFor,
+}: {
+  title: string;
+  type: string;
+  amount: number;
+  balance: number;
+  appliedFor: number;
+}) => {
   return (
-  
-  <div className="flex w-full justify-around gap-4">
+    <div className="flex w-full justify-around gap-4">
       <div className="border border-gray-150 rounded-lg my-2 flex-grow">
         <div className="px-6 py-2">
           <h1 className="py-2 font-semibold text-base">{title}</h1>

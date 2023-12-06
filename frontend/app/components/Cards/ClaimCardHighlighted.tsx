@@ -1,7 +1,7 @@
 import {PaperClipIcon} from "@heroicons/react/20/solid";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 import { useContext } from "react";
-import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
+import { highlightContext } from "@/utils";
 import LoanCardHighlighted from "./LoanCardHighlighted";
 import InfoCardHighlighted from "./InfoCardHighlighted";
 
@@ -36,7 +36,7 @@ const ClaimCardHighlighted = ({claim_data, prefixString, width, isHistorical} : 
                           </div>
                           {/* General info card */}
                           {claim_data ? (
-                              <InfoCardHighlighted 
+                              <InfoCardHighlighted
                                   title="General Information"
                                   fields={["Inquest Held", "Place of Death", "Autopsy Performed"]}
                                   values={[

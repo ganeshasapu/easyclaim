@@ -6,6 +6,7 @@ import { createContext, useEffect, useState } from "react";
 import CurrentClaimFooter from "@/app/components/CurrentClaimFooter";
 import React from "react";
 import ClaimCardHighlighted from "@/app/components/Cards/ClaimCardHighlighted";
+import { highlightContext } from "@/utils";
 
 const user = {
     name: "Tom Cook",
@@ -14,14 +15,14 @@ const user = {
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 
-export const highlightContext = createContext({});
+
 
 
 export default function CompareClaimView({params}: {params: {claim_ids: string}}) {
     const [claim1, setClaim1Data] = useState<LifeClaim | null>(null);
     const [claim2, setClaim2Data] = useState<LifeClaim | null>(null);
     const [similar_claims, setSimilarClaims] = useState<SimilarClaim[] | null>(null);
-    const [similarity_score, setSimilarityScore] = useState<number>(0.0); 
+    const [similarity_score, setSimilarityScore] = useState<number>(0.0);
     const [highlighted_claim, setHighlightedClaim] = useState<Object[any]>({});
     const router = useRouter();
 
@@ -33,7 +34,7 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
         setClaim1Data(claim1_data);
         setClaim2Data(claim2_data);
         const dict = {}
-        
+
         for (const key in claim1_data) {
             if (key == "claimNumber") {
                 dict[key] = (claim1_data[key] === claim2_data[key])
@@ -43,7 +44,7 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                 dict[key] = (claim1_data[key] === claim2_data[key])
             } else if(key == "autopsyPerformed") {
                 dict[key] = (claim1_data[key] === claim2_data[key])
-            } else if(key == "dateOccured") {       
+            } else if(key == "dateOccured") {
                 dict[key] = dateThreshold(claim1_data[key], claim2_data[key])
             } else if(key == "medicalInformation") {
                 const medicalInformation: Object[any] = {}
@@ -101,7 +102,7 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
     const dateThreshold = (inputDate1: string, inputDate2: string): string => {
         const parsedDate1 = new Date(inputDate1);
         const parsedDate2 = new Date(inputDate2);
-      
+
         if (
           parsedDate1.getMonth() === parsedDate2.getMonth() &&
           parsedDate1.getFullYear() === parsedDate2.getFullYear()
@@ -115,10 +116,10 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
           return "transparent"
         }
       }
-      
-    
+
+
       console.log(moneyThreshold("84672", "34851"))
-    
+
     useEffect(() => {
         const getSimilarClaim = async (claim_id: string) => {
             const similar_claims_url = `/api/get_similar_life/${claim_id}`;
@@ -173,7 +174,7 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
             }
         };
 
-        
+
         getLifeClaim(claim1_id, true);
         getLifeClaim(claim2_id, false);
         highlightClaims();
