@@ -1,23 +1,19 @@
 "use client";
+
 import { Menu, Popover } from "@headlessui/react";
-import { ArrowLeftIcon, CheckCircleIcon, PaperClipIcon, XCircleIcon } from "@heroicons/react/20/solid";
+import { ArrowLeftIcon, PaperClipIcon, XCircleIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import LoanCard from "@/app/components/Cards/LoanCard";
 import InfoCard from "@/app/components/Cards/InfoCard";
-import SimilarClaimCard from "@/app/components/Cards/SimilarClaimCard";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import SimilarClaimsPanel from "@/app/components/SimilarClaimsPanel";
 import CurrentClaimFooter from "@/app/components/CurrentClaimFooter";
 
 const user = {
-  name: "Stacy",
-  email: "tom@example.com",
+  name: "Stacy Grace",
+  email: "stacy.grace@mail.securian.com",
   imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  image:
-    "/stacy.jpg",
-  
+      "/stacy.png"
 };
 
 export default function CurrentClaimView({params}: {params: {claim_id: string}}) {
@@ -91,7 +87,7 @@ export default function CurrentClaimView({params}: {params: {claim_id: string}})
                         <Menu.Button className="relative flex rounded-full bg-white text-sm ring-2 ring-white ring-opacity-20 focus:outline-none focus:ring-opacity-100">
                           <span className="absolute -inset-1.5" />
                           <span className="sr-only">Open user menu</span>
-                          <img className="h-8 w-8 rounded-full" src={user.image} alt="" />
+                          <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
                         </Menu.Button>
                       </div>
                     </Menu>
