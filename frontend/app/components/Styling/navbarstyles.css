@@ -1,0 +1,8 @@
+.gradient-div{
+    background-color: linear-gradient(red 40%, yellow 30%, blue 65%);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
