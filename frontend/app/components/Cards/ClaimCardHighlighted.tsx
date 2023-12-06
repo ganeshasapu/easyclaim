@@ -1,14 +1,15 @@
-// react component
-import InfoCard from "@/app/components/Cards/InfoCard";
-import LoanCard from "@/app/components/Cards/LoanCard";
 import {PaperClipIcon} from "@heroicons/react/20/solid";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 import { useContext } from "react";
 import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
+import LoanCardHighlighted from "./LoanCardHighlighted";
+import InfoCardHighlighted from "./InfoCardHighlighted";
 
 
-const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
+const ClaimCardHighlighted = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
     prefixString: string, width: string, isHistorical: boolean}) => {
+        console.log("hello from claim card highlighted")
+
   return (
       <div className={`grid grid-cols-1 gap-4 lg:col-span-${width}`}>
           <section aria-labelledby="section-1-title">
@@ -35,7 +36,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                           </div>
                           {/* General info card */}
                           {claim_data ? (
-                              <InfoCard 
+                              <InfoCardHighlighted 
                                   title="General Information"
                                   fields={["Inquest Held", "Place of Death", "Autopsy Performed"]}
                                   values={[
@@ -50,7 +51,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
 
                           {/* Employment Info card */}
                           {claim_data ? (
-                              <InfoCard
+                              <InfoCardHighlighted
                                   title="Employment Information"
                                   fields={["Date Last Worked", "Occupation", "Reason Stopped Working"]}
                                   values={[
@@ -65,7 +66,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
 
                           {/* Medical Information Card */}
                           {claim_data ? (
-                              <InfoCard
+                              <InfoCardHighlighted
                                   title="Medical Information"
                                   fields={["Cause of Death", "Hospitalized", "Type of Death"]}
                                   values={[
@@ -80,7 +81,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
 
                           {/* Loan Information Card */}
                           {claim_data ? (
-                              <InfoCard
+                              <InfoCardHighlighted
                                   title="Loan Information"
                                   fields={["Lending Institute Name", "Lending Institute Province"]}
                                   values={[
@@ -96,7 +97,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
 
                           <div className="flex w-full justify-around gap-4">
                               {claim_data ? (
-                                  <LoanCard
+                                  <LoanCardHighlighted
                                       title="Loan A"
                                       type={claim_data.generalLoanInformation.loanA.typeOrPurposeOfLoan}
                                       amount={claim_data.generalLoanInformation.loanA.originalAmountOfLoan}
@@ -111,7 +112,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
 
                               {/* Loan B Card*/}
                               {claim_data ? (
-                                  <LoanCard
+                                  <LoanCardHighlighted
                                       title="Loan B"
                                       type={claim_data.generalLoanInformation.loanB.typeOrPurposeOfLoan}
                                       amount={claim_data.generalLoanInformation.loanB.originalAmountOfLoan}
@@ -126,7 +127,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
 
                               {/* Loan C Card */}
                               {claim_data ? (
-                                  <LoanCard
+                                  <LoanCardHighlighted
                                       title="Loan C"
                                       type={claim_data.generalLoanInformation.loanC.typeOrPurposeOfLoan}
                                       amount={claim_data.generalLoanInformation.loanC.originalAmountOfLoan}
@@ -213,4 +214,4 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
   );
 };
 
-export default ClaimCard;
+export default ClaimCardHighlighted;

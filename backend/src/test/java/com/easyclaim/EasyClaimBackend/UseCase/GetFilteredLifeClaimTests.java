@@ -34,9 +34,9 @@ public class GetFilteredLifeClaimTests {
 
         LifeClaim claim = new LifeClaim("291833", "2019-02-08", "hospital", true, false, medInfo, info, loanInfo);
         List<LifeClaim> list = new ArrayList<>(List.of(claim));
-        when(dataAccessObject.getFilteredLifeClaims(input)).thenReturn(list);
+        when(dataAccessObject.getFilteredLifeClaims(input, 0)).thenReturn(list);
 
-        List<LifeClaim> returnedList = service.getFilteredLifeClaims(input);
+        List<LifeClaim> returnedList = service.getFilteredLifeClaims(input, 0);
 
         for (LifeClaim returnedClaim: returnedList) {
             int amount = returnedClaim.getGeneralLoanInformation().getLoanA().getAmountOfInsuranceAppliedFor();

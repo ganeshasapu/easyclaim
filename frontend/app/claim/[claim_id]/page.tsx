@@ -1,18 +1,4 @@
 "use client";
-/*
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Menu, Popover } from "@headlessui/react";
 import { ArrowLeftIcon, CheckCircleIcon, PaperClipIcon, XCircleIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";

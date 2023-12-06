@@ -22,7 +22,6 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
          UploadLifeClaimDataAccessInterface, GetFilteredLifeClaimsDataAccessInterface {
     @Override
     public List<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {
-        System.out.println("Type: " + type);
         Firestore dbFirestore = FirestoreClient.getFirestore();
         String collectionName = type + " Claims";
 
@@ -34,7 +33,6 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         List<LifeClaim> claims = new ArrayList<>();
 
-        System.out.println(documents);
 
         for (QueryDocumentSnapshot document : documents) {
             claims.add(document.toObject(LifeClaim.class));
@@ -51,8 +49,6 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
                     .limit(10).get();
             List<QueryDocumentSnapshot> documents = future.get().getDocuments();
             List<LifeClaim> claims = new ArrayList<>();
-
-            System.out.println(documents);
 
             for (QueryDocumentSnapshot document : documents) {
                 claims.add(document.toObject(LifeClaim.class));
@@ -138,7 +134,7 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
     }
 
     @Override
-    public List<LifeClaim> getFilteredLifeClaims(String type) throws InterruptedException, ExecutionException {
+    public List<LifeClaim> getFilteredLifeClaims(String type, int lastClaimIndex) throws InterruptedException, ExecutionException {
         ArrayList<LifeClaim> filteredClaims = new ArrayList<>();
         Map<String, Boolean> filters = stringToDictionary(type);
         Firestore dbFirestore = FirestoreClient.getFirestore();
@@ -149,13 +145,25 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         applyAmountFilter(filters, refs, filteredClaims);
         applyDateFilter(filters, refs, filteredClaims);
 
+
         if (!filteredClaims.isEmpty()) {
-            return filteredClaims;
+            if (lastClaimIndex * 10 > filteredClaims.size()) {
+                return new ArrayList<>();
+            }
+            return filteredClaims.subList(lastClaimIndex * 10, Math.min(filteredClaims.size(), (lastClaimIndex * 10) + 10));
         } else if ((filters.get("1") || filters.get("2") || filters.get("3") ||
                 filters.get("4") || filters.get("5") || filters.get("6") || filters.get("7"))){
             return new ArrayList<>();
         }else {
-            return getLifeClaims("Historical");
+            List<LifeClaim> claims = getLifeClaims("Historical");
+            if (lastClaimIndex * 10 > claims.size()) {
+                return new ArrayList<>();
+            }
+            if (lastClaimIndex * 10 > claims.size()) {
+                return new ArrayList<>();
+            }
+            List<LifeClaim> claimsSubset = claims.subList(lastClaimIndex * 10, Math.min(claims.size(), (lastClaimIndex * 10) + 10));
+            return claimsSubset;
         }
 
     }
@@ -166,7 +174,8 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         if (filters.get("1")) {
             addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 0)
                     .whereLessThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000).get(), filteredClaims);
-        } 
+        }
+
 
         if (filters.get("2")) {
             addClaimsFromQuery(refs.whereGreaterThan("generalLoanInformation.loanA.amountOfInsuranceAppliedFor", 25000)

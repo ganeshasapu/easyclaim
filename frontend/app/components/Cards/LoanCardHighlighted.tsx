@@ -11,7 +11,14 @@ const field_to_dict = {
 
 
 // react component
-const LoanCard = ({ title, type, amount, balance, appliedFor }: { title: string; type: string; amount: number; balance: number; appliedFor: number }) => {
+const LoanCardHighlighted = ({ title, type, amount, balance, appliedFor }: { title: string; type: string; amount: number; balance: number; appliedFor: number }) => {
+  const hightlightDict = useContext(highlightContext);
+  if (Object.keys(hightlightDict).length == 0) {
+    return null
+  }
+  const titleHighlight = hightlightDict.generalLoanInformation[field_to_dict[title]]
+  console.log(222222222222, titleHighlight)
+  console.log(111111111111111111, appliedFor)
   return (
   
   <div className="flex w-full justify-around gap-4">
@@ -22,19 +29,19 @@ const LoanCard = ({ title, type, amount, balance, appliedFor }: { title: string;
         <div className="px-6 pb-4 divide-y divide-gray-200">
           <div className="flex justify-between py-2">
             <p>Type: </p>
-            <p>{type}</p>
+            <p style={{backgroundColor : titleHighlight.typeOrPurposeOfLoan ? "#dcfce7" : "transparent"}}>{type}</p>
           </div>
           <div className="flex justify-between py-2">
             <p>Original: </p>
-            <p>{amount}</p>
+            <p style={{backgroundColor : titleHighlight.originalAmountOfLoan}}>{amount}</p>
           </div>
           <div className="flex justify-between py-2">
             <p>Balance Left: </p>
-            <p>{balance}</p>
+            <p style={{backgroundColor : titleHighlight.balanceOnDateOfDeath}}>{balance}</p>
           </div>
           <div className="flex justify-between py-2">
             <p>Applied For: </p>
-            <p>{appliedFor}</p>
+            <p style={{backgroundColor : titleHighlight.amountOfInsuranceAppliedFor}}>{appliedFor}</p>
           </div>
         </div>
       </div>
@@ -42,4 +49,4 @@ const LoanCard = ({ title, type, amount, balance, appliedFor }: { title: string;
   );
 };
 
-export default LoanCard;
+export default LoanCardHighlighted;

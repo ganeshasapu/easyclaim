@@ -17,8 +17,8 @@ public class GetFilteredLifeClaimService {
 
     private final GetFilteredLifeClaimsDataAccessInterface dataAccessObject;
 
-    public List<LifeClaim> getFilteredLifeClaims(String type) throws InterruptedException, ExecutionException {
-        return this.dataAccessObject.getFilteredLifeClaims(type);
+    public List<LifeClaim> getFilteredLifeClaims(String type, int lastClaimIndex) throws InterruptedException, ExecutionException {
+        return this.dataAccessObject.getFilteredLifeClaims(type, lastClaimIndex);
 
     }
 }

@@ -1,12 +1,11 @@
 "use client";
-
 import { Menu, Popover } from "@headlessui/react";
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
-import { createContext, useContext, useEffect, useState } from "react";
-import ClaimCard from "@/app/components/Cards/ClaimCard";
+import { createContext, useEffect, useState } from "react";
 import CurrentClaimFooter from "@/app/components/CurrentClaimFooter";
 import React from "react";
+import ClaimCardHighlighted from "@/app/components/Cards/ClaimCardHighlighted";
 
 const user = {
     name: "Tom Cook",
@@ -124,7 +123,7 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
         const getSimilarClaim = async (claim_id: string) => {
             const similar_claims_url = `/api/get_similar_life/${claim_id}`;
             const similar_claims = await fetch(similar_claims_url).then((res) => res.json());
-            
+
             const findSimilarityScore = async () => {
                 const similar_claim_score = await fetch(similar_claims_url).then((res) => res.json()).then((data) => {
                     return data.find((similarClaim: SimilarClaim) => similarClaim.claim.claimNumber === claim2_id).similarityScore
@@ -139,17 +138,17 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
             console.error(similar_claims.error);
             return;
           }
-    
+
           similar_claims.sort(
             (a: SimilarClaim, b: SimilarClaim) => b.similarityScore - a.similarityScore
           );
-    
+
           setSimilarClaims(similar_claims);
         };
         getSimilarClaim(claim1_id);
       }, []);
-    
-  
+
+
 
     if (!params.claim_ids) {
         return <div>Missing info</div>
@@ -179,6 +178,8 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
         getLifeClaim(claim2_id, false);
         highlightClaims();
     }, []);
+
+    console.log("Hello from compare claims page")
 
     return (
         <>
@@ -236,12 +237,12 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                         {/* Main 2 column grid */}
                         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-8">
                             {/* Current Claim */}
-                            <ClaimCard claim_data={claim1} prefixString={"Current:"} width={'1'}
+                            <ClaimCardHighlighted claim_data={claim1} prefixString={"Current:"} width={'1'}
                                        isHistorical={false}/>
 
 
                             {/* Precedent Claim */}
-                           <ClaimCard claim_data={claim2} prefixString={"Precedent:"} width={'1'}
+                           <ClaimCardHighlighted claim_data={claim2} prefixString={"Precedent:"} width={'1'}
                                       isHistorical={false}/>
                             <div className="absolute top-[8.6rem] left-[78.5rem] h-10 w-10 rounded-lg flex items-center justify-center shadow-md p-4" style={{
                 backgroundColor: `${similarity_score >= 75 ? "#0b9541" : similarity_score >= 50 ? "#e0911b" : "#c4221a"}`,

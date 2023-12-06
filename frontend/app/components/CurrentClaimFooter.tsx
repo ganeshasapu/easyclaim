@@ -21,17 +21,16 @@ const CurrentClaimFooter = (props: {
 
   async function handleApproveClaim() {
     try {
-      console.log(props.urlSegment);
       const url = "/api/approve_life/" + props.urlSegment;
       const response = await fetch(url);
       if (response.ok) {
-        console.log("claim successfully approved");
+        console.info("claim successfully approved");
         router.push("/inbox");
       } else {
         throw new Error("could not approve claim");
       }
     } catch (error) {
-      console.log("error approving claim");
+      console.error("error approving claim");
     }
   }
 
@@ -40,13 +39,13 @@ const CurrentClaimFooter = (props: {
       const url = "/api/deny_life/" + props.urlSegment;
       const response = await fetch(url);
       if (response.ok) {
-        console.log("claim successfully denied");
+        console.info("claim successfully denied");
         router.push("/inbox");
       } else {
         throw new Error("could not deny claim");
       }
     } catch (error) {
-      console.log("error denying claim");
+      console.error("error denying claim");
     }
   }
 

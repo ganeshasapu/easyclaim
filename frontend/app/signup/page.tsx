@@ -1,9 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { useAuth } from '../context/AuthContext'  
+import { useAuth } from '../context/AuthContext'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import AuthProviderWrapper from '../AuthProviderWrapper'; 
+import AuthProviderWrapper from '../AuthProviderWrapper';
 
 const Signup = () => {
   useEffect(() => {
@@ -12,7 +12,6 @@ const Signup = () => {
 
   const router = useRouter()
   const { user, signup } = useAuth()
-  console.log(user)
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -22,17 +21,13 @@ const Signup = () => {
     e.preventDefault()
 
     try {
-      console.log(data.email, data.password)
       await signup(data.email, data.password)
       router.push('/')
-      console.log('trying to signup')
+      console.info('trying to signup')
     } catch (err) {
-      console.log(data.email, data.password)
-      console.log(err)
-      console.log('error signing up')
+      console.error(err)
+      console.error('error signing up')
     }
-
-    console.log(data)
   }
 
   return (

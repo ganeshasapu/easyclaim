@@ -124,13 +124,13 @@ def create_life_claim(first, last, current):
     claim_number = random.randint(100000, 999999)
     month = random.randint(1, 12)
     day = random.randint(4, 28)
-    year = random.randint(10, 23)
+    year = random.randint(2010, 2023)
     if month < 10:
         month = f"0{month}"
     if day < 10:
         day = f"0{day}"
     data["claimNumber"] = f"{claim_number}"
-    data["dateOccured"] = f"{month}-{day}-{year}"
+    data["dateOccured"] = f"{year}-{month}-{day}"
     data["inquestHeld"] = bool(random.randint(0, 1))
     data["autopsyPerformed"] = bool(random.randint(0, 1))
     options = [["Home", "Old Age", "Natural", False], ["Hospital", "Heart Attack", "Natural", True],
@@ -145,7 +145,7 @@ def create_life_claim(first, last, current):
     temp_day = int(day) - 3
     if temp_day < 10:
         temp_day = f"0{temp_day}"
-    temp_date = f"{month}-{temp_day}-{year}"
+    temp_date = f"{year}-{month}-{temp_day}"
     options = [["Retired", "N/A", "Death"], ["Construction", temp_date, "Death"], ["Doctor", temp_date, "Death"],
                ["Engineer", temp_date, "Death"], ["Lawyer", temp_date, "Death"], ["Teacher", temp_date, "Death"]]
     index = random.randint(0, len(options) - 1)
@@ -173,9 +173,9 @@ def create_life_claim(first, last, current):
         data["generalLoanInformation"][loan_string]["typeOrPurposeOfLoan"] = options[index]
         data["generalLoanInformation"][loan_string]["balanceOnDateOfDeath"] = balance
 
-    if current: 
+    if current:
         data["status"] = "Recieved"
-    else: 
+    else:
         num = random.randint(0, 1)
         data["status"] = "Approved" if num == 0 else "Denied"
     # Saving JSON file
@@ -227,7 +227,7 @@ def create_disability_claim(first, last):
             "wasReferred": "",
             "treatedPastTwoYears": "",
             "treatedByAnother": ""
-        }, 
+        },
         "status": ""
     }
 
@@ -235,13 +235,13 @@ def create_disability_claim(first, last):
     claim_number = random.randint(100000, 999999)
     month = random.randint(1, 12)
     day = random.randint(4, 28)
-    year = random.randint(50, 85)
+    year = random.randint(1950, 1985)
     if month < 10:
         month = f"0{month}"
     if day < 10:
         day = f"0{day}"
     data["claimNumber"] = f"{claim_number}"
-    data["dateOfBirth"] = f"{month}-{day}-{year}"
+    data["dateOfBirth"] = f"{year}-{month}-{day}"
     options = ["RBC", "TD", "BMO", "CIBC", "Scotiabank"]
     index = random.randint(0, len(options) - 1)
     data["nameOfLendingInstitution"] = options[index]
@@ -252,19 +252,19 @@ def create_disability_claim(first, last):
     data["disabilityType"] = options[index]
     month = random.randint(1, 10)
     day = random.randint(1, 21)
-    year = random.randint(10, 23)
+    year = random.randint(2010, 2023)
     if month < 10:
         month = f"0{month}"
     if day < 10:
         day = f"0{day}"
-    temp_date = f"{month}-{day}-{year}"
+    temp_date = f"{year}-{month}-{day}"
     month = int(month) + 1
     day = int(month) + 5
     if month < 10:
         month = f"0{month}"
     if day < 10:
         day = f"0{day}"
-    temp_date_2 = f"{month}-{day}-{year}"
+    temp_date_2 = f"{year}-{month}-{day}"
     if index == 0:
         data["disability"]["accident"]["dateOccurred"] = temp_date
         data["disability"]["accident"]["dateFirstTreated"] = temp_date_2
@@ -291,7 +291,7 @@ def create_disability_claim(first, last):
         month = f"0{month}"
     if day < 10:
         day = f"0{day}"
-    temp_date = f"{month}-{day}-{year}"
+    temp_date = f"{year}-{month}-{day}"
     data["dateLastWorked"] = temp_date
     data["missedWorkPast"] = bool(random.randint(0, 1))
     data["returnedWork"] = bool(random.randint(0, 1))
@@ -355,7 +355,7 @@ def create_employment_claim(first, last):
         },
         "authorizedRep": {
             "companyName": "",
-        }, 
+        },
         "status": ""
     }
     claim_number = random.randint(100000, 999999)
