@@ -3,9 +3,14 @@ import InfoCard from "@/app/components/Cards/InfoCard";
 import LoanCard from "@/app/components/Cards/LoanCard";
 import {PaperClipIcon} from "@heroicons/react/20/solid";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
+import { useContext } from "react";
+import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
+
 
 const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
     prefixString: string, width: string, isHistorical: boolean}) => {
+
+const hightlightDict = useContext(highlightContext);
   return (
       <div className={`grid grid-cols-1 gap-4 lg:col-span-${width}`}>
           <section aria-labelledby="section-1-title">
@@ -32,7 +37,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                           </div>
                           {/* General info card */}
                           {claim_data ? (
-                              <InfoCard
+                              <InfoCard 
                                   title="General Information"
                                   fields={["Inquest Held", "Place of Death", "Autopsy Performed"]}
                                   values={[
