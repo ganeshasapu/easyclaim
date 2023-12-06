@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import { Menu, Popover } from "@headlessui/react";
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
@@ -8,10 +9,10 @@ import React from "react";
 import ClaimCardHighlighted from "@/app/components/Cards/ClaimCardHighlighted";
 
 const user = {
-    name: "Tom Cook",
-    email: "tom@example.com",
+    name: "Stacy Grace",
+    email: "stacy.grace@mail.securian.com",
     imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "/stacy.png",
 };
 
 export const highlightContext = createContext({});
@@ -74,7 +75,6 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                             if (key3 == "typeOrPurposeOfLoan") {
                                 loan[key3] = (claim1_data[key][key2][key3] === claim2_data[key][key2][key3])
                             } else {
-                                console.log(claim1_data[key][key2][key3], claim2_data[key][key2][key3])
                                 loan[key3] = moneyThreshold(claim1_data[key][key2][key3], claim2_data[key][key2][key3])
                             }
                         }
@@ -83,7 +83,6 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
                 }
                 dict[key] = generalLoanInformation
         }
-        console.log(dict)
         setHighlightedClaim(dict)
     }
 }
@@ -116,9 +115,7 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
         }
       }
       
-    
-      console.log(moneyThreshold("84672", "34851"))
-    
+        
     useEffect(() => {
         const getSimilarClaim = async (claim_id: string) => {
             const similar_claims_url = `/api/get_similar_life/${claim_id}`;
@@ -178,8 +175,6 @@ export default function CompareClaimView({params}: {params: {claim_ids: string}}
         getLifeClaim(claim2_id, false);
         highlightClaims();
     }, []);
-
-    console.log("Hello from compare claims page")
 
     return (
         <>

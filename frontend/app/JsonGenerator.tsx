@@ -1,9 +1,7 @@
-'use client'
+"use client";
 
 import React, { useState } from 'react';
 import jsonData from '../../dummy_data/life_claims/life_claim_data.json';
-import { time } from 'console';
-import { json } from 'stream/consumers';
 
 
 interface UserData{
@@ -12,7 +10,7 @@ interface UserData{
   documentName: string
 }
 
-export default function ClientComponent() {
+export default function JsonGenerator() {
   const [inputValue, setInputValue] = useState('');
   const [documentName, setDocumentName] = useState('');
   const [name, setName] = useState('');
@@ -25,19 +23,15 @@ export default function ClientComponent() {
     try {
       const name = inputValue;
       const apiUrl = `/api/people/${encodeURIComponent(name)}`;
-      console.log(apiUrl);
 
       const response = await fetch(apiUrl);
-      console.log(response);
 
       if (!response.ok) {
         throw new Error('error in response');
       }
 
       const data = await response.json();
-      console.log(typeof data);
 
-      console.log(`Search result: ${JSON.stringify(data)}`);
       setResult(data);
     } catch (error) {
       console.log('Error fetching data:', error);
@@ -58,7 +52,6 @@ export default function ClientComponent() {
       };
 
       const requestBodyJSON = JSON.stringify(requestBody);
-      console.log(requestBodyJSON);
 
       const apiUrl = `/api/people/`
 
@@ -75,7 +68,6 @@ export default function ClientComponent() {
       }
 
       const data = await response.json();
-      console.log(`Create result: ${JSON.stringify(data)}`);
     } catch (error) {
       console.log('Error creating user:', error);
     }
@@ -102,7 +94,6 @@ export default function ClientComponent() {
         }
 
         const data = await response.json();
-          console.log(`Create result: ${JSON.stringify(data)}`);
         } catch (error) {
           console.log('Error creating user:', error);
         }
@@ -123,14 +114,12 @@ export default function ClientComponent() {
           body: requestBodyJSON,
         });
 
-        console.log(response);
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
 
         const data = await response.json();
-        console.log(`Create result: ${JSON.stringify(data)}`);
       } catch (error) {
         console.log("Error creating user:", error);
       }
@@ -141,12 +130,10 @@ export default function ClientComponent() {
     try {
       const apiUrl = '/api/get_life/Current';
       const response = await fetch(apiUrl);
-      console.log(response)
       if (!response.ok) {
         throw new Error('could not get life claim');
       }
       const data = await response.json() as Array<LifeClaim>;
-      console.log(data);
     } catch(error) {
       console.log('error getting life claim:', error)
     }
@@ -156,12 +143,10 @@ export default function ClientComponent() {
     try {
       const apiUrl = '/api/get_life/Historical';
       const response = await fetch(apiUrl);
-      console.log(response.json)
       if (!response.ok) {
         throw new Error('could not get life claim');
       }
       const data = await response.json() as Array<LifeClaim>;
-      console.log(data);
     } catch(error) {
       console.log('error getting life claim:', error)
     }
@@ -171,12 +156,10 @@ export default function ClientComponent() {
     try{
       const apiUrl = '/api/get_similar_life/' + inputClaimNumber;
       const response = await fetch(apiUrl);
-      console.log(response.json);
       if (!response.ok) {
         throw new Error('could not get similar life claims');
       }
       const data = await response.json() as Array<LifeClaim>;
-      console.log(data);
     }catch(error) {
       console.log('error getting similar life claims: ', error);
     }

@@ -5,13 +5,12 @@ import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ClaimCard from "@/app/components/Cards/ClaimCard";
-import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
 const user = {
-    name: "Stacy",
-    email: "tom@example.com",
-    image: "/stacy.jpeg",
-    imageUrl: "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
+    name: "Stacy Grace",
+    email: "stacy.grace@mail.securian.com",
+    imageUrl:
+        "/stacy.png",
 };
 
 export default function HistoricalClaimView({params}: {params: {claim_id: string}}) {

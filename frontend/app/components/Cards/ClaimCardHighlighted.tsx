@@ -1,14 +1,11 @@
 import {PaperClipIcon} from "@heroicons/react/20/solid";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
-import { useContext } from "react";
-import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
 import LoanCardHighlighted from "./LoanCardHighlighted";
 import InfoCardHighlighted from "./InfoCardHighlighted";
 
 
 const ClaimCardHighlighted = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
     prefixString: string, width: string, isHistorical: boolean}) => {
-        console.log("hello from claim card highlighted")
 
   return (
       <div className={`grid grid-cols-1 gap-4 lg:col-span-${width}`}>

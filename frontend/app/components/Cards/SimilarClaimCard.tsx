@@ -1,6 +1,5 @@
 import { useRouter } from "next/navigation";
 
-// react component
 const SimilarClaimCard = ({
   title,
   dateOccured,

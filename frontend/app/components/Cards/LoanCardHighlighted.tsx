@@ -7,18 +7,12 @@ const field_to_dict = {
   "Loan C": "loanC",
 }
 
-
-
-
-// react component
 const LoanCardHighlighted = ({ title, type, amount, balance, appliedFor }: { title: string; type: string; amount: number; balance: number; appliedFor: number }) => {
   const hightlightDict = useContext(highlightContext);
   if (Object.keys(hightlightDict).length == 0) {
     return null
   }
   const titleHighlight = hightlightDict.generalLoanInformation[field_to_dict[title]]
-  console.log(222222222222, titleHighlight)
-  console.log(111111111111111111, appliedFor)
   return (
   
   <div className="flex w-full justify-around gap-4">

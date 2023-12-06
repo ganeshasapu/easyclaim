@@ -1,10 +1,7 @@
-// react component
 import InfoCard from "@/app/components/Cards/InfoCard";
 import LoanCard from "@/app/components/Cards/LoanCard";
 import {PaperClipIcon} from "@heroicons/react/20/solid";
-import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
-import { useContext } from "react";
-import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
+import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";P
 
 
 const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,

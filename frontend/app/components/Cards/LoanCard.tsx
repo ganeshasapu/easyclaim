@@ -1,16 +1,9 @@
-import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
-import { useContext } from "react";
-
 const field_to_dict = {
   "Loan A": "loanA",
   "Loan B": "loanB",
   "Loan C": "loanC",
 }
 
-
-
-
-// react component
 const LoanCard = ({ title, type, amount, balance, appliedFor }: { title: string; type: string; amount: number; balance: number; appliedFor: number }) => {
   return (
   

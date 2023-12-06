@@ -30,8 +30,6 @@ const InfoCardHighlighted = ({
     return null
   }
 
-  console.log(hightlightDict)
-
   const inner_dict = title == "General Information" ? hightlightDict : title == "Medical Information" ? hightlightDict.medicalInformation : title == "Employment Information" ? hightlightDict.employmentInformation : hightlightDict.generalLoanInformation
   
   return (
