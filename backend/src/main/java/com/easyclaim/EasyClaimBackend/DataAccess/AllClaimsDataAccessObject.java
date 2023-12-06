@@ -97,22 +97,14 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
         // Creating iterable object for current life claims
         LifeClaim currentClaim = null;
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        Iterable<DocumentReference> refs = dbFirestore.collection(type + " Claims").document("Life")
-                .collection("Claims").listDocuments();
+        CollectionReference refs = dbFirestore.collection(type + " Claims").document("Life")
+                .collection("Claims");
+        ApiFuture<QuerySnapshot> future = refs.whereEqualTo("claimNumber", claimNumber).get();
 
-        // Iterating through all current life claims
-        for (DocumentReference ref : refs) {
-            ApiFuture<DocumentSnapshot> futureSnapshot = ref.get();
-            DocumentSnapshot doc = futureSnapshot.get();
+        QuerySnapshot querySnapshot = future.get();
 
-            // Parsing document into LifeClaim object and checking claimNumber attribute
-            if (doc.exists()) {
-                currentClaim = doc.toObject(LifeClaim.class);
-                assert currentClaim != null;
-                if (currentClaim.getClaimNumber().equals(claimNumber)) {
-                    break;
-                }
-            }
+        for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
+            currentClaim = document.toObject(LifeClaim.class);
         }
         return currentClaim;
     }
