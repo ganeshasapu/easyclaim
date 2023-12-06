@@ -1,10 +1,5 @@
 import {PaperClipIcon} from "@heroicons/react/20/solid";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
-<<<<<<< HEAD
-=======
-import { useContext } from "react";
-import { highlightContext } from "@/utils";
->>>>>>> 90fbcbf9cd6f9d3fe7d66277ed6281e1fcec821f
 import LoanCardHighlighted from "./LoanCardHighlighted";
 import InfoCardHighlighted from "./InfoCardHighlighted";
 

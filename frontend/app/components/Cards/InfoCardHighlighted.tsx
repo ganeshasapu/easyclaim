@@ -2,7 +2,7 @@ import { highlightContext } from "@/utils";
 
 import { useContext } from "react";
 
-const field_to_dict = {
+const field_to_dict: any = {
   "Inquest Held": "inquestHeld",
   "Place of Death": "placeOfDeath",
   "Autopsy Performed": "autopsyPerformed",
@@ -16,7 +16,6 @@ const field_to_dict = {
   "Lending Institute Province": "lendingInstitutionProvince",
 };
 
-// react component
 const InfoCardHighlighted = ({
   title,
   fields,
@@ -26,27 +25,13 @@ const InfoCardHighlighted = ({
   fields: string[];
   values: string[];
 }) => {
-  const hightlightDict = useContext(highlightContext);
+  const hightlightDict: any = useContext(highlightContext);
   if (Object.keys(hightlightDict).length == 0) {
     return null;
   }
 
-<<<<<<< HEAD
   const inner_dict = title == "General Information" ? hightlightDict : title == "Medical Information" ? hightlightDict.medicalInformation : title == "Employment Information" ? hightlightDict.employmentInformation : hightlightDict.generalLoanInformation
   
-=======
-  console.log(hightlightDict);
-
-  const inner_dict =
-    title == "General Information"
-      ? hightlightDict
-      : title == "Medical Information"
-      ? hightlightDict.medicalInformation
-      : title == "Employment Information"
-      ? hightlightDict.employmentInformation
-      : hightlightDict.generalLoanInformation;
-
->>>>>>> 90fbcbf9cd6f9d3fe7d66277ed6281e1fcec821f
   return (
     <div className="border border-gray-150 rounded-lg my-4">
       <div className="px-6 py-2">
