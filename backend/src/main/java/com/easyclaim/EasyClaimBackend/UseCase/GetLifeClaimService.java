@@ -20,7 +20,10 @@ public class GetLifeClaimService {
 
   public List<LifeClaim> getLifeClaims(String type) throws InterruptedException, ExecutionException {
     return this.dataAccessObject.getLifeClaims(type);
+  }
 
+  public List<LifeClaim> getLifeClaimsPaginated(String type, String lastClaimNumber) throws InterruptedException, ExecutionException {
+    return this.dataAccessObject.getLifeClaimsPaginated(type, lastClaimNumber);
   }
 
   public LifeClaim findLifeClaim(String claimNumber) throws ExecutionException, InterruptedException {

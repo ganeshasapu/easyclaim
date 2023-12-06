@@ -43,6 +43,47 @@ public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterfa
     }
 
     @Override
+    public List<LifeClaim> getLifeClaimsPaginated(String type, String lastClaimNumber) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        if (lastClaimNumber.equals("null")) {
+            ApiFuture<QuerySnapshot> future = dbFirestore.collection(type + " Claims").document("Life").collection("Claims")
+                    .limit(10).get();
+            List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+            List<LifeClaim> claims = new ArrayList<>();
+
+            for (QueryDocumentSnapshot document : documents) {
+                if (document.exists()) {
+                    claims.add(document.toObject(LifeClaim.class));
+                }
+            }
+
+            return claims.isEmpty() ? new ArrayList<>() : claims;
+        }
+
+        ApiFuture<DocumentSnapshot> lastDocFuture = dbFirestore.collection(type + " Claims").document("Life").collection("Claims")
+                .document(lastClaimNumber).get();
+        DocumentSnapshot lastDocSnapshot = lastDocFuture.get();
+
+        if (!lastDocSnapshot.exists()) {
+            return new ArrayList<>();
+        }
+        // Use the last document snapshot for pagination
+        ApiFuture<QuerySnapshot> future = dbFirestore.collection(type + " Claims").document("Life").collection("Claims")
+                .startAfter(lastDocSnapshot).limit(10).get();
+
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+        List<LifeClaim> claims = new ArrayList<>();
+
+        for (QueryDocumentSnapshot document : documents) {
+            if (document.exists()) {
+                claims.add(document.toObject(LifeClaim.class));
+            }
+        }
+
+        return claims.isEmpty() ? new ArrayList<>() : claims;
+    }
+
+    @Override
     public String deleteLifeClaim(String type, String claimNumber) {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         dbFirestore.collection(type + " Claims").document("Life").collection("Claims")
