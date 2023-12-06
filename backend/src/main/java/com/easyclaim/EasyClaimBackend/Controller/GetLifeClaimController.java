@@ -28,6 +28,12 @@ public class GetLifeClaimController {
     return lifeClaimService.getLifeClaims(type);
   }
 
+    @GetMapping("/get_life/{type}/{lastClaimNumber}")
+    public List<LifeClaim> getLifeClaimsPaginated(@PathVariable String type, @PathVariable String lastClaimNumber) throws InterruptedException, ExecutionException {
+        return lifeClaimService.getLifeClaimsPaginated(type, lastClaimNumber);
+    }
+
+
   @GetMapping("/get_life/claim/{claimNumber}")
     public LifeClaim getLifeClaim(@PathVariable String claimNumber) throws InterruptedException, ExecutionException {
         return lifeClaimService.findLifeClaim(claimNumber);
