@@ -1,7 +1,13 @@
 import InfoCard from "@/app/components/Cards/InfoCard";
 import LoanCard from "@/app/components/Cards/LoanCard";
 import {PaperClipIcon} from "@heroicons/react/20/solid";
+<<<<<<< HEAD
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";P
+=======
+import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
+import { useContext } from "react";
+import { highlightContext } from "@/utils";
+>>>>>>> 90fbcbf9cd6f9d3fe7d66277ed6281e1fcec821f
 
 
 const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data: LifeClaim | null,
@@ -32,7 +38,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                           </div>
                           {/* General info card */}
                           {claim_data ? (
-                              <InfoCard 
+                              <InfoCard
                                   title="General Information"
                                   fields={["Inquest Held", "Place of Death", "Autopsy Performed"]}
                                   values={[

@@ -1,25 +1,26 @@
-import { highlightContext } from "@/app/compare_claims/[claim_ids]/page";
+import { highlightContext } from "@/utils";
+
 import { useContext } from "react";
 
 const field_to_dict = {
   "Inquest Held": "inquestHeld",
-   "Place of Death": "placeOfDeath",
-    "Autopsy Performed": "autopsyPerformed",
-    "Cause of Death": "causeOfDeath",
-    "Hospitalized": "hospitalized",
-    "Type of Death": "typeOfDeath",
-    "Date Last Worked": "dateLastWorked",
-    "Occupation": "occupation",
-    "Reason Stopped Working": "reasonInsuredStoppedWorking",
-    "Lending Institute Name": "nameOfLendingInstitution",
-    "Lending Institute Province": "lendingInstitutionProvince"
-}
+  "Place of Death": "placeOfDeath",
+  "Autopsy Performed": "autopsyPerformed",
+  "Cause of Death": "causeOfDeath",
+  Hospitalized: "hospitalized",
+  "Type of Death": "typeOfDeath",
+  "Date Last Worked": "dateLastWorked",
+  Occupation: "occupation",
+  "Reason Stopped Working": "reasonInsuredStoppedWorking",
+  "Lending Institute Name": "nameOfLendingInstitution",
+  "Lending Institute Province": "lendingInstitutionProvince",
+};
 
 // react component
 const InfoCardHighlighted = ({
   title,
   fields,
-  values
+  values,
 }: {
   title: string;
   fields: string[];
@@ -27,11 +28,25 @@ const InfoCardHighlighted = ({
 }) => {
   const hightlightDict = useContext(highlightContext);
   if (Object.keys(hightlightDict).length == 0) {
-    return null
+    return null;
   }
 
+<<<<<<< HEAD
   const inner_dict = title == "General Information" ? hightlightDict : title == "Medical Information" ? hightlightDict.medicalInformation : title == "Employment Information" ? hightlightDict.employmentInformation : hightlightDict.generalLoanInformation
   
+=======
+  console.log(hightlightDict);
+
+  const inner_dict =
+    title == "General Information"
+      ? hightlightDict
+      : title == "Medical Information"
+      ? hightlightDict.medicalInformation
+      : title == "Employment Information"
+      ? hightlightDict.employmentInformation
+      : hightlightDict.generalLoanInformation;
+
+>>>>>>> 90fbcbf9cd6f9d3fe7d66277ed6281e1fcec821f
   return (
     <div className="border border-gray-150 rounded-lg my-4">
       <div className="px-6 py-2">
@@ -41,7 +56,13 @@ const InfoCardHighlighted = ({
         {fields.map((field, index) => (
           <div key={index} className="flex justify-between py-2">
             <p>{field}:</p>
-            <p style={{backgroundColor : inner_dict[field_to_dict[field]] ? "#dcfce7" : "transparent"}}>{values[index]}</p>
+            <p
+              style={{
+                backgroundColor: inner_dict[field_to_dict[field]] ? "#dcfce7" : "transparent",
+              }}
+            >
+              {values[index]}
+            </p>
           </div>
         ))}
       </div>
