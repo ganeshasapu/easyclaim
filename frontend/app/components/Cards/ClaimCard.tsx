@@ -155,7 +155,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                                   <div className="ml-4 flex-shrink-0">
                                       <a
                                           href="#"
-                                          className="font-medium text-indigo-600 hover:text-indigo-500"
+                                          className="font-medium text-[#0b9541] text-[#0b9541]"
                                       >
                                           Download
                                       </a>
@@ -175,7 +175,7 @@ const ClaimCard = ({claim_data, prefixString, width, isHistorical} : {claim_data
                                   <div className="ml-4 flex-shrink-0">
                                       <a
                                           href="#"
-                                          className="font-medium text-indigo-600 hover:text-indigo-500"
+                                          className="font-medium text-[#0b9541] hover:text-[#0b9541]"
                                       >
                                           Download
                                       </a>
