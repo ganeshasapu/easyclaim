@@ -35,7 +35,8 @@ public class GetSimilarLifeIntegrationTests {
     @Test
     void getSimilarLifeClaims_enterByClaimNumber_similarClaimsReturned() throws Exception {
         MvcResult result = this.mockMvc.perform(MockMvcRequestBuilders.
-                        get("/api/get_similar_life/{claimNumber}", "151076")).andDo(print()).
+                        get("/api/get_similar_life/{claimNumber}", "955263")).andDo(print()).
+
                 andExpect(status().isOk()).andExpect(content().contentType("application/json")).andReturn();
 
         SimilarClaim[] claims = g.fromJson(result.getResponse().getContentAsString(), SimilarClaim[].class);
