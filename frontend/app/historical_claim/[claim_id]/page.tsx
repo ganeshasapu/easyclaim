@@ -8,10 +8,10 @@ import ClaimCard from "@/app/components/Cards/ClaimCard";
 import HistoricalClaimFooter from "@/app/components/HistoricalClaimFooter";
 
 const user = {
-    name: "Stacy",
+    name: "Tom Cook",
     email: "tom@example.com",
-    image: "/public/stacy.png",
-    imageUrl: "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
+    imageUrl:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 
 export default function HistoricalClaimView({params}: {params: {claim_id: string}}) {
