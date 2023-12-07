@@ -49,12 +49,12 @@ export default function HistoricalClaimView({params}: {params: {claim_id: string
                                     {/* Logo */}
                                     <div className="absolute left-0 flex-shrink-0 lg:static flex">
                                         <button
-                                            className="flex gap-2"
+                                            className="flex gap-2 text-white"
                                             onClick={() => {
                                                 router.back();
                                             }}
                                         >
-                                            <ArrowLeftIcon className="h-6 w-6" />
+                                            <ArrowLeftIcon className="h-6 w-6 text-white" />
                                             <div>Back</div>
                                         </button>
                                     </div>
