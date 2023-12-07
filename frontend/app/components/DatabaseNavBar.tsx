@@ -43,7 +43,7 @@ const DatabaseNavBar = () => {
                       Inbox
                     </Link>
                     <div className="py-2 border rounded w-full px-4 bg-[#0b9541] text-white text-center font-bold">
-                      Database
+                      Historical Claims
                     </div>
                 </div>
 
@@ -87,6 +87,7 @@ const DatabaseNavBar = () => {
         
     )
 }
+
 
 const DatabaseNavBarAuthProvider = () => (
   <AuthProviderWrapper>
