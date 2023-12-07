@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import React, { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useRouter } from 'next/navigation'
@@ -25,7 +26,6 @@ const Signup = () => {
       router.push('/')
       console.info('trying to signup')
     } catch (err) {
-      console.error(err)
       console.error('error signing up')
     }
   }
