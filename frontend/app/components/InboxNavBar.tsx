@@ -39,7 +39,7 @@ const InboxNavBar = () => {
                         Inbox
                     </div>
                     <Link className="py-2 border rounded w-full px-4 text-center" href={"/database"}>
-                        Database
+                        Historical Claims
                     </Link> 
                        
             </div>
