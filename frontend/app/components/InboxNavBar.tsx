@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { Dialog, Disclosure, Transition, Menu} from '@headlessui/react'
-import { Fragment, useState, useEffect } from 'react'
+import { Transition, Menu} from '@headlessui/react'
+import { Fragment } from 'react'
+import { useAuth } from "../context/AuthContext";
+import AuthProviderWrapper from '../AuthProviderWrapper';
 
 const top_space = {
     padding: 10,
@@ -8,33 +10,37 @@ const top_space = {
     height: 70,
   };
 
-const user = {
-    name: "Stacy",
-    email: "stacy@mail.securian.com",
+  const user = {
+    name: "Stacy Grace",
+    email: "stacy.grace@mail.securian.com",
     imageUrl:
-      "https://i0.wp.com/www.sfnwseries.com/wp-content/uploads/2017/11/team-1-4-person-circle-p2-200-1.png?ssl=1",
-    image: "/stacy.jpg",
+        "/stacy.png",
 };
 
-// const div_top = {
-//   "background-image": "linear-gradient(red, yellow);",
-// }
-
 const InboxNavBar = () => {
-    return(
+  const { user1, logout } = useAuth();
+  const handleLogout = async (e: any) => {
+    e.preventDefault()
+  
+    try {
+      await logout()
+      console.info('trying to logout')
+    } catch (err) {
+      console.error('error logging out')
+    }
+  }
+  return(
         <div className="flex w-full p-4 items-center border-b border-white">
-            <Link href="https://www.securiancanada.ca/?utm_source=google&utm_medium=ps&utm_campaign=brand&utm_content=english&utm_term=securian-canada&gad_source=1">
+            <Link href="/">
               <img className="h-8 w-8 rounded-full" src="/Logo.png" alt="Your Company" style={top_space}/>
             </Link>
             <div className="flex w-full items-center justify-evenly p-2 gap-8" id="TopHeading">
-              {/* <span className="bg-[#0b9541] "> */}
                 <div className="py-2 border rounded w-full px-4 bg-[#0b9541] text-white text-center font-bold">
                         Inbox
                     </div>
                     <Link className="py-2 border rounded w-full px-4 text-center" href={"/database"}>
-                        Database
+                        Historical Claims
                     </Link> 
-                    {/* </span>  */}
                        
             </div>
           
@@ -42,8 +48,7 @@ const InboxNavBar = () => {
           <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full rounded-md bg-white px-1 py-1 text-sm font-semibold">
-          {/* <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-          <img className="h-9 w-5 rounded-full" src={user.image} alt="Stacy" style={top_space} />
+          <img className="h-9 w-5 rounded-full" src={user.imageUrl} alt="Stacy" style={top_space} />
         </Menu.Button>
       </div>
 
@@ -61,7 +66,7 @@ const InboxNavBar = () => {
             <form method="POST" action="#">
               <Menu.Item>
                 {({ active }) => (
-                  <button type="submit">
+                  <button type="submit" onClick={() => handleLogout }>
                     <Link href="/"> Log Out</Link>
                   </button>
                 )}
@@ -76,4 +81,10 @@ const InboxNavBar = () => {
     )
 }
 
-export default InboxNavBar;
+const InboxNavBarAuthProvider = () => (
+  <AuthProviderWrapper>
+    <InboxNavBar />
+  </AuthProviderWrapper>
+);
+
+export default InboxNavBarAuthProvider;
