@@ -3,7 +3,16 @@
     <h2>by Ganesh Asapu, Nauhar Kapur, Raunak Madan, Vibhas Raizada, and Caesar Saleh</h2>
 </div>
 
-_Making the adjudication process a breeze_
+
+<div align='center'>
+<h3><em>Consistent Adjudication, Made Easy</em></h3>
+</div>
+
+<br>
+    
+<div align='center'>
+<img width="600" alt="Screenshot 2023-12-07 at 9 29 26 PM" src="https://github.com/ganeshasapu/easyclaim/assets/144617434/5b869982-068a-475f-8dad-91eea3bf5d9f">
+</div>
 
 _______
 
@@ -13,6 +22,9 @@ _______
   This project was made as part of the <em><b>Technology Leadership Initative's</b></em> integrated-industry project at the <em><b>University of Toronto</b></em>.
 </div>
 
+<h3>View the deployed project <a href="https://easyclaim.vercel.app"> here </a> </h3>
+
+<hr>
 
 <div>
   <h3> Our expected features <em>(WIP)</em>: </h3>
@@ -34,6 +46,7 @@ _______
     <li> Frontend in <em>React</em> and <em>Typescript</em> </li>
     <li> Backend in <em>Spring Boot</em> and <em>Java</em></li>
     <li> Database running on <em>Firebase</em></li>
+    <li> Deployed using <em>Microsoft Azure</em></li>
   </ul>
 </div>
 
@@ -99,13 +112,14 @@ _______
 </div>
 
 <div>
-  <h3> <em>(Old)</em> Running the program locally: </h3>
+  <h3>Running the program locally: </h3>
   <ol>
-    <li> Install <a href="https://nodejs.org/en/"> node.js </a> </li>
+    <li> Install <a href="https://nodejs.org/en/"> node.js </a> with the command <code>npm i</code></li>
+    <li> Get the firebase API key from <a href="https://github.com/CaesarSaleh"> CaesarSaleh </a> 
+            <ul><li><em>This will be stored in a <code>.env</code> file that should NOT be made public or stored on the GitHub repo!</em></li></ul>
     <li> Run <code>npm run dev</code> in the Terminal</li>
     <li> Open <a href="http://localhost:3000"> http://localhost:3000 </a> </li>
   </ol>
-  <h3> <em>(Update)</em> Hooray! The program is now viewable at <a href="https://easyclaim.vercel.app"> this link! </a> </h3>
 </div>
 
 
