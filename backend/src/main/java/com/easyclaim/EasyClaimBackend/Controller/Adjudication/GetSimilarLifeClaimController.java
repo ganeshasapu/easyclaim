@@ -1,7 +1,7 @@
-package com.easyclaim.EasyClaimBackend.Controller;
+package com.easyclaim.EasyClaimBackend.Controller.Adjudication;
 
 
-import com.easyclaim.EasyClaimBackend.UseCase.GetSimilarLifeClaimService;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetSimilarLifeClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

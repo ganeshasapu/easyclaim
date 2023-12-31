@@ -1,15 +1,12 @@
-package com.easyclaim.EasyClaimBackend.Controller;
+package com.easyclaim.EasyClaimBackend.Controller.Adjudication;
 
 
-import com.easyclaim.EasyClaimBackend.UseCase.GetFilteredLifeClaimService;
-import com.easyclaim.EasyClaimBackend.UseCase.GetSimilarLifeClaimService;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetFilteredLifeClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
-import com.easyclaim.EasyClaimBackend.UseCase.GetLifeClaimService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 

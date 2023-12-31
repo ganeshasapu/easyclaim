@@ -1,14 +1,12 @@
-package com.easyclaim.EasyClaimBackend.UseCase;
+package com.easyclaim.EasyClaimBackend.UseCase.Adjudication;
 
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.concurrent.ExecutionException;
-import java.util.ArrayList;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import com.easyclaim.EasyClaimBackend.Entity.SimilarClaim;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

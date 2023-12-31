@@ -1,4 +1,4 @@
-package com.easyclaim.EasyClaimBackend.UseCase;
+package com.easyclaim.EasyClaimBackend.UseCase.Adjudication;
 
 
 

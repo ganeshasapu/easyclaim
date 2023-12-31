@@ -1,17 +1,15 @@
 package com.easyclaim.EasyClaimBackend.DataAccess;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
-import com.easyclaim.EasyClaimBackend.UseCase.DeleteLifeClaimDataAccessInterface;
-import com.easyclaim.EasyClaimBackend.UseCase.GetFilteredLifeClaimsDataAccessInterface;
-import com.easyclaim.EasyClaimBackend.UseCase.GetLifeClaimsDataAccessInterface;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.DeleteLifeClaimDataAccessInterface;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetFilteredLifeClaimsDataAccessInterface;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetLifeClaimsDataAccessInterface;
 import com.easyclaim.EasyClaimBackend.UseCase.UploadLifeClaimDataAccessInterface;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;

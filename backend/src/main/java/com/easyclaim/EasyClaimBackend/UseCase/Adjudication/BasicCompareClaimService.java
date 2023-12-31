@@ -1,4 +1,4 @@
-package com.easyclaim.EasyClaimBackend.UseCase;
+package com.easyclaim.EasyClaimBackend.UseCase.Adjudication;
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import org.springframework.stereotype.Service;

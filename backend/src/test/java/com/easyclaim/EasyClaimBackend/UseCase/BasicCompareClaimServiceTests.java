@@ -1,6 +1,7 @@
 package com.easyclaim.EasyClaimBackend.UseCase;
 
 import com.easyclaim.EasyClaimBackend.Entity.*;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.BasicCompareClaimService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

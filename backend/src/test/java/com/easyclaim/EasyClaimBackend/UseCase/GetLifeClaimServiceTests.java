@@ -2,10 +2,11 @@ package com.easyclaim.EasyClaimBackend.UseCase;
 
 
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetLifeClaimService;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetLifeClaimsDataAccessInterface;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 
 import java.util.ArrayList;

@@ -1,7 +1,8 @@
-package com.easyclaim.EasyClaimBackend.UseCase;
+package com.easyclaim.EasyClaimBackend.UseCase.Adjudication;
 
 import java.util.concurrent.ExecutionException;
 
+import com.easyclaim.EasyClaimBackend.UseCase.UploadLifeClaimDataAccessInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
