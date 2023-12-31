@@ -1,8 +1,7 @@
-package com.easyclaim.EasyClaimBackend.UseCase;
+package com.easyclaim.EasyClaimBackend.UseCase.Adjudication;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.ArrayList;
 
 
 import lombok.RequiredArgsConstructor;

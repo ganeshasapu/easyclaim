@@ -1,4 +1,4 @@
-package com.easyclaim.EasyClaimBackend.Controller;
+package com.easyclaim.EasyClaimBackend.Controller.Adjudication;
 
 import com.easyclaim.EasyClaimBackend.UseCase.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;

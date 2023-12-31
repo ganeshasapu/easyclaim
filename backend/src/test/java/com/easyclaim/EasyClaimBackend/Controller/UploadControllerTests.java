@@ -1,5 +1,6 @@
 package com.easyclaim.EasyClaimBackend.Controller;
 
+import com.easyclaim.EasyClaimBackend.Controller.Adjudication.UploadController;
 import com.easyclaim.EasyClaimBackend.Entity.LifeClaim;
 import com.easyclaim.EasyClaimBackend.UseCase.UploadService;
 import org.junit.jupiter.api.Assertions;

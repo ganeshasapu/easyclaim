@@ -1,7 +1,8 @@
 package com.easyclaim.EasyClaimBackend.Controller;
 
+import com.easyclaim.EasyClaimBackend.Controller.Adjudication.GetFilteredLifeClaimController;
 import com.easyclaim.EasyClaimBackend.Entity.*;
-import com.easyclaim.EasyClaimBackend.UseCase.GetFilteredLifeClaimService;
+import com.easyclaim.EasyClaimBackend.UseCase.Adjudication.GetFilteredLifeClaimService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
