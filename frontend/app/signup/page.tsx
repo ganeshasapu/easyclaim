@@ -5,95 +5,124 @@ import { useAuth } from '../context/AuthContext'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import AuthProviderWrapper from '../AuthProviderWrapper';
+import { UserCredential } from 'firebase/auth';
 
 const Signup = () => {
-  useEffect(() => {
-    document.title = 'EasyClaim Signup';
-  }, []);
+    useEffect(() => {
+        document.title = 'EasyClaim Signup';
+    }, []);
 
-  const router = useRouter()
-  const { user, signup } = useAuth()
-  const [data, setData] = useState({
-    email: '',
-    password: '',
-  })
+    const router = useRouter()
+    const { user, signup } = useAuth()
+    const [data, setData] = useState({
+        email: '',
+        password: '',
+    })
+    const [userType, setUserType] = useState<string | null>(null);
 
-  const handleSignup = async (e: any) => {
-    e.preventDefault()
+    const handleSignup = async (e: any) => {
+        e.preventDefault()
 
-    try {
-      await signup(data.email, data.password)
-      router.push('/')
-      console.info('trying to signup')
-    } catch (err) {
-      console.error('error signing up')
+        try {
+            console.info('trying to signup')
+            console.log(userType)
+            signup(data.email, data.password).then((credential: UserCredential) => {
+                
+                if (userType == "Claimant") {
+                    const uid = credential.user.uid;
+                    router.push(`/claimant/${uid}`)
+                }
+                else if (userType == "Adjudicator") {
+                    router.push(`/inbox`)
+                }
+            })
+        } catch (err) {
+            console.error('error signing up')
+        }
     }
-  }
 
-  return (
-      <div className='h-screen  justify-center'>
-          <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-              <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                  <img className="mx-auto h-16 w-auto" src="/logo.png" alt="Your Company"/>
-                  <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-757575">Sign up as an adjudicator</h2>
-              </div>
+    return (
+        <div className=' h-screen  justify-center'>
 
-              <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                  <form className="space-y-6" action="#" method="POST">
-                  <div>
-                      <label className="block text-sm font-medium leading-6 text-757575">Email address</label>
-                      <div className="mt-2">
-                      <input id="email" onChange={(e: any) =>
-                setData({
-                  ...data,
-                  email: e.target.value,
-                })
-              } value={data.email} name="email" type="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2"/>
-                      </div>
-                  </div>
 
-                  <div>
-                      <div className="flex items-center justify-between">
-                      <label className="block text-sm font-medium leading-6 text-757575">Password</label>
-                      </div>
-                      <div className="mt-2">
-                      <input id="password" onChange={(e: any) =>
-                setData({
-                  ...data,
-                  password: e.target.value,
-                })
-              } value={data.password} name="password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-757575 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2" />
-                      </div>
-                  </div>
 
-                  <div>
-                      <div className="flex items-center justify-between">
-                      <label className="block text-sm font-medium leading-6 text-757575">Repeat Password</label>
-                      </div>
-                      <div className="mt-2">
-                      <input id="password" name="retype password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-757575 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2" />
-                      </div>
-                  </div>
+            <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
 
-                  <div>
-                      <button type="submit" onClick={handleSignup} className="flex w-full justify-center rounded-md bg-[#43934B] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#43934B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#43934B]">Sign Up</button>
-                  </div>
-                  <div className="text-sm">
-                          <Link href="/">
-                              <p className="font-semibold text-[#43934B] hover:text-[#43934B]">Already have an account? Login here!</p>
-                          </Link>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  );
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                    <img className="mx-auto h-16 w-auto" src="/logo.png" alt="Your Company" />
+                    <div className="mt-10 flex flex-col items-center mb-[5vh] space-y-[3vh]">
+
+                        <h2 className="text-2xl font-bold">
+                            Sign up as a
+                        </h2>
+                        <div className="flex rounded-md" role="group">
+                            <button type="button" onClick={() => {setUserType("Claimant")}} className=" px-4 py-2 text-md font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                                <h2>Claimant</h2>
+                            </button>
+
+                            <button type="button" onClick={() => {setUserType("Adjudicator")}} className="px-4 py-2 text-md font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                                <h2>Adjudicator</h2>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <form className="space-y-6" action="#" method="POST">
+                        <div>
+                            <label className="block text-sm font-medium leading-6 text-757575">Email address</label>
+                            <div className="mt-2">
+                                <input id="email" onChange={(e: any) =>
+                                    setData({
+                                        ...data,
+                                        email: e.target.value,
+                                    })
+                                } value={data.email} name="email" type="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex items-center justify-between">
+                                <label className="block text-sm font-medium leading-6 text-757575">Password</label>
+                            </div>
+                            <div className="mt-2">
+                                <input id="password" onChange={(e: any) =>
+                                    setData({
+                                        ...data,
+                                        password: e.target.value,
+                                    })
+                                } value={data.password} name="password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-757575 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex items-center justify-between">
+                                <label className="block text-sm font-medium leading-6 text-757575">Repeat Password</label>
+                            </div>
+                            <div className="mt-2">
+                                <input id="password" name="retype password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-757575 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#43934B] sm:text-sm sm:leading-6 pl-2" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" onClick={handleSignup} className="flex w-full justify-center rounded-md bg-[#43934B] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#43934B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#43934B]">Sign Up</button>
+                        </div>
+                        <div className="text-sm">
+                            <Link href="/">
+                                <p className="font-semibold text-[#43934B] hover:text-[#43934B]">Already have an account? Login here!</p>
+                            </Link>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 const SignupWithAuthProvider = () => (
-  <AuthProviderWrapper>
-    <Signup />
-  </AuthProviderWrapper>
+    <AuthProviderWrapper>
+        <Signup />
+    </AuthProviderWrapper>
 );
 
 export default SignupWithAuthProvider;
