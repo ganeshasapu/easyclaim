@@ -16,7 +16,7 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 @Service
-public class AllClaimsDataAccessObject implements GetLifeClaimsDataAccessInterface, DeleteLifeClaimDataAccessInterface,
+public class AdjudicationDataAccessObject implements GetLifeClaimsDataAccessInterface, DeleteLifeClaimDataAccessInterface,
          UploadLifeClaimDataAccessInterface, GetFilteredLifeClaimsDataAccessInterface {
     @Override
     public List<LifeClaim> getLifeClaims(String type) throws ExecutionException, InterruptedException {

@@ -1,0 +1,12 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAVRN26PFHWWFUNLIR
+      secret-key: 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
+
+application:
+  bucket:
+    name: easyclaim-storage
+
+server:
+  port: 8080
