@@ -37,26 +37,6 @@ public class FormRecognizer {
 
         AnalyzeResult analyzeResult = analyzeLayoutResultPoller.getFinalResult();
 
-        // pages
-        analyzeResult.getPages().forEach(documentPage -> {
-            System.out.printf("Page has width: %.2f and height: %.2f, measured with unit: %s%n",
-                    documentPage.getWidth(),
-                    documentPage.getHeight(),
-                    documentPage.getUnit());
-
-            // lines
-            documentPage.getLines().forEach(documentLine ->
-                    System.out.printf("Line %s is within a bounding polygon %s.%n",
-                            documentLine.getContent(),
-                            documentLine.getBoundingPolygon().toString()));
-
-            // words
-            documentPage.getWords().forEach(documentWord ->
-                    System.out.printf("Word %s has a confidence score of %.2f%n.",
-                            documentWord.getContent(),
-                            documentWord.getConfidence()));
-        });
-
         // tables
         List<DocumentTable> tables = analyzeResult.getTables();
         for (int i = 0; i < tables.size(); i++) {

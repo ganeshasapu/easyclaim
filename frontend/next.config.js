@@ -11,6 +11,10 @@ module.exports = {
             source: '/api/:path*',
             destination: process.env.NEXT_BACKEND_BASE_URL + '/api/:path*',
           },
+          {
+            source: '/claimant/:path*',
+            destination: process.env.NEXT_BACKEND_BASE_URL + '/claimant/:path*',
+          }
         ]
       },
   };
